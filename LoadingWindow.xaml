@@ -36,10 +36,10 @@
 	<WindowChrome.WindowChrome>
 		<WindowChrome CaptionHeight="30" 
 		              ResizeBorderThickness="5" 
-		              CornerRadius="3"
+		              CornerRadius="0"
 		              GlassFrameThickness="0"/>
 	</WindowChrome.WindowChrome>
-	<Border BorderThickness="3" Background="{StaticResource DarkerSCB}" BorderBrush="{StaticResource ReadyDOSPurple}" Padding="35">
+	<Border BorderThickness="1" Background="{StaticResource DarkerSCB}" BorderBrush="{StaticResource ReadyDOSPurple}" Padding="35">
 		<StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
 			<Label x:Name="LoadingLabel" Content="Loading..." Style="{StaticResource LabelStyle}" Opacity="0" />
 			<Label x:Name="FoundRequiredModelsLabel" Content="Found required model(s)." Style="{StaticResource LabelStyle}" Opacity="0" />

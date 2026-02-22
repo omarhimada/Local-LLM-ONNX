@@ -8,7 +8,7 @@ internal static class Phi4 {
 		if (string.IsNullOrEmpty(userPrompt)) {
 			return string.Empty;
 		}
-		const string constructedRootSystemPrompt = $"{_defaultInstruction}{_art}{_algorithms}{_specificity}";
+		const string constructedRootSystemPrompt = $"{_defaultInstruction}";
 		List<ChatMessage> messages = [
 			new (ChatRole.System, constructedRootSystemPrompt),
 			new (ChatRole.User, userPrompt)

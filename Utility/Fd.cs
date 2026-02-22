@@ -1,7 +1,6 @@
 using OLLM.Utility.Syntax;
 using System.Windows;
 using System.Windows.Documents;
-using System.Windows.Media;
 
 namespace OLLM.Utility;
 

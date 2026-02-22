@@ -30,7 +30,23 @@
 		<AssemblyVersion>$(VersionPrefix).$(BuildTimeMonthUtc).$(BuildTimeSecondsUtc)</AssemblyVersion>
 		<FileVersion>$(Version)</FileVersion>
 		<InformationalVersion>$(Version)</InformationalVersion>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="SD\CUDA\**" />
+	  <Compile Remove="SD\Native\**" />
+	  <Compile Remove="SD\Parameters\**" />
+	  <EmbeddedResource Remove="SD\CUDA\**" />
+	  <EmbeddedResource Remove="SD\Native\**" />
+	  <EmbeddedResource Remove="SD\Parameters\**" />
+	  <None Remove="SD\CUDA\**" />
+	  <None Remove="SD\Native\**" />
+	  <None Remove="SD\Parameters\**" />
+	  <Page Remove="SD\CUDA\**" />
+	  <Page Remove="SD\Native\**" />
+	  <Page Remove="SD\Parameters\**" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<Compile Remove="Utility\ModelSpecific\CodeGemma.cs" />
@@ -94,10 +110,10 @@
 		<PackageReference Include="Microsoft.Data.Sqlite.Core" Version="11.0.0-preview.1.26104.118" />
 		<PackageReference Include="Microsoft.Extensions.AI" Version="10.3.0" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="11.0.0-preview.1.26104.118" />
-		<PackageReference Include="Microsoft.Extensions.VectorData.Abstractions" Version="9.7.0" />
-		<PackageReference Include="Microsoft.ML.OnnxRuntimeGenAI.DirectML" Version="0.11.4" />
+		<PackageReference Include="Microsoft.Extensions.VectorData.Abstractions" Version="10.0.0" />
+		<PackageReference Include="Microsoft.ML.OnnxRuntimeGenAI.DirectML" Version="0.12.0" />
 		<PackageReference Include="Microsoft.SemanticKernel.Connectors.SqliteVec" Version="1.70.0-preview" />
-		<PackageReference Include="Microsoft.SemanticKernel.Core" Version="1.70.0" />
+		<PackageReference Include="Microsoft.SemanticKernel.Core" Version="1.72.0" />
 		<PackageReference Include="System.Management" Version="11.0.0-preview.1.26104.118" />
 	</ItemGroup>
 
@@ -137,6 +153,9 @@
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
 		</None>
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="ONNX\SD\" />
 	</ItemGroup>
 
 	<!-- Do not include native PDBs and .lib in published release (for simplicity and UX cleanliness) -->
