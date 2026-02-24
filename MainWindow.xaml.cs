@@ -1,11 +1,14 @@
 using OLLM.Interact;
 using OLLM.Memory;
+using OLLM.SD;
 using OLLM.State;
+using OLLM.Utility;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Media;
+
 namespace OLLM;
+
+using static Constants;
 
 internal partial class MainWindow : Window {
 	#region Fields & Properties
@@ -42,6 +45,24 @@ internal partial class MainWindow : Window {
 	}
 	internal async void InterruptButtonClick(object sender, RoutedEventArgs e) {
 		await LinearCommunication!._interrupt(TheirResponse, ChatButton);
+		_doneThinking();
+	}
+
+	internal async void SDButtonClick(object sender, RoutedEventArgs e) {
+		try {
+			string positive = Base64e.DecodeFromBase64(_sdPrompt);
+			string negative = Base64e.DecodeFromBase64(_sdNegative);
+
+			Diffusion.Diffuse(new DiffusionOptions {
+				Prompt = positive,
+				Negative = negative
+			});
+		} catch (Exception sdException) {
+			MessageBox.Show(sdException.Message);
+			if (sdException.InnerException is not null) {
+				MessageBox.Show(sdException.InnerException!.Message);
+			}
+		}
 		_doneThinking();
 	}
 	internal void CloseButtonClick(object sender, RoutedEventArgs e) => Application.Current.Shutdown();

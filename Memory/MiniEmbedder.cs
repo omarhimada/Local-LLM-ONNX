@@ -1,10 +1,11 @@
 using Microsoft.Extensions.AI;
-using Microsoft.ML.OnnxRuntime;
-using Microsoft.ML.OnnxRuntime.Tensors;
-using OLLM.State;
 using System.Text.RegularExpressions;
 using System.Windows;
 namespace OLLM.Memory;
+
+using Microsoft.ML.OnnxRuntime;
+using Microsoft.ML.OnnxRuntime.Tensors;
+using State;
 
 /// <summary>
 /// Provides functionality to generate text embeddings using a locally hosted MiniLM ONNX model and vocabulary file.

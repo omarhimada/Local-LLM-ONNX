@@ -76,8 +76,10 @@ internal static class EnsureModelsArePresent {
 		if (!TryRequiredModelIsPresent(_preBuildEmbedModelDirectory, out string? embedModelPathToUse) ||
 			embedModelPathToUse == null) {
 			if (_embedModelIsRequired) {
+#pragma warning disable CS0162 // Unreachable code detected
 				potentialFriendlyUserErrorMessage.AppendLine(
 					$"{_userFriendlyModelDirectoryErrorResponse}{Environment.NewLine}{embedModelPathToUse}");
+#pragma warning restore CS0162 // Unreachable code detected
 			}
 		}
 		if (modelPathToReturn == null && (_embedModelIsRequired && embedModelPathToUse == null)) {

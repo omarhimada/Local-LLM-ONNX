@@ -1,38 +1,42 @@
+using Microsoft.ML.OnnxRuntime;
 using Microsoft.ML.OnnxRuntime.Tensors;
 
 namespace OLLM.SD {
-	// LMS scheduler (compact)
 	internal sealed class LmsScheduler {
-		private readonly float[] _alphasCumProd;
+		private readonly float[] _alphasCumulativeProd;
 		public int[] Timesteps { get; private set; } = [];
 		public float[] Sigmas { get; private set; } = [];
 
 		private readonly List<DenseTensor<float>> _derivatives = [];
 
-		public LmsScheduler(int numTrainTimesteps, float betaStart, float betaEnd) {
+		public LmsScheduler(int numTrainTimesteps, Float16 betaStart, Float16 betaEnd) {
 			// Linear betas as in common SD schedulers
 			float[] betas = new float[numTrainTimesteps];
 			for (int i = 0; i < numTrainTimesteps; i++)
-				betas[i] = betaStart + (betaEnd - betaStart) * i / (numTrainTimesteps - 1);
+				betas[i] = betaStart.ToFloat() + (betaEnd.ToFloat() - betaStart.ToFloat()) * i / (numTrainTimesteps - 1);
 
 			float[] alphas = betas.Select(b => 1f - b).ToArray();
-			_alphasCumProd = new float[numTrainTimesteps];
+			_alphasCumulativeProd = new float[numTrainTimesteps];
 			float prod = 1f;
 			for (int i = 0; i < numTrainTimesteps; i++) {
 				prod *= alphas[i];
-				_alphasCumProd[i] = prod;
+				_alphasCumulativeProd[i] = prod;
 			}
 		}
 
 		public void SetTimesteps(int numInferenceSteps) {
 			// Common: evenly spaced timesteps descending
-			Timesteps = Enumerable.Range(0, numInferenceSteps)
-								  .Select(i => (int)Math.Round((1 - (double)i / (numInferenceSteps - 1)) * (_alphasCumProd.Length - 1)))
-								  .ToArray();
+			Timesteps =
+				Enumerable.Range(0, numInferenceSteps)
+					.Select(i =>
+						(int)Math.Round(
+							(1 - (double)i / (numInferenceSteps - 1)) *
+							(_alphasCumulativeProd.Length - 1)))
+					.ToArray();
 
 			// Convert to sigmas
 			Sigmas = Timesteps.Select(t => {
-				float acp = _alphasCumProd[t];
+				float acp = _alphasCumulativeProd[t];
 				return (float)Math.Sqrt((1 - acp) / acp);
 			}).ToArray();
 

@@ -8,6 +8,7 @@ using System.Windows.Threading;
 
 namespace OLLM.Interact;
 
+using OLLM.Memory;
 using State;
 using State.Thinking;
 using Utility;
@@ -43,8 +44,8 @@ internal partial class LinearCommunication(ModelState modelState) {
 		await _thought.AnimateIn();
 	}
 
-	public async Task UpdateThinkingOverlay(string text) {
-		if (_thought is null) {
+	public async Task UpdateThinkingOverlay(string text, CancellationToken ct) {
+		if (_thought is null || ct.IsCancellationRequested) {
 			return;
 		}
 		_thought.SetText(text);
@@ -99,10 +100,10 @@ internal partial class LinearCommunication(ModelState modelState) {
 		} catch (Exception) {
 			SomethingWentWrong(theirResponse, true);
 		}
-		await ChatWithModelAsync(systemAndUserMessage, theirResponse);
+		await ChatWithModelAsync(systemAndUserMessage, userInputText, theirResponse);
 	}
 
-	private async Task ChatWithModelAsync(string systemAndUserMessage, RichTextBox theirResponse) {
+	private async Task ChatWithModelAsync(string systemAndUserMessage, string userMessage, RichTextBox theirResponse) {
 		CancellationToken ct = _cts.Token;
 
 		// The 'inner monologue' of the model as they reason
@@ -124,7 +125,7 @@ internal partial class LinearCommunication(ModelState modelState) {
 
 		await Application.Current.Dispatcher.InvokeAsync(() => {
 			theirResponse.Document = flowDoc;
-			BeginThinkingOverlayAsync(theirResponse, string.Empty);
+			_ = BeginThinkingOverlayAsync(theirResponse, string.Empty);
 		}, DispatcherPriority.Normal, ct);
 
 		await Task.Run(() => {
@@ -149,9 +150,11 @@ internal partial class LinearCommunication(ModelState modelState) {
 						thinkingTextBuilder.Append(piece);
 						Application.Current.Dispatcher.InvokeAsync(() => {
 							streamingRun!.Text += piece;
-							UpdateThinkingOverlay(streamingRun!.Text);
-							//theirResponse.ScrollToEnd();
-						}, DispatcherPriority.Normal, ct);
+							Task think = UpdateThinkingOverlay(streamingRun!.Text, ct);
+							if (think.IsCanceled) {
+								theirResponse.Document = new FlowDocument();
+							}
+						}, DispatcherPriority.Render, ct);
 						break;
 					case true when piece.Contains(_thinkEnd): {
 							// Thinking ceases
@@ -172,27 +175,34 @@ internal partial class LinearCommunication(ModelState modelState) {
 		}, ct);
 
 		await Application.Current.Dispatcher.InvokeAsync(() => {
-			//streamingRun!.Text += spl[0];
-			EndThinkingOverlay(theirResponse);
+			_ = EndThinkingOverlay(theirResponse);
 			theirResponse.ScrollToEnd();
-		}, DispatcherPriority.Normal, ct);
-
-
+		}, DispatcherPriority.Render, ct);
 
 		// All blocks (paragraphs, etc.) appended to the flow document
 		finalTextBuilder.Append(_nlrs);
 		finalTextBuilder.Append(_lineBreak);
 		finalTextBuilder.Append(_nlrs);
 
-		List<FdBlockMd> finalParagraphBlocks = Md.Parse(finalTextBuilder.ToString());
+		string ftb = finalTextBuilder.ToString();
+
+		List<FdBlockMd> finalParagraphBlocks = Md.Parse(ftb);
 
 		await Application.Current.Dispatcher.InvokeAsync(() => {
 			theirResponse.Document = Fd.Render(finalParagraphBlocks);
 			theirResponse.ScrollToEnd();
-		}, DispatcherPriority.Normal, ct);
+		}, DispatcherPriority.Render, ct);
 
-		// Debugging
-		//await Remember.MemorizeDiscussionAsync(theirResponse.Text, ct);
+		try {
+			await Application.Current.Dispatcher.InvokeAsync(() => {
+				if (userMessage.StartsWith(_learnStart)) {
+					_ = Remember.MemorizeDiscussionAsync(ftb, ct);
+				}
+			}, DispatcherPriority.Normal, ct);
+		} catch (Exception memoryExpception) {
+			// Continue;
+			MessageBox.Show(memoryExpception.Message);
+		}
 	}
 
 	private static void SomethingWentWrong(RichTextBox theirResponse, bool? couldNotParseUserInput = false, string? exceptionMessage = null) {

@@ -244,13 +244,17 @@
 
                     <Button x:Name="ChatButton" Content=" chat " IsDefault="True" 
 							Click="ChatButtonClick" AutomationProperties.Name="ChatButton"
-							Style="{StaticResource ButtonStyle}" Width="617" />
+							Style="{StaticResource ButtonStyle}" Width="Auto" />
 
                     <Button x:Name="InterruptButton" Content=" interrupt " 
 							Click="InterruptButtonClick" AutomationProperties.Name="InterruptButton"
-							Style="{StaticResource ButtonStyle}" Width="101" />
+							Style="{StaticResource ButtonStyle}" Width="Auto" />
 
-                </StackPanel>
+					<Button x:Name="SD" Content=" sd " 
+							Click="SDButtonClick" AutomationProperties.Name="SDButton"
+							Style="{StaticResource ButtonStyle}" Width="Auto" />
+
+				</StackPanel>
 
                 <RichTextBox x:Name="TheirResponse" 
 				             Grid.Row="2"

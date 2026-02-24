@@ -27,6 +27,7 @@ internal static class Constants {
 	#endregion
 
 	#region SD
+	//dosdossi/0nnX00Aammnpdxebr
 	internal static string _sdModelPath = $"{AppContext.BaseDirectory}..\\..\\..\\ONNX\\SD\\0nnX00Aammnpdxebr";
 
 	// ReSharper disable StringLiteralTypo
@@ -37,15 +38,6 @@ internal static class Constants {
 	"""
 	MWdpcmwgbW9kZWxzaG9vdF9zdHlsZSByZWFsIHJhdyBwaG90byAxOCB5ZWFyIG9sZCBicn
 	VuZXR0ZSB3ZWFyaW5nIGEgcmVkIGRyZXNzIGZ1bGwgYm9keSBmMi41IHBob3Rvc2hvb3Q=
-	ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု 
-	န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း 
-	မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း 
-	မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း 
-	မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း 
-	မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း 
-	မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု
-	 န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု 
-	 န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ န်း မု န့်ိ
 	""";
 
 	// Some of the negative words are disgusting and offensive,
@@ -105,6 +97,7 @@ internal static class Constants {
 	internal const string _resourceFontFamilyLocationPrefix = "./Fonts/#";
 	#endregion
 
+	internal const string _learnStart = "<learn>";
 	internal const string _maxLengthParameter = "max_length";
 	internal const string _doSample = "do_sample";
 	internal const string _temperature = "temperature";

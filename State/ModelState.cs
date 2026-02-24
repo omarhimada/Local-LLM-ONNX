@@ -1,6 +1,5 @@
 using Microsoft.ML.OnnxRuntimeGenAI;
 using System.IO;
-using System.Management;
 using System.Windows;
 using static OLLM.Constants;
 namespace OLLM.State;
@@ -18,6 +17,7 @@ internal class ModelState {
 	internal ModelState(string modelDirectory) {
 		ModelDirectory = modelDirectory;
 		Config config = new(ModelDirectory);
+		//config.AppendProvider("cuda");
 		config.AppendProvider(_dml);
 		#region Point to the direct ONNX model itself to instantiate the inference session
 		string? modelFilePath = Directory.GetFiles(modelDirectory, _onnxSearch).FirstOrDefault();
@@ -40,7 +40,7 @@ internal class ModelState {
 	}
 	internal void SetGeneratorParameterSearchOptions() {
 		#region Set generator parameters
-		GeneratorParams?.SetSearchOption(_maxLengthParameter, 32768);
+		GeneratorParams?.SetSearchOption(_maxLengthParameter, 98304);
 		GeneratorParams?.SetSearchOption(_doSample, true);
 		GeneratorParams?.SetSearchOption(_temperature, _getTemperature());
 		GeneratorParams?.SetSearchOption(_topK, 51);

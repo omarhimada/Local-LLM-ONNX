@@ -1,5 +1,6 @@
 using Microsoft.ML.OnnxRuntime;
 using Microsoft.ML.OnnxRuntime.Tensors;
+using Microsoft.ML.OnnxRuntimeGenAI;
 using Microsoft.ML.Tokenizers;
 using System.IO;
 using System.Windows;
@@ -8,23 +9,36 @@ using System.Windows.Media.Imaging;
 
 namespace OLLM.SD;
 
+using static Constants;
+
 internal static class Diffusion {
+#pragma warning disable IDE0051
+	private static readonly OgaHandle _sdOgaHandle = new();
+#pragma warning restore IDE0051
+
+	internal static DenseTensor<float> ConvertFloat16ToFloat(DenseTensor<Float16> float16Tensor) {
+		Float16[] float16Array = float16Tensor.ToArray();
+		float[] floatArray = float16Array.Select(x => x.ToFloat()).ToArray();
+		return new DenseTensor<float>(floatArray, float16Tensor.Dimensions);
+	}
+
 	internal static WriteableBitmap Diffuse(DiffusionOptions dOpt) {
 		string modelRoot = $"{dOpt.ModelRoot}";
 		string prompt = $"{dOpt.Prompt}";
-		string negativePrompt = ""; // Optional: pull from dOpt if you add it
+		string negativePrompt = $"{dOpt.Negative}";
+
 		int height = dOpt.Height;
 		int width = dOpt.Width;
 		int seed = dOpt.Seed;
 		int steps = dOpt.Steps;
-		float guidance = dOpt.Guidance;
+		Float16 guidance = dOpt.Guidance;
 
 		using SessionOptions so = new();
+
 		so.GraphOptimizationLevel = GraphOptimizationLevel.ORT_ENABLE_ALL;
 		so.EnableCpuMemArena = false;
-
-		// DML execution for Windows. Change to AppendExecutionProvider_CUDA() for Nvidia.
-		so.AppendExecutionProvider_DML();
+		Config config = new Config(modelRoot);
+		config.AppendProvider(_dml);
 
 		using InferenceSession textEncoder = new(Path.Combine(modelRoot, "text_encoder", "model.onnx"), so);
 		using InferenceSession unet = new(Path.Combine(modelRoot, "unet", "model.onnx"), so);
@@ -32,65 +46,67 @@ internal static class Diffusion {
 
 		string tokenizerPath = Path.Combine(modelRoot, "tokenizer");
 
-		// Encode chunked text embeddings to bypass the 77-token limit
-		DenseTensor<float> textEmbeddings = EncodeTextChunked(textEncoder, prompt, negativePrompt, tokenizerPath);
+		DenseTensor<Float16> textEmbeddings = EncodeTextChunked(textEncoder, prompt, negativePrompt, tokenizerPath);
 
-		// Prepare scheduler & initial latents
-		LmsScheduler scheduler = new(numTrainTimesteps: 1000, betaStart: 0.00085f, betaEnd: 0.012f);
+		LmsScheduler scheduler =
+			new(
+				numTrainTimesteps: 1000,
+				betaStart: (Float16)0.00085f,
+				betaEnd: (Float16)0.012f);
 		scheduler.SetTimesteps(steps);
 
 		Random rng = new(seed);
-		DenseTensor<float> latents = CreateRandomLatents(rng, height, width);
-		latents = Scale(latents, scheduler.Sigmas[0]);
+		DenseTensor<Float16> latents = CreateRandomLatents(rng, height, width);
+		DenseTensor<float> latentsFloat = ConvertFloat16ToFloat(latents);
+		latentsFloat = Scale(latentsFloat, scheduler.Sigmas[0]);
 
-		// Denoise (UNet Loop)
 		for (int i = 0; i < scheduler.Timesteps.Length; i++) {
-			int t = scheduler.Timesteps[i];
+			int timestep = scheduler.Timesteps[i];
 			float sigma = scheduler.Sigmas[i];
-			DenseTensor<float> latentInput = RepeatLatents(latents, 2);
-			latentInput = scheduler.ScaleModelInput(latentInput, sigma);
+			DenseTensor<Float16> latentInput = RepeatLatents(latents, 2);
+			DenseTensor<float> latentInputFloat = ConvertFloat16ToFloat(latentInput);
+			latentInputFloat = scheduler.ScaleModelInput(latentInputFloat, sigma);
 
-			DenseTensor<float> noisePredicate = RunUnet(unet, latentInput, t, textEmbeddings);
-			DenseTensor<float> noiseUnconditional = SliceBatch(noisePredicate, 0);
-			DenseTensor<float> noiseText = SliceBatch(noisePredicate, 1);
+			DenseTensor<Float16> noisePredicate = RunUnet(unet, latentInput, timestep, textEmbeddings);
+			DenseTensor<Float16> noiseUnconditional = SliceBatch(noisePredicate, 0);
+			DenseTensor<Float16> noiseText = SliceBatch(noisePredicate, 1);
 
-			// Classifier-Free Guidance
-			DenseTensor<float> guided = Add(noiseUnconditional, Scale(Sub(noiseText, noiseUnconditional), guidance));
+			DenseTensor<float> noiseUnconditionalFloat = ConvertFloat16ToFloat(noiseUnconditional);
 
-			latents = scheduler.Step(guided, i, latents);
-			Console.WriteLine($"Step {i + 1}/{steps} (t={t}, sigma={sigma:0.0000})");
+			DenseTensor<float> guided =
+				Add(noiseUnconditionalFloat,
+					Scale(
+						Sub(
+							ConvertFloat16ToFloat(noiseText),
+							noiseUnconditionalFloat
+						), guidance.ToFloat()));
+
+			latentsFloat = scheduler.Step(guided, i, latentsFloat);
+			Console.WriteLine($"Step {i + 1}/{steps} (t={timestep}, sigma={sigma:0.0000})");
 		}
 
-		// Decode latents directly to a native WPF WriteableBitmap
-		WriteableBitmap image = DecodeToImage(vaeDecoder, latents, height, width);
+		WriteableBitmap image = DecodeToImage(vaeDecoder, latentsFloat, height, width);
 
 		return image;
 	}
 
-	/// <summary>
-	/// Chunks the prompt, runs the text encoder on each chunk, and concatenates the embeddings.
-	/// </summary>
-	private static DenseTensor<float> EncodeTextChunked(InferenceSession textEncoder, string prompt, string negativePrompt, string tokenizerPath) {
-		// 1. Get raw BPE IDs (without BOS/EOS)
+	private static DenseTensor<Float16> EncodeTextChunked(
+		InferenceSession textEncoder, string prompt, string negativePrompt, string tokenizerPath) {
+
 		List<int> condRaw = GetRawBpeIds(prompt, tokenizerPath);
 		List<int> uncondRaw = GetRawBpeIds(negativePrompt, tokenizerPath);
 
-		// 2. Determine number of chunks needed (max of both, at least 1)
 		int chunks = Math.Max(1, Math.Max(
 			(int)Math.Ceiling(condRaw.Count / 75.0),
 			(int)Math.Ceiling(uncondRaw.Count / 75.0)
 		));
 
-		// 3. Create tensors for [2, chunks * 77]
 		DenseTensor<long> inputIds = new([2, chunks * MaxLength]);
 
-		// 4. Fill the tensors with appropriate BOS/EOS padding per chunk
-		FillChunkedIds(inputIds, 0, uncondRaw, chunks); // Batch 0 = Unconditional
-		FillChunkedIds(inputIds, 1, condRaw, chunks);   // Batch 1 = Conditional
+		FillChunkedIds(inputIds, 0, uncondRaw, chunks);
+		FillChunkedIds(inputIds, 1, condRaw, chunks);
+		List<DenseTensor<Float16>> chunkEmbeddingsFloat16 = [];
 
-		List<DenseTensor<float>> chunkEmbeddings = new();
-
-		// 5. Run Text Encoder on each 77-token chunk individually
 		for (int c = 0; c < chunks; c++) {
 			DenseTensor<long> chunkInput = new([2, MaxLength]);
 			for (int b = 0; b < 2; b++) {
@@ -102,17 +118,17 @@ internal static class Diffusion {
 			List<NamedOnnxValue> inputs = [NamedOnnxValue.CreateFromTensor("input_ids", chunkInput)];
 			using IDisposableReadOnlyCollection<DisposableNamedOnnxValue> results = textEncoder.Run(inputs);
 
-			// Deep copy output to prevent memory access violations
-			Tensor<float> output = results.First(x => x.Name == "last_hidden_state").AsTensor<float>();
-			chunkEmbeddings.Add(new DenseTensor<float>(output.ToArray(), output.Dimensions.ToArray()));
+			DisposableNamedOnnxValue output = results.First(x => x.Name == "last_hidden_state");
+			Tensor<Float16> output4 = results.First(x => x.Name == "last_hidden_state").AsTensor<Float16>();
+
+			chunkEmbeddingsFloat16.Add(new DenseTensor<Float16>(output4.ToArray(), output4.Dimensions.ToArray()));
 		}
 
-		// 6. Concatenate chunk embeddings along the sequence axis
-		int dim = chunkEmbeddings[0].Dimensions[2]; // Usually 768 or 1024
-		DenseTensor<float> finalEmbeddings = new([2, chunks * MaxLength, dim]);
+		int dim = chunkEmbeddingsFloat16[0].Dimensions[2];
+		DenseTensor<Float16> finalEmbeddings = new([2, chunks * MaxLength, dim]);
 
 		for (int c = 0; c < chunks; c++) {
-			var chunk = chunkEmbeddings[c];
+			var chunk = chunkEmbeddingsFloat16[c];
 			for (int b = 0; b < 2; b++) {
 				for (int s = 0; s < MaxLength; s++) {
 					for (int d = 0; d < dim; d++) {
@@ -126,13 +142,14 @@ internal static class Diffusion {
 	}
 
 	private static List<int> GetRawBpeIds(string text, string tokenizerPath) {
-		if (string.IsNullOrWhiteSpace(text))
-			return new List<int>();
+		if (string.IsNullOrWhiteSpace(text)) {
+			return [];
+		}
 
 		using Stream vocabStream = File.OpenRead(Path.Combine(tokenizerPath, "vocab.json"));
 		using Stream mergesStream = File.OpenRead(Path.Combine(tokenizerPath, "merges.txt"));
 
-		Tokenizer bpeTokenizer = BpeTokenizer.Create(vocabStream, mergesStream);
+		Microsoft.ML.Tokenizers.Tokenizer bpeTokenizer = BpeTokenizer.Create(vocabStream, mergesStream);
 		return bpeTokenizer.EncodeToIds(text.ToLowerInvariant()).ToList();
 	}
 
@@ -141,56 +158,58 @@ internal static class Diffusion {
 			int startOffset = c * MaxLength;
 			int rawStart = c * 75;
 
-			tensor[batchIndex, startOffset] = 49406; // BOS Token
-
+			tensor[batchIndex, startOffset] = 49406;
 			for (int i = 0; i < 75; i++) {
 				int rawIndex = rawStart + i;
 				if (rawIndex < rawIds.Count) {
 					tensor[batchIndex, startOffset + 1 + i] = rawIds[rawIndex];
 				} else {
-					tensor[batchIndex, startOffset + 1 + i] = 49407; // EOS / Pad Token
+					tensor[batchIndex, startOffset + 1 + i] = 49407;
 				}
 			}
-
-			tensor[batchIndex, startOffset + 76] = 49407; // EOS Token
+			tensor[batchIndex, startOffset + 76] = 49407;
 		}
 	}
-
-	private static DenseTensor<float> CreateRandomLatents(Random rng, int height, int width) {
+	private static DenseTensor<Float16> CreateRandomLatents(Random rng, int height, int width) {
 		int h = height / DownsampleFactor;
 		int w = width / DownsampleFactor;
 
-		DenseTensor<float> t = new(new[] { 1, LatentChannels, h, w });
-		for (int c = 0; c < LatentChannels; c++)
-			for (int y = 0; y < h; y++)
-				for (int x = 0; x < w; x++)
+		DenseTensor<Float16> t = new([1, LatentChannels, h, w]);
+		for (int c = 0; c < LatentChannels; c++) {
+			for (int y = 0; y < h; y++) {
+				for (int x = 0; x < w; x++) {
 					t[0, c, y, x] = NextGaussian(rng);
+				}
+			}
+		}
 
 		return t;
 	}
 
-	private static float NextGaussian(Random rng) {
+	private static Float16 NextGaussian(Random rng) {
 		double u1 = 1.0 - rng.NextDouble();
 		double u2 = 1.0 - rng.NextDouble();
-		return (float)(Math.Sqrt(-2.0 * Math.Log(u1)) * Math.Cos(2.0 * Math.PI * u2));
+		return (Float16)(Math.Sqrt(-2.0 * Math.Log(u1)) * Math.Cos(2.0 * Math.PI * u2));
 	}
 
-	private static DenseTensor<float> RunUnet(InferenceSession unet, DenseTensor<float> sample, int timestep, DenseTensor<float> textEmbeddings) {
-		DenseTensor<long> t = new([1]) {
+	private static DenseTensor<Float16> RunUnet(
+		InferenceSession unet,
+		DenseTensor<Float16> sample,
+		int timestep,
+		DenseTensor<Float16> textEmbeddings) {
+		DenseTensor<int> t = new([1]) {
 			[0] = timestep
 		};
 
 		List<NamedOnnxValue> inputs = [
 			NamedOnnxValue.CreateFromTensor("sample", sample),
-				NamedOnnxValue.CreateFromTensor("timestep", t),
-				NamedOnnxValue.CreateFromTensor("encoder_hidden_states", textEmbeddings)
+								NamedOnnxValue.CreateFromTensor("encoder_hidden_states", textEmbeddings)
 		];
 
 		using IDisposableReadOnlyCollection<DisposableNamedOnnxValue> results = unet.Run(inputs);
 
-		// Note: Depending on your exact ONNX export, this could be "out_sample" or simply "sample"
-		Tensor<float> output = results.First(x => x.Name == "out_sample").AsTensor<float>();
-		return new DenseTensor<float>(output.ToArray(), output.Dimensions.ToArray());
+		Tensor<Float16> output = results.First(x => x.Name == "out_sample").AsTensor<Float16>();
+		return new DenseTensor<Float16>(output.ToArray(), output.Dimensions.ToArray());
 	}
 
 	private static WriteableBitmap DecodeToImage(InferenceSession vaeDecoder, DenseTensor<float> latents, int height, int width) {
@@ -208,7 +227,6 @@ internal static class Diffusion {
 
 		float[] img = decoded.ToArray();
 
-		// WPF native bitmap format (96 DPI is standard monitor resolution)
 		WriteableBitmap bmp = new(width, height, 96, 96, PixelFormats.Bgr24, null);
 		bmp.Lock();
 
@@ -230,7 +248,6 @@ internal static class Diffusion {
 					g = g / 2f + 0.5f;
 					b = b / 2f + 0.5f;
 
-					// WriteableBitmap with Bgr24 requires Blue, Green, Red memory ordering
 					row[x * 3 + 0] = ToByte(b);
 					row[x * 3 + 1] = ToByte(g);
 					row[x * 3 + 2] = ToByte(r);
@@ -241,7 +258,6 @@ internal static class Diffusion {
 		bmp.AddDirtyRect(new Int32Rect(0, 0, width, height));
 		bmp.Unlock();
 
-		// CRITICAL: Freeze the bitmap so it can safely cross from Task.Run() to the Main UI thread
 		bmp.Freeze();
 
 		return bmp;
@@ -252,24 +268,33 @@ internal static class Diffusion {
 		}
 	}
 
-	private static DenseTensor<float> RepeatLatents(DenseTensor<float> latents, int repeat) {
+	private static DenseTensor<Float16> RepeatLatents(DenseTensor<Float16> latents, int repeat) {
 		int[] d = latents.Dimensions.ToArray();
-		DenseTensor<float> outT = new(new[] { repeat, d[1], d[2], d[3] });
-		for (int r = 0; r < repeat; r++)
-			for (int c = 0; c < d[1]; c++)
-				for (int y = 0; y < d[2]; y++)
-					for (int x = 0; x < d[3]; x++)
+		DenseTensor<Float16> outT = new([repeat, d[1], d[2], d[3]]);
+		for (int r = 0; r < repeat; r++) {
+			for (int c = 0; c < d[1]; c++) {
+				for (int y = 0; y < d[2]; y++) {
+					for (int x = 0; x < d[3]; x++) {
 						outT[r, c, y, x] = latents[0, c, y, x];
+					}
+				}
+			}
+		}
+
 		return outT;
 	}
 
-	private static DenseTensor<float> SliceBatch(DenseTensor<float> t, int batchIndex) {
+	private static DenseTensor<Float16> SliceBatch(DenseTensor<Float16> t, int batchIndex) {
 		int[] d = t.Dimensions.ToArray();
-		DenseTensor<float> outT = new(new[] { 1, d[1], d[2], d[3] });
-		for (int c = 0; c < d[1]; c++)
-			for (int y = 0; y < d[2]; y++)
-				for (int x = 0; x < d[3]; x++)
+		DenseTensor<Float16> outT = new([1, d[1], d[2], d[3]]);
+		for (int c = 0; c < d[1]; c++) {
+			for (int y = 0; y < d[2]; y++) {
+				for (int x = 0; x < d[3]; x++) {
 					outT[0, c, y, x] = t[batchIndex, c, y, x];
+				}
+			}
+		}
+
 		return outT;
 	}
 
@@ -277,21 +302,25 @@ internal static class Diffusion {
 		=> ElementWise(a, b, (x, y) => x + y);
 
 	private static DenseTensor<float> Sub(DenseTensor<float> a, DenseTensor<float> b)
-		=> ElementWise(a, b, (x, y) => x - y);
+		=> ElementWise(a, b, (x, y) => (x - y));
 
 	private static DenseTensor<float> Scale(DenseTensor<float> a, float s) {
 		int[] d = a.Dimensions.ToArray();
 		DenseTensor<float> outT = new(d);
-		for (int i = 0; i < a.Length; i++)
+		for (int i = 0; i < a.Length; i++) {
 			outT.Buffer.Span[i] = a.Buffer.Span[i] * s;
+		}
+
 		return outT;
 	}
 
 	private static DenseTensor<float> ElementWise(DenseTensor<float> a, DenseTensor<float> b, Func<float, float, float> f) {
 		int[] d = a.Dimensions.ToArray();
 		DenseTensor<float> outT = new(d);
-		for (int i = 0; i < a.Length; i++)
+		for (int i = 0; i < a.Length; i++) {
 			outT.Buffer.Span[i] = f(a.Buffer.Span[i], b.Buffer.Span[i]);
+		}
+
 		return outT;
 	}
 

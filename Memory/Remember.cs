@@ -2,8 +2,10 @@ using Microsoft.Extensions.AI;
 using Microsoft.Extensions.VectorData;
 using Microsoft.SemanticKernel.Connectors.SqliteVec;
 using OLLM.Utility;
-using static OLLM.Constants;
+
 namespace OLLM.Memory;
+
+using static Constants;
 
 internal class Remember : IDisposable {
 #if DEBUG
@@ -51,7 +53,10 @@ internal class Remember : IDisposable {
 	/// <summary>
 	/// Store a discussion that had occurred.
 	/// </summary>
-	internal static async Task MemorizeDiscussionAsync(string text, CancellationToken ct = default) {
+	internal static async Task MemorizeDiscussionAsync(string? text, CancellationToken ct = default) {
+		if (text is null) {
+			return;
+		}
 		if (_memories is not null && _embedder is not null && !string.IsNullOrEmpty(_embedder.EmbedderState.VocabularyPath)) {
 			try {
 				string cleanedString = StringCleaner.Md(text);
