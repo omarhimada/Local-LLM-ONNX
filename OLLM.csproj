@@ -60,6 +60,7 @@
 		<None Remove="Fonts\overpass-mono-light.otf" />
 		<None Remove="Fonts\overpass-mono-regular.otf" />
 		<None Remove="Fonts\overpass-mono-semibold.otf" />
+		<None Remove="ONNX\SD\onnxruntime-genai-cuda.dll" />
 	</ItemGroup>
 
 	<ItemGroup>
