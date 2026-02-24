@@ -11,21 +11,18 @@ namespace OLLM.Interact;
 using OLLM.Memory;
 using State;
 using State.Thinking;
+using System.IO;
 using Utility;
 using Utility.ModelSpecific;
 using static Constants;
 
-internal partial class LinearCommunication(ModelState modelState) {
+internal partial class LinearCommunication(ModelState modelState, Remember? _memories) {
 #pragma warning disable IDE0051
 	private readonly OgaHandle _ogaHandle = new();
 #pragma warning restore IDE0051
-
 	private readonly CancellationTokenSource _cts = new();
-
 	private bool InterruptButtonEnabled { get; set; } = true;
-
 	private FloatingAdorner? _thought;
-
 	private AdornerLayer? _layer;
 
 	public async Task BeginThinkingOverlayAsync(RichTextBox theirResponse, string text) {
@@ -60,6 +57,7 @@ internal partial class LinearCommunication(ModelState modelState) {
 		await _thought.AnimateOut();
 		await Application.Current.Dispatcher.InvokeAsync(async () => {
 			await Task.Delay(180);
+			File.WriteAllLines($"thinking_{DateTime.UtcNow.Ticks}.log", _thought.GetBodyText().Split(Environment.NewLine));
 			_layer.Remove(_thought);
 			_thought = null;
 			_layer = null;
@@ -196,7 +194,7 @@ internal partial class LinearCommunication(ModelState modelState) {
 		try {
 			await Application.Current.Dispatcher.InvokeAsync(() => {
 				if (userMessage.StartsWith(_learnStart)) {
-					_ = Remember.MemorizeDiscussionAsync(ftb, ct);
+					_ = _memories?.MemorizeDiscussionAsync(ftb, ct);
 				}
 			}, DispatcherPriority.Normal, ct);
 		} catch (Exception memoryExpception) {

@@ -17,6 +17,9 @@ using static MdFd;
 /// information during the model's thinking process.
 /// </summary>
 public sealed class FloatingAdorner : Adorner {
+	// For creating logs of their thinking so we can correct with instructions.
+	internal string GetBodyText() => _body.Text;
+
 	private readonly VisualCollection _visuals;
 
 	// Obstruction layer (blurred snapshot + dim tint)
@@ -100,22 +103,17 @@ public sealed class FloatingAdorner : Adorner {
 			VerticalAlignment = VerticalAlignment.Center,
 
 			CornerRadius = new CornerRadius(0),
-			Padding = new Thickness(10, 9, 10, 9),
+			Padding = new Thickness(8, 8, 8, 8),
 			Background = _black,
 			BorderBrush = _readyDosPurple,
 
 			BorderThickness = new Thickness(1),
-			Effect = new DropShadowEffect {
-				BlurRadius = 16,
-				ShadowDepth = 2,
-				Opacity = 0.7
-			},
 			Child = new StackPanel {
 				Orientation = Orientation.Vertical,
 				Children =
 				{
 					_title,
-					new Border { Height = 1, Margin = new Thickness(0, 6, 0, 6), Background = _readyDosPurple, Opacity = 0.35 },
+					new Border { Height = 1, Margin = new Thickness(0, 3, 0, 3), Background = _readyDosPurple, Opacity = 1 },
 					_scroll
 				}
 			},
@@ -211,7 +209,7 @@ public sealed class FloatingAdorner : Adorner {
 			Storyboard.SetTargetProperty(tintFade, new PropertyPath(OpacityProperty));
 			sb.Children.Add(tintFade);
 
-			DoubleAnimation fade = new(0, 1, TimeSpan.FromMilliseconds(333)) { EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseOut } };
+			DoubleAnimation fade = new(0d, 1d, TimeSpan.FromMilliseconds(252)) { EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseOut } };
 			Storyboard.SetTarget(fade, _bubble);
 			Storyboard.SetTargetProperty(fade, new PropertyPath(OpacityProperty));
 			sb.Children.Add(fade);
@@ -236,7 +234,7 @@ public sealed class FloatingAdorner : Adorner {
 	public async Task AnimateOut() {
 		await Application.Current.Dispatcher.InvokeAsync(new Action(() => {
 			_flushTimer.Stop();
-			_pending = "";
+			_pending = string.Empty;
 			_dirty = false;
 
 			DoubleAnimation veilFade = new(0, TimeSpan.FromMilliseconds(140));

@@ -23,14 +23,15 @@ internal partial class MainWindow : Window {
 		ModelState = modelState;
 		EmbedderState = embedderState;
 		MiniEmbedder = miniEmbedder;
-		LinearCommunication = new(ModelState);
+		Memories = null;
 		try {
 			Memories = new Remember(MiniEmbedder!);
-		} catch (Exception) {
-			// TODO ""Vector property 'Vector' has type 'GeneratedEmbeddings<Embedding<float>>' which isn't supported by your provider, and no embedding generator is configured. Configure a generator that supports converting 'GeneratedEmbeddings<Embedding<float>>' to vector type supported by your provider.""
-			// MessageBox.Show(exception.Message);
-			// Fail silently, continue
+		} catch (Exception) { //exception) {
+							  //MessageBox.Show(exception.Message);
+							  // Fail silently, continue
 		}
+		LinearCommunication = new(ModelState, Memories);
+
 	}
 	internal MainWindow() {
 		InitializeComponent();
@@ -43,6 +44,7 @@ internal partial class MainWindow : Window {
 		await LinearCommunication!._interact(UserInputText, TheirResponse, ChatButton);
 		_doneThinking();
 	}
+
 	internal async void InterruptButtonClick(object sender, RoutedEventArgs e) {
 		await LinearCommunication!._interrupt(TheirResponse, ChatButton);
 		_doneThinking();
@@ -62,16 +64,19 @@ internal partial class MainWindow : Window {
 			if (sdException.InnerException is not null) {
 				MessageBox.Show(sdException.InnerException!.Message);
 			}
+			SDButton.IsEnabled = false;
 		}
 		_doneThinking();
 	}
 	internal void CloseButtonClick(object sender, RoutedEventArgs e) => Application.Current.Shutdown();
+
 	private void CodeModeToggled(object sender, RoutedEventArgs e) {
 		if (sender is not CheckBox checkBox) {
 			return;
 		}
 		ModelState?.ExpectingCodeResponse = checkBox.IsChecked ?? false;
 	}
+
 	#region 'thinking' animation
 	private void _thinking() {
 		Thinking.IsEnabled = true;

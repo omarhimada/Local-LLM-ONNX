@@ -250,7 +250,7 @@
 							Click="InterruptButtonClick" AutomationProperties.Name="InterruptButton"
 							Style="{StaticResource ButtonStyle}" Width="Auto" />
 
-					<Button x:Name="SD" Content=" sd " 
+					<Button x:Name="SDButton" Content=" sd " 
 							Click="SDButtonClick" AutomationProperties.Name="SDButton"
 							Style="{StaticResource ButtonStyle}" Width="Auto" />
 

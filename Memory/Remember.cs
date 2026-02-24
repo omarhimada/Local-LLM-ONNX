@@ -2,6 +2,7 @@ using Microsoft.Extensions.AI;
 using Microsoft.Extensions.VectorData;
 using Microsoft.SemanticKernel.Connectors.SqliteVec;
 using OLLM.Utility;
+using System.Windows;
 
 namespace OLLM.Memory;
 
@@ -16,48 +17,42 @@ internal class Remember : IDisposable {
 		// If published/building in Release mode, the memories.db will be beside the executable
 		protected static string _db = $"Data Source={Environment.ProcessPath}\\..\\memories.db";
 #endif
-	protected const string _dbDiscussions = "discussions";
-	protected static SqliteVectorStore? _vectorStore;
-	//protected static SqliteCollection<string, Discussion>? _memories;
-	protected static SqliteCollection<long, Discussion>? _memories;
-	protected static MiniEmbedder? _embedder;
+	internal const string _dbDiscussions = "discussions";
+	//internal SqliteVectorStore? _vectorStore;
+	internal SqliteDynamicCollection _memoriesCollection;
+	internal static MiniEmbedder? _embedder;
 	private readonly CancellationTokenSource _cts = new();
 	private readonly SqliteCollectionOptions _sqliteOptions = new() {
-		VectorVirtualTableName = "Recollections"
+		VectorVirtualTableName = "Recollections",
+		EmbeddingGenerator = _embedder
 	};
-	/// <summary>
-	/// Initializes a new instance of the Remember class and synchronously starts the memory initialization process using
-	/// the specified embedding generator.
-	/// </summary>
-	/// <remarks>This constructor blocks until the memory initialization process completes. If the initialization
-	/// fails, an exception may be thrown. Use this constructor only when synchronous initialization is
-	/// required.</remarks>
-	/// <param name="embeddingGenerator">The embedding generator to use for initializing memory. Cannot be null.</param>
+
+	//private readonly SqliteVectorStoreOptions _sqliteVectorStoreOptions = new();
+
 	internal Remember(MiniEmbedder embeddingGenerator) {
 		CancellationToken ct = _cts.Token;
-		_memories = new(_db, _memoriesDbName, _sqliteOptions);
+		_memoriesCollection = new(_db, _memoriesDbName, _sqliteOptions);
 		Task memoryInitializationTask = Task.Run(async () => {
 			await StartAsync(embeddingGenerator, ct);
 		}, ct);
 		Task.WaitAll(memoryInitializationTask);
 	}
-	internal static async Task StartAsync(
-		MiniEmbedder embedder,
-		CancellationToken ct = default) {
+
+	internal async Task StartAsync(MiniEmbedder embedder, CancellationToken ct = default) {
 		_embedder = embedder;
-		_vectorStore?.Dispose();
-		_vectorStore = new(_db);
-		_memories = _vectorStore.GetCollection<long, Discussion>(_dbDiscussions);
-		await _memories.EnsureCollectionExistsAsync(ct);
+		//_vectorStore?.Dispose();
+		//_vectorStore = new(_db, _sqliteVectorStoreOptions);
+		await _memoriesCollection.EnsureCollectionExistsAsync(ct);
 	}
+
 	/// <summary>
 	/// Store a discussion that had occurred.
 	/// </summary>
-	internal static async Task MemorizeDiscussionAsync(string? text, CancellationToken ct = default) {
+	internal async Task MemorizeDiscussionAsync(string? text, CancellationToken ct = default) {
 		if (text is null) {
 			return;
 		}
-		if (_memories is not null && _embedder is not null && !string.IsNullOrEmpty(_embedder.EmbedderState.VocabularyPath)) {
+		if (_memoriesCollection is not null && _embedder is not null && !string.IsNullOrEmpty(_embedder.EmbedderState.VocabularyPath)) {
 			try {
 				string cleanedString = StringCleaner.Md(text);
 				GeneratedEmbeddings<Embedding<float>> vector =
@@ -72,23 +67,23 @@ internal class Remember : IDisposable {
 					Vector = vector,
 					UnixTimeMilliseconds = id
 				};
-				await _memories.UpsertAsync(turn, ct);
-			} catch (Exception) {
-				// Fail silently, continue
-				// TODO
+				await _memoriesCollection.UpsertAsync(turn.ToDictionary(), ct);
+			} catch (Exception exception) {
+				MessageBox.Show(exception.Message);
 			}
 		}
 	}
+
 	/// <summary>
 	/// Try to remember before responding. It is possible to forget, so this method can return null.
 	/// </summary>
-	internal static async Task<IReadOnlyList<Discussion>?> RememberDiscussionsAsync(
+	internal async Task<IReadOnlyList<Discussion>?> RememberDiscussionsAsync(
 		string query,
 		int topK = 8,
 		int candidates = 33,
 		double halfLifeDays = 365,
 		CancellationToken ct = default) {
-		if (_memories is not null && _embedder is not null) {
+		if (_memoriesCollection is not null && _embedder is not null) {
 			ReadOnlyMemory<float> embeddingVectorQuery =
 				await _embedder.GenerateVectorAsync(query, cancellationToken: ct);
 			// Retrieve candidate set from vector search (bigger than topK)
@@ -96,8 +91,8 @@ internal class Remember : IDisposable {
 			long nowMs = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
 			// When VectorSearchResult score is null fallback to ordering sequentially with an index 'rank'
 			int rank = 0;
-			await foreach (VectorSearchResult<Discussion> hit in _memories.SearchAsync(embeddingVectorQuery, top: candidates, cancellationToken: ct)) {
-				Discussion turn = hit.Record;
+			await foreach (VectorSearchResult<Dictionary<string, object?>> hit in _memoriesCollection.SearchAsync(embeddingVectorQuery, top: candidates, cancellationToken: ct)) {
+				Discussion turn = Discussion.FromDictionary(hit.Record);
 				// With VectorSearchResult the hit.Score is distance, so lower is better
 				double baseDistance = hit.Score ?? rank;
 				double adjustedDistance = baseDistance;
@@ -119,13 +114,13 @@ internal class Remember : IDisposable {
 		}
 		return null;
 	}
+
 	/// <summary>
 	/// Close the connections, keep the memories.
 	/// </summary>
 	public void Dispose() {
-		_memories?.Dispose();
-		_vectorStore?.Dispose();
-		_memories = null;
-		_vectorStore = null;
+		_memoriesCollection?.Dispose();
+		//_vectorStore?.Dispose();
+		//_vectorStore = null;
 	}
 }

@@ -56,11 +56,10 @@ internal partial class App : Application {
 				MiniEmbedder = new(ModelState, EmbedderState);
 			});
 
-
 			await _animateLabelIn(LoadingWindow.InitializingLabel);
 
 			MainWindow mainWindow = new();
-			mainWindow.Initialize(ModelState!, EmbedderState, MiniEmbedder!);
+			mainWindow.Initialize(ModelState!, EmbedderState!, MiniEmbedder!);
 			MainWindow = mainWindow;
 
 			mainWindow.Show();
