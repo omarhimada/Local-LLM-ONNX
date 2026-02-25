@@ -291,12 +291,16 @@ internal class Ogpt055 {
 						sb.Append(_braceOpen);
 						HashSet<string> reqList = [];
 						if (paramSpec.TryGetProperty(_required, out JsonElement reqProp) && reqProp.ValueKind == JsonValueKind.Array) {
-							reqList = [.. reqProp.EnumerateArray().Select(r => r.GetString()).Where(s => s != null)!];
+							JsonElement.ArrayEnumerator reqPropEnumerated = reqProp.EnumerateArray();
+							IEnumerable<string?> reqPropEnumeratedStrings = reqPropEnumerated.Select(r => r.GetString());
+							IEnumerable<string> reqPropEnumeratedNonNullStrings = reqPropEnumeratedStrings.Where(s => s != null)!;
+
+							reqList = [.. reqPropEnumeratedNonNullStrings];
 						}
 
-						var props = propsProp.EnumerateObject().ToList();
+						List<JsonProperty> props = propsProp.EnumerateObject().ToList();
 						for (int i = 0; i < props.Count; i++) {
-							var prop = props[i];
+							JsonProperty prop = props[i];
 							sb.Append(prop.Name);
 							if (!reqList.Contains(prop.Name))
 								sb.Append(_optionalFlag);
