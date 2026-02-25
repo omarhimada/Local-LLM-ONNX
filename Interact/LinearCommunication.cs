@@ -8,12 +8,13 @@ using System.Windows.Threading;
 
 namespace OLLM.Interact;
 
+using Microsoft.Extensions.AI;
 using OLLM.Memory;
+using OLLM.Utility.ModelSpecific;
 using State;
 using State.Thinking;
 using System.IO;
 using Utility;
-using Utility.ModelSpecific;
 using static Constants;
 
 internal partial class LinearCommunication(ModelState modelState, Remember? _memories) {
@@ -94,7 +95,12 @@ internal partial class LinearCommunication(ModelState modelState, Remember? _mem
 	private async Task SendMessage(string userInputText, RichTextBox theirResponse) {
 		string systemAndUserMessage = string.Empty;
 		try {
-			systemAndUserMessage = Phi4.AsFormattedString(userInputText);
+			List<ChatMessage> chatMessages = [
+				new ChatMessage(ChatRole.System, _defaultInstruction),
+				new ChatMessage(ChatRole.User, userInputText.Trim())
+			];
+
+			systemAndUserMessage = Ogpt055.RenderTemplate(chatMessages.ToArray());
 		} catch (Exception) {
 			SomethingWentWrong(theirResponse, true);
 		}

@@ -20,6 +20,9 @@ internal static class Constants {
 	// Microsoft/Phi-4-Reasoning
 	internal static string _preBuildPhiReasoning4ModelPath = $"{AppContext.BaseDirectory}..\\..\\..\\ONNX\\Phi-4-Reasoning";
 
+	// gpt-oss-20b onnx
+	internal static string _preBuildGPT20BModelPath = $"{AppContext.BaseDirectory}..\\..\\..\\ONNX\\gpt-oss-20b";
+
 	#region Embed model
 	// All-MiniLM-L6-v2-ONNX
 	internal static string _preBuildEmbedModelDirectory = $"{AppContext.BaseDirectory}..\\..\\..\\ONNX\\Embed\\All-MiniLM-L6-v2-ONNX";
