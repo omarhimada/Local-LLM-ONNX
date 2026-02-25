@@ -158,7 +158,7 @@ internal partial class LinearCommunication(ModelState modelState, Remember? _mem
 							if (think.IsCanceled) {
 								theirResponse.Document = new FlowDocument();
 							}
-						}, DispatcherPriority.Render, ct);
+						}, DispatcherPriority.Normal, ct);
 						break;
 					case true when piece.Contains(_thinkEnd): {
 							// Thinking ceases
@@ -181,7 +181,7 @@ internal partial class LinearCommunication(ModelState modelState, Remember? _mem
 		await Application.Current.Dispatcher.InvokeAsync(() => {
 			_ = EndThinkingOverlay(theirResponse);
 			theirResponse.ScrollToEnd();
-		}, DispatcherPriority.Render, ct);
+		}, DispatcherPriority.Normal, ct);
 
 		// All blocks (paragraphs, etc.) appended to the flow document
 		finalTextBuilder.Append(_nlrs);
@@ -202,7 +202,7 @@ internal partial class LinearCommunication(ModelState modelState, Remember? _mem
 				if (userMessage.StartsWith(_learnStart)) {
 					_ = _memories?.MemorizeDiscussionAsync(ftb, ct);
 				}
-			}, DispatcherPriority.Normal, ct);
+			}, DispatcherPriority.Background, ct);
 		} catch (Exception memoryExpception) {
 			// Continue;
 			MessageBox.Show(memoryExpception.Message);
