@@ -114,7 +114,6 @@ internal partial class LinearCommunication(ModelState modelState, Remember? _mem
 		// Does not contain the initial <think> token
 		StringBuilder thinkingTextBuilder = new();
 		// Final response or solution to whatever problem they're addressing
-		StringBuilder finalTextBuilder = new();
 
 		// The flow document that inevitably becomes 'their response'
 		FlowDocument flowDoc = new();
@@ -130,7 +129,7 @@ internal partial class LinearCommunication(ModelState modelState, Remember? _mem
 		await Application.Current.Dispatcher.InvokeAsync(() => {
 			theirResponse.Document = flowDoc;
 			_ = BeginThinkingOverlayAsync(theirResponse, string.Empty);
-		}, DispatcherPriority.Normal, ct);
+		}, DispatcherPriority.Render, ct);
 
 		await Task.Run(() => {
 
@@ -160,37 +159,25 @@ internal partial class LinearCommunication(ModelState modelState, Remember? _mem
 							}
 						}, DispatcherPriority.Normal, ct);
 						break;
-					case true when piece.Contains(_thinkEnd): {
-							// Thinking ceases
-							string[] spl = piece.Split(_thinkEnd);
-
-							thinkingTextBuilder.Append(spl[0]);
-							finalTextBuilder.Append(spl[1]);
-
-							thinking = false;
-							break;
-						}
 					default:
 						// Construct final response
-						finalTextBuilder.Append(piece);
+						thinkingTextBuilder.Append(piece);
 						break;
 				}
 			}
 		}, ct);
+
+		string response = thinkingTextBuilder.ToString();
+
+		var s = response.Split(_solutionMessage);
+		response = s[1];
 
 		await Application.Current.Dispatcher.InvokeAsync(() => {
 			_ = EndThinkingOverlay(theirResponse);
 			theirResponse.ScrollToEnd();
 		}, DispatcherPriority.Normal, ct);
 
-		// All blocks (paragraphs, etc.) appended to the flow document
-		finalTextBuilder.Append(_nlrs);
-		finalTextBuilder.Append(_lineBreak);
-		finalTextBuilder.Append(_nlrs);
-
-		string ftb = finalTextBuilder.ToString();
-
-		List<FdBlockMd> finalParagraphBlocks = Md.Parse(ftb);
+		List<FdBlockMd> finalParagraphBlocks = Md.Parse(response);
 
 		await Application.Current.Dispatcher.InvokeAsync(() => {
 			theirResponse.Document = Fd.Render(finalParagraphBlocks);
@@ -200,7 +187,7 @@ internal partial class LinearCommunication(ModelState modelState, Remember? _mem
 		try {
 			await Application.Current.Dispatcher.InvokeAsync(() => {
 				if (userMessage.StartsWith(_learnStart)) {
-					_ = _memories?.MemorizeDiscussionAsync(ftb, ct);
+					_ = _memories?.MemorizeDiscussionAsync(response, ct);
 				}
 			}, DispatcherPriority.Background, ct);
 		} catch (Exception memoryExpception) {

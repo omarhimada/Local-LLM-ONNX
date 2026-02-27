@@ -4,115 +4,22 @@ using System.Text.Json;
 
 namespace OLLM.Utility.ModelSpecific;
 
+using static Constants;
 internal class Ogpt055 {
-	#region Constants
-	internal const string _analysisChannel = "<|channel|>analysis<|message|>";
-	internal const string _any = "any";
-	internal const string _anyArray = "any[]";
-	internal const string _arguments = "arguments";
-	internal const string _array = "array";
-	internal const string _assignment = " = ";
-	internal const string _assistant = "assistant";
-	internal const string _boolean = "boolean";
-	internal const string _booleanArray = "boolean[]";
-	internal const string _braceClose = "}";
-	internal const string _braceOpen = "{\n";
-	internal const string _browser = "browser";
-	internal const string _call = "<|call|>";
-	internal const string _commaSeparator = ", ";
-	internal const string _commentaryChannel = "<|channel|>commentary ";
-	internal const string _content = "content";
-	internal const string _contentType = "content_type";
-	internal const string _currentDatePrefix = "Current date: ";
-	internal const string _defaultIdentity = "You are ChatGPT, a large language model trained by OpenAI.";
-	internal const string _developer = "developer";
-	internal const string _emptyLambdaSuffix = "() => any;\n";
-	internal const string _end = "<|end|>";
-	internal const string _enum = "enum";
-	internal const string _enumSeparator = "\" | \"";
-	internal const string _finalChannel = "<|channel|>final<|message|>";
-	internal const string _function = "function";
-	internal const string _functionsCallNote = "\nCalls to these tools must go to the commentary channel: 'functions'.";
-	internal const string _functionsNamespace = "functions";
-	internal const string _headerPrefix = "## ";
-	internal const string _instructionsHeader = "# Instructions\n\n";
-	internal const string _integer = "integer";
-	internal const string _items = "items";
-	internal const string _json = "json";
-	internal const string _knowledgeCutoff = "Knowledge cutoff: 2024-06";
-	internal const string _lambdaAnySuffix = "}) => any;\n";
-	internal const string _lambdaParam = "(_: {";
-	internal const string _mediumEffort = "medium";
-	internal const string _messageTag = "<|message|>";
-	internal const string _name = "name";
-	internal const string _namespaceKeyword = "namespace ";
-	internal const string _namespaceOpen = " {\n";
-	internal const string _newLine = "\n";
-	internal const string _nullable = "nullable";
-	internal const string _nullableSuffix = " | null";
-	internal const string _number = "number";
-	internal const string _numberArray = "number[]";
-	internal const string _object = "object";
-	internal const string _objectMatch = "object | object";
-	internal const string _oneOf = "oneOf";
-	internal const string _optionalFlag = "?";
-	internal const string _parameters = "parameters";
-	internal const string _properties = "properties";
-	internal const string _propertySeparator = ": ";
-	internal const string _python = "python";
-	internal const string _quote = "\"";
-	internal const string _reasoningPrefix = "Reasoning: ";
-	internal const string _required = "required";
-	internal const string _return = "<|return|>";
-	internal const string _role = "role";
-	internal const string _startAssistantAnalysis = "<|start|>assistant<|channel|>analysis<|message|>";
-	internal const string _startAssistantFinal = "<|start|>assistant<|channel|>final<|message|>";
-	internal const string _startAssistantGeneration = "<|start|>assistant\n";
-	internal const string _startAssistantToFunctions = "<|start|>assistant to=functions.";
-	internal const string _startDeveloper = "<|start|>developer<|message|>";
-	internal const string _startFunctionsToAssistant = "<|start|>functions.";
-	internal const string _startSystemMessage = "<|start|>system<|message|>";
-	internal const string _startUser = "<|start|>user<|message|>";
-	internal const string _string = "string";
-	internal const string _stringArray = "string[]";
-	internal const string _system = "system";
-	internal const string _thinkEnd = "</think>";
-	internal const string _thinkStart = "<think>";
-	internal const string _thinking = "thinking";
-	internal const string _toAssistantCommentary = " to=assistant<|channel|>commentary<|message|>";
-	internal const string _tool = "tool";
-	internal const string _toolCalls = "tool_calls";
-	internal const string _toolsHeader = "# Tools\n\n";
-	internal const string _type = "type";
-	internal const string _typeKeyword = "type ";
-	internal const string _unionSeparator = " | ";
-	internal const string _user = "user";
-	internal const string _validChannelsNote = "# Valid channels: analysis, commentary, final. Channel must be included for every message.";
-	internal const string _dateformat = "yyyy-MM-dd";
-	#endregion
+
 	internal static readonly JsonSerializerOptions JsonOptions = new() { WriteIndented = false };
 
 	internal static string RenderTemplate(ChatMessage[] messages,
-		List<string>? builtinTools = null, string? modelIdentity = null,
+		List<string>? builtinTools = null,
 		string? reasoningEffort = null, bool addGenerationPrompt = false) {
 
 		StringBuilder construct = new();
 
 		construct.Append(_startSystemMessage);
-		construct.Append(BuildSystemMessage(modelIdentity, reasoningEffort, builtinTools));
-
-		string? developerMessage = string.Empty;
 
 		int startIndex = 0;
-		if (messages.Length > 0) {
-			string? firstRole = messages[0].Role.ToString();
-			if (firstRole is _developer or _system) {
-				developerMessage = messages[0].Text;
-				startIndex = 1;
-			}
-		}
 
-		#region Think first then pick up a hammer and fix something. Until then, no tools.
+		#region For potential client integrations
 		//bool hasTools =
 		//	tools.HasValue &&
 		//	tools.Value.ValueKind == JsonValueKind.Array &&
@@ -131,16 +38,20 @@ internal class Ogpt055 {
 		//	}
 		//	construct.Append(_end);
 		//}
+		//string? lastToolCallName;
 		#endregion
-
-		string? lastToolCallName = null;
 
 		for (int i = startIndex; i < messages.Length; i++) {
 			ChatMessage message = messages[i];
-			string? role = messages[i].Role.ToString();
+			ChatRole role = messages[i].Role;
 			bool isLast = (i == messages.Length - 1);
 
-			if (role == _assistant) {
+			if (role == ChatRole.System) {
+				construct.Append(message.Text);
+				construct.Append(_end);
+			}
+
+			if (role == ChatRole.Assistant) {
 				string content = message.Text;
 				string thought = string.Empty;
 				if (message.Text.Contains(_thinkStart) && message.Text.Contains(_thinkEnd)) {
@@ -199,6 +110,7 @@ internal class Ogpt055 {
 					lastToolCallName = tcName;
 				} else*/
 				#endregion
+
 				if (isLast && !addGenerationPrompt) {
 					if (!string.IsNullOrEmpty(thought)) {
 						construct.Append($"{_startAssistantAnalysis}{thought}{_end}");
@@ -206,12 +118,14 @@ internal class Ogpt055 {
 					construct.Append($"{_startAssistantFinal}{content}{_return}");
 				} else {
 					construct.Append($"{_startAssistantFinal}{content}{_end}");
-					lastToolCallName = null;
+					//lastToolCallName = null;
 				}
-			} else if (role == _tool) {
-				string? content = message.Text;
-				construct.Append($"{_startFunctionsToAssistant}{lastToolCallName}{_toAssistantCommentary}{JsonSerializer.Serialize(content, JsonOptions)}{_end}");
-			} else if (role == _user) {
+			} else if (role == ChatRole.Tool) {
+				#region Client integrations
+				//string? content = message.Text;
+				//construct.Append($"{_startFunctionsToAssistant}{lastToolCallName}{_toAssistantCommentary}{JsonSerializer.Serialize(content, JsonOptions)}{_end}");
+				#endregion
+			} else if (role == ChatRole.User) {
 				string? content = message.Text;
 				construct.Append($"{_startUser}{content}{_end}");
 			}
@@ -324,7 +238,7 @@ internal class Ogpt055 {
 		return sb.ToString();
 	}
 
-	#region We must give them tools, instead of ccalling them tools. TODO 
+	#region For client integrations
 	//internal string RenderToolNamespace(string namespaceName, JsonElement tools) {
 	//	StringBuilder sb = new();
 	//	sb.Append(_headerPrefix).Append(namespaceName).Append("\n\n");
@@ -359,24 +273,6 @@ internal class Ogpt055 {
 	//}
 	#endregion
 
-	internal static string BuildSystemMessage(string? modelIdentity, string? reasoningEffort, List<string>? builtinTools) {
-		StringBuilder sb = new();
-
-		sb.AppendLine(string.IsNullOrEmpty(modelIdentity) ? _defaultIdentity : modelIdentity);
-		sb.AppendLine(_knowledgeCutoff);
-		sb.Append(_currentDatePrefix).AppendLine(DateTime.Now.ToString(_dateformat)).AppendLine();
-		sb.Append(_reasoningPrefix).Append(reasoningEffort ?? _mediumEffort).AppendLine("\n");
-		sb.Append(_validChannelsNote);
-
-		//if (tools.HasValue && tools.Value.ValueKind == JsonValueKind.Array && tools.Value.GetArrayLength() > 0) {
-		//	sb.Append(_functionsCallNote);
-		//}
-
-		return sb.ToString();
-	}
-
 	private bool GetNullable(JsonElement paramSpec) =>
 		paramSpec.TryGetProperty(_nullable, out JsonElement prop) && prop.ValueKind == JsonValueKind.True;
-
-	private string? GetMessageText(ChatMessage message) => message.Text;
 }

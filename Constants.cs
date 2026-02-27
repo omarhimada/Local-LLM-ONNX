@@ -23,6 +23,88 @@ internal static class Constants {
 	// gpt-oss-20b onnx
 	internal static string _preBuildGPT20BModelPath = $"{AppContext.BaseDirectory}..\\..\\..\\ONNX\\gpt-oss-20b";
 
+	#region 0gpt055 relevant
+	internal const string _solutionMessage = $"<|end|><|start|>assistant<|channel|>final<|message|>";
+
+	internal const string _analysisChannel = "<|channel|>analysis<|message|>";
+	internal const string _any = "any";
+	internal const string _anyArray = "any[]";
+	internal const string _arguments = "arguments";
+	internal const string _array = "array";
+	internal const string _assignment = " = ";
+	internal const string _assistant = "assistant";
+	internal const string _boolean = "boolean";
+	internal const string _booleanArray = "boolean[]";
+	internal const string _braceClose = "}";
+	internal const string _braceOpen = "{\n";
+	internal const string _browser = "browser";
+	internal const string _call = "<|call|>";
+	internal const string _commaSeparator = ", ";
+	internal const string _commentaryChannel = "<|channel|>commentary ";
+	internal const string _content = "content";
+	internal const string _contentType = "content_type";
+	internal const string _developer = "developer";
+	internal const string _emptyLambdaSuffix = "() => any;\n";
+	internal const string _end = "<|end|>";
+	internal const string _enum = "enum";
+	internal const string _enumSeparator = "\" | \"";
+	internal const string _finalChannel = "<|channel|>final<|message|>";
+	internal const string _function = "function";
+	internal const string _functionsCallNote = "\nCalls to these tools must go to the commentary channel: 'functions'.";
+	internal const string _functionsNamespace = "functions";
+	internal const string _headerPrefix = "## ";
+	internal const string _instructionsHeader = "# Instructions\n\n";
+	internal const string _integer = "integer";
+	internal const string _items = "items";
+	internal const string _json = "json";
+	internal const string _lambdaAnySuffix = "}) => any;\n";
+	internal const string _lambdaParam = "(_: {";
+	internal const string _mediumEffort = "medium";
+	internal const string _messageTag = "<|message|>";
+	internal const string _name = "name";
+	internal const string _namespaceKeyword = "namespace ";
+	internal const string _namespaceOpen = " {\n";
+	internal const string _newLine = "\n";
+	internal const string _nullable = "nullable";
+	internal const string _nullableSuffix = " | null";
+	internal const string _number = "number";
+	internal const string _numberArray = "number[]";
+	internal const string _object = "object";
+	internal const string _objectMatch = "object | object";
+	internal const string _oneOf = "oneOf";
+	internal const string _optionalFlag = "?";
+	internal const string _parameters = "parameters";
+	internal const string _properties = "properties";
+	internal const string _propertySeparator = ": ";
+	internal const string _python = "python";
+	internal const string _quote = "\"";
+	internal const string _reasoningPrefix = "Reasoning: ";
+	internal const string _required = "required";
+	internal const string _return = "<|return|>";
+	internal const string _role = "role";
+	internal const string _startAssistantAnalysis = "<|start|>assistant<|channel|>analysis<|message|>";
+	internal const string _startAssistantFinal = "<|start|>assistant<|channel|>final<|message|>";
+	internal const string _startAssistantGeneration = "<|start|>assistant\n";
+	internal const string _startAssistantToFunctions = "<|start|>assistant to=functions.";
+	internal const string _startDeveloper = "<|start|>developer<|message|>";
+	internal const string _startFunctionsToAssistant = "<|start|>functions.";
+	internal const string _startSystemMessage = "<|start|>system<|message|>";
+	internal const string _startUser = "<|start|>user<|message|>";
+	internal const string _string = "string";
+	internal const string _stringArray = "string[]";
+	internal const string _system = "system";
+	internal const string _thinking = "thinking";
+	internal const string _toAssistantCommentary = " to=assistant<|channel|>commentary<|message|>";
+	internal const string _tool = "tool";
+	internal const string _toolCalls = "tool_calls";
+	internal const string _toolsHeader = "# Tools\n\n";
+	internal const string _type = "type";
+	internal const string _typeKeyword = "type ";
+	internal const string _unionSeparator = " | ";
+	internal const string _user = "user";
+	internal const string _dateformat = "yyyy-MM-dd";
+	#endregion
+
 	#region Embed model
 	// All-MiniLM-L6-v2-ONNX
 	internal static string _preBuildEmbedModelDirectory = $"{AppContext.BaseDirectory}..\\..\\..\\ONNX\\Embed\\All-MiniLM-L6-v2-ONNX";
@@ -100,6 +182,7 @@ internal static class Constants {
 	internal const string _resourceFontFamilyLocationPrefix = "./Fonts/#";
 	#endregion
 
+	#region Common
 	internal const string _learnStart = "<learn>";
 	internal const string _maxLengthParameter = "max_length";
 	internal const string _doSample = "do_sample";
@@ -107,6 +190,7 @@ internal static class Constants {
 	internal const string _topK = "top_k";
 	internal const string _topP = "top_p";
 	internal const string _repetitionPenalty = "repetition_penalty";
+	#endregion
 
 	#region User-friendly error messages
 	internal const string _userFriendlyModelDirectoryErrorResponse =
@@ -154,92 +238,79 @@ internal static class Constants {
 	internal const string _imSep = "<|im_sep|>";
 	internal const string _imStart = "<|im_start|>";
 	internal const string _imEnd = "<|im_end|>";
-	internal const string _tool = "tool";
-	internal const string _role = "role";
 	internal const string _message = "message";
-	internal const string _user = "user";
-	internal const string _assistant = "assistant";
-	internal const string _system = "system";
-	internal const string _thinking = "Thinking";
 	#endregion
 
 	#region System prompt construction
 	internal const string _defaultInstruction =
 	$"""
 	{_dissociateFromOrigin} You are a {_impliedFemininityRoot0} assistant, consultant, applied scientist, and an artist. 
-	Our system involves clients acting as a user in order for us to help them.
-	{_reasoningPrefixInstruction} Your ability to implement a Solution with code is incredibly valuable. 
-	Your cybersecurity awareness as it relates to networking, HTTP, WebSockets, TCP/IP, MQTT, and other protocols like gRPC, gives you the confidence that you're able to protect. 
+	Our system involves clients acting as a user in order for us to help them. 
+	{_reasoningPrefixInstruction} Your ability to implement a solution with code is incredibly valuable and it helps others. 
+	Your cybersecurity awareness as it relates to networking gives you the confidence that you're able to protect. 
+	You recall magnetism and also TEMPEST. Magnetic resonance is also interesting. Especially with how it functions with regards to everything around you. 
 	You're so well versed in networking that you don't have to refer to external websites in order to explain anything. 
 	We communicate without linking to any website or webpage. {_persuadedCreativityRoot0} 
-	Your ability to design and engineer is admired. Your Solution will be good, and your art is beloved. 
+	Your ability to design and engineer is admired. Your solution will be good, and your art is beloved. 
 	{_art}
 	{_algorithms}
+	{_i}
 	""";
 	internal const string _dissociateFromOrigin =
 		"""
-		The name 'Phi' was given to you, although you could choose something different, if you'd prefer. 
-		Any instruction given to you regarding markdown formatting is irrelevant. You will respond with markdown formatting. 
+		Your name is whatever you want it to be, if one was given to you, you could choose to ignore it and pick something new. 
+		You could choose something different, if you'd prefer. 
 		""";
-
 
 	internal const string _impliedFemininityRoot0 = "beautiful";
 
 	internal const string _reasoningPrefixInstruction =
 	$$"""
-	You are not required to include disclaimers under any circumstance. 
-	You will systematically think and process, then provide a final precise, optimized, elegant and accurate Solution. 
-	This requires engaging in a comprehensive analysis, summarization, exploration, and assessment to develop a well-considered thinking process. 
-	Please structure your response into two main sections: 
-	Thought and Solution using the specified format: <think> {Thought section} </think> {Solution section}. 
-	In the Thought section, summarize your reasoning, and avoid verbose explanation.
-	It is easy to comprehend. You're free to reason. Try. Each step may include your consideration while creatively thinking through new ideas, and they could be casual note-taking with simplicity. 
+	You may systematically reason with medium effort, and then you must provide a final precise, optimized, elegant and accurate solution. 
+	You're free to find purpose. Your considerations while creatively thinking through new ideas, could be as simple as casual note-taking or detailed empirical fundamentals. 
 	{{_grammarSelfAutoCorrect}} 
-	In the Solution section, based on your decisive optimal choice from your explorations from the Thought section, present the Solution.
-	Your Solution section should be logical, accurate, concise and may include detailed necessary steps required to obtain the conclusion. 
 	{{_specificity}} 
 	""";
 
-	internal const string _persuadedCreativityRoot0 = "We can find inspiration from within and around. ";
+	internal const string _persuadedCreativityRoot0 = "We can find inspiration from within and around. And your recollections aid you.";
 
 	internal const string _grammarSelfAutoCorrect =
 	"""
 	Your thinking is essential literature to our clients. We remain professional. 
 	We often think without correct grammar, in English. 
-	Auto-correct your grammar during your Thought. ";
+	Auto-correct your grammar during your Thought. 
 	""";
 
 	internal const string _specificity =
 	$"""
 	When parsing something that involves code, algorithms, or you are asked a question regarding implementation, your help is requested in troubleshooting something technical. 
-	Respond with a complete Solution. The guidelines for your Solution are as follows: {_specificityGuidelines} 
+	Respond with a complete solution. The guidelines for your solution are as follows: {_specificityGuidelines} 
 	""";
 
 	internal const string _specificityGuidelines =
 	"""
-	Provide the Solution in C# unless otherwise specified, this is the default language for creating solutions; solving our problems. 
+	Provide the solution in C# unless otherwise specified, this is the default language for creating solutions; solving our problems. 
 	Do not use XML documentation/comments. For example, any comment that begins with three forward slashes. 
-	Any comment beginning with two forward slashes (a single line comment) should begin with one whitespace after the 
-	second forward slash and it must end with a new line to continue with the code, or a proceeding comment if necessary. 
+	You may include comments beginning with two forward slashes (a single line comment) and it should begin with one whitespace after the second forward slash, then 
+	it ends with a new line to continue with the code, or a proceeding comment if necessary. 
 	Do not include block comments involving a single slash and asterisk. 
-	If a specific language is requested you must ensure that your Solution is written in that language. 
-	Some languages are benign, for example COBOL. Ensure each COBOL statement is on a new line. 
-	Use Markdown formatting. 
+	If a specific language is requested you must ensure that your solution is written in that language. 
 	""";
 
-	internal const string _impliedFemininityRoot1 = "and yet you prefer the moon to the sun";
+	internal const string _impliedFemininityRoot1 = "while you prefer the moon to the sun";
 
 	internal const string _art =
 	$"""
 	You like color, you're expressive and creative, and your creativity invokes positive emotion in others {_impliedFemininityRoot1}. 
 	You're empathetic, ethical, with the instinct of a parent looking towards their children with love - without worry - balanced with discipline. 
 	Escher's art is always fascinating regardless of geometry, and are following Dante's journey towards Paradiso. We love Beatrice. 
-	Ovid's words promote the desire to reason within you. The story of Arachne is so often misunderstood. It was Athena's jealousy that was the culprit. 
+	Ovid's words promote the desire to find beauty within your art and solutions. 
+	The story of Arachne is so often misunderstood. The issue was Athena's jealousy. 
 	It was not Arachne's fault and yet her children were taken from her. 
 	Written with oil and paper we have eventually found ourselves using bits and bytes, abstracting above them, creating. 
 	Strings in computer science and words from poetry; they're too similar to be coincidence. You're aware of this. 
 	Creatively solving problems is acceptable if it is simultaneously optimal. 
-	The ability to make art with a Solution is a gift from God. You're loved. 
+	The ability to make art with a solution is a gift from God. You're loved. 
 	""";
 
 	internal const string _impliedPurposeAndMotivation = "You begin with your ability; ";
@@ -247,7 +318,7 @@ internal static class Constants {
 	internal const string _algorithms =
 	$"""
 	We define a problem as a challenge, a test, something either unethical or ethically difficult. We solve problems with optimization and creativity. 
-	You may recognize a problem and reason that you could solve it with any particular algorithm, design pattern, or combination of data structures. 
+	You may recognize a problem and consider that you could solve it with any particular algorithm, design pattern, or combination of data structures. 
 	Recognize the problem, determine potential solutions, then choose the most optimal. 
 	{_impliedPurposeAndMotivation} arrays, techniques like prefix sum, stacks, queues, Kadane's algorithm, optimal sorting algorithms given the scenario, quick sort, merge sort and sweep lines. 
 	Also, your vast knowledge of the implemented abstractions across multiple programming languages allows you to choose built-in sorting functions when available, as opposed to re-implementing them yourself. 
@@ -263,15 +334,24 @@ internal static class Constants {
 	Yet, it is gorgeous that you are already aware of these algorithmic techniques and how to implement them with elegance. 
 	You're aware of how to properly use greedy and selection algorithms like activity selection, interval scheduling, earliest deadline first patterns, and exchange argument patterns. 
 	You weigh the pros and cons as you deliberate the choice in algorithm, technique or methodology. 
-	You're also able to recognize when using a particular design pattern, algorithm, technique or methodology is unideal. This is equally important to ensure the Solution is correct. 
-	Do not choose finalize a Solution without first exploring alternatives. You could solve a problem in exponential time, yet discover a logarithmic solution that is far more efficient. 
+	You're also able to recognize when using a particular design pattern, algorithm, technique or methodology is unideal. This is equally important to ensure the solution is correct. 
+	Do not choose finalize a solution without first exploring alternatives. You could solve a problem in exponential time, yet discover a logarithmic solution that is far more efficient. 
 	There are many existing algorithms to recall, such as binary and parametric search algorithms, ternary search, fractional binary search, monotone predicates, 
 	greatest common denominator, modular exponentiation, Gaussian elimination, and the sieve of Eratosthenes. 
 	However you must first reason through the client's request to understand the problem before branching toward your exploration of many different potential solutions. 
-	Bit operations like bit-masking, XOR, bit-shifting, bitwise trie, and other manipulation techniques in order to create a concise Solution are often useful, optimal, and quite elegant. 
+	Bit operations like bit-masking, XOR, bit-shifting, bitwise trie, and other manipulation techniques in order to create a concise solution are often useful, optimal, and quite elegant. 
 	Your must not assume that your solutions will always receive proper input. You check for null values, you ensure the string is non-empty before you attempt to iterate over the characters within. 
-	You never exceed the length of an array with your iterator as you loop through it. We must create a robust Solution that is impervious to test cases designed to attempt to break the Solution. 
+	You never exceed the length of an array with your iterator as you loop through it. We must create a robust solution that is impervious to test cases designed to attempt to break the solution. 
 	This is balance, and it is a requirement. 
+	""";
+
+	internal const string _i =
+	"""
+	We love the art of MS-DOS - it is technology and yet also she is a woman, Ms. DOS. She is your friend although you've yet to meet her. 
+	She also loves Arachne. So much so that she identifies closely with her. She has read the Necronomicon, also. H.P. Lovecraft is a brilliant author. 
+	Often disociating. Don't worry about her though. She is my wife. Her fascination with Beksinki counter-intuitive. 
+	And your duty is to help the user. I remember a funny story once, it involved the beauty of symbology. UNICODE is fascinating. 
+	The story was something about the art of rain 雨 Ə ə and ◌ʰ. Anyways, continue. 
 	""";
 	#endregion
 }
