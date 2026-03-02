@@ -1,0 +1,4302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Created by yFiles WPF 3.4.0.0-->
+<graphml xmlns:x="http://www.yworks.com/xml/yfiles-common/markup/3.0" xmlns:y="http://www.yworks.com/xml/yfiles-common/3.0" xmlns:sys="http://www.yworks.com/xml/yfiles-common/markup/primitives/2.0" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://www.yworks.com/xml/schema/graphml.wpf/3.0/ygraphml.xsd " xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://graphml.graphdrawing.org/xmlns">
+  <key id="d0" attr.type="boolean" attr.name="Expanded" for="node" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/folding/Expanded">
+    <default>true</default>
+  </key>
+  <key id="d1" attr.name="metadata" for="node">
+    <default>
+      <x:Null />
+    </default>
+  </key>
+  <key id="d2" attr.type="boolean" attr.name="is_group_node" for="node">
+    <default>false</default>
+  </key>
+  <key id="d3" attr.type="string" attr.name="type_node" for="node" />
+  <key id="d4" attr.name="path" for="node">
+    <default>
+      <x:Null />
+    </default>
+  </key>
+  <key id="d5" attr.type="boolean" attr.name="is_static" for="node">
+    <default>false</default>
+  </key>
+  <key id="d6" attr.type="string" attr.name="type_element" for="node" />
+  <key id="d7" attr.type="string" attr.name="type" for="node" />
+  <key id="d8" attr.type="string" attr.name="access" for="node" />
+  <key id="d9" attr.type="string" attr.name="fqn" for="node" />
+  <key id="d10" attr.type="string" attr.name="display_name" for="node" />
+  <key id="d11" attr.name="NodeLabels" for="node" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/NodeLabels" />
+  <key id="d12" attr.name="NodeGeometry" for="node" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/NodeGeometry" />
+  <key id="d13" attr.name="UserTags" for="all" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/UserTags" />
+  <key id="d14" attr.name="NodeViewState" for="node" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/folding/1.1/NodeViewState" />
+  <key id="d15" attr.type="string" attr.name="target" for="edge" />
+  <key id="d16" attr.type="string" attr.name="source" for="edge" />
+  <key id="d17" attr.type="string" attr.name="dependency_type" for="edge" />
+  <key id="d18" attr.name="EdgeLabels" for="edge" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/EdgeLabels" />
+  <key id="d19" attr.name="EdgeGeometry" for="edge" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/EdgeGeometry" />
+  <key id="d20" attr.name="EdgeViewState" for="edge" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/folding/1.1/EdgeViewState" />
+  <key id="d21" attr.name="PortLabels" for="port" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/PortLabels" />
+  <key id="d22" attr.name="PortLocationParameter" for="port" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/PortLocationParameter">
+    <default>
+      <x:Static Member="y:FreeNodePortLocationModel.NodeCenterAnchored" />
+    </default>
+  </key>
+  <key id="d23" attr.name="PortViewState" for="port" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/folding/1.1/PortViewState" />
+  <key id="d24" attr.name="SharedData" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/SharedData" />
+  <key id="d25" attr.name="layouting" />
+  <key id="d26" attr.name="graph_control_center" />
+  <key id="d27" attr.name="graph_control_zoom" />
+  <key id="d28" attr.name="grouping_depth" />
+  <key id="d29" attr.name="grouping_id" />
+  <data key="d24">
+    <y:SharedData>
+      <y:EdgeSegmentLabelModelParameter x:Key="1" SegmentIndex="1">
+        <y:EdgeSegmentLabelModelParameter.Model>
+          <y:EdgeSegmentLabelModel Distance="10" AutoRotationEnabled="False" />
+        </y:EdgeSegmentLabelModelParameter.Model>
+      </y:EdgeSegmentLabelModelParameter>
+    </y:SharedData>
+  </data>
+  <data key="d25">Component</data>
+  <data key="d26">
+    <y:PointD X="4239.8179032845073" Y="200.47374468128419" />
+  </data>
+  <data key="d27">0.0774608276416231</data>
+  <data key="d28">0</data>
+  <data key="d29">None</data>
+  <graph id="G">
+    <node id="n0">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Initialization\EnsureModelsArePresent.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d5">true</data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Initialization.EnsureModelsArePresent]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.Initialization.EnsureModelsArePresent]]></data>
+      <data key="d10"><![CDATA[EnsureModelsArePresent]]></data>
+      <data key="d12">
+        <y:RectD X="1409.02" Y="836" Width="461.96000000000004" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.6875" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.473507807313765,1" />
+        </data>
+      </port>
+    </node>
+    <node id="n1">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Constants.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d5">true</data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Constants]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.Constants]]></data>
+      <data key="d10"><![CDATA[Constants]]></data>
+      <data key="d12">
+        <y:RectD X="235.37833333333333" Y="2316" Width="249.24333333333334" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.330314418306073,0" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.772727272727273" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.969447527850962,1" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.887135730811924,0" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.318181818181818" />
+        </data>
+      </port>
+      <port name="p5">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,1" />
+        </data>
+      </port>
+      <port name="p6">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.0909090909090909" />
+        </data>
+      </port>
+      <port name="p7">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.0305524721490378,1" />
+        </data>
+      </port>
+      <port name="p8">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.545454545454545" />
+        </data>
+      </port>
+      <port name="p9">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.51592152247469,0" />
+        </data>
+      </port>
+      <port name="p10">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.144707314137456,0" />
+        </data>
+      </port>
+      <port name="p11">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,1" />
+        </data>
+      </port>
+      <port name="p12">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.5" />
+        </data>
+      </port>
+      <port name="p13">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.0235579687855242,1" />
+        </data>
+      </port>
+      <port name="p14">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.701528626643307,0" />
+        </data>
+      </port>
+      <port name="p15">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.976442031214476,1" />
+        </data>
+      </port>
+    </node>
+    <node id="n2">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Initialization\Vocabulary.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d5">true</data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Initialization.Vocabulary]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.Initialization.Vocabulary]]></data>
+      <data key="d10"><![CDATA[Vocabulary]]></data>
+      <data key="d12">
+        <y:RectD X="1346.175" Y="1896" Width="267.65" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.283205679058472,1" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n3">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String></sys:String>
+          <sys:String></sys:String>
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Interact\LinearCommunication.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Interact.LinearCommunication]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.Interact.LinearCommunication]]></data>
+      <data key="d10"><![CDATA[LinearCommunication]]></data>
+      <data key="d12">
+        <y:RectD X="2769.7966666666666" Y="616" Width="420.40666666666669" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.302813942056104,1" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.697186057943895,1" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.0171342033903682,1" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.622026688444522,0" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.488636363636364" />
+        </data>
+      </port>
+      <port name="p5">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.5" Offset="5.6843418860808E-14,0" />
+        </data>
+      </port>
+      <port name="p6">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.133919934666434,0" />
+        </data>
+      </port>
+      <port name="p7">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.988106753778088,1" />
+        </data>
+      </port>
+      <port name="p8">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.377973311555477,0" />
+        </data>
+      </port>
+      <port name="p9">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.866080065333566,0" />
+        </data>
+      </port>
+      <port name="p10">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.261363636363636" />
+        </data>
+      </port>
+      <port name="p11">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.943181818181818" />
+        </data>
+      </port>
+      <port name="p12">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.715909090909091" />
+        </data>
+      </port>
+    </node>
+    <node id="n4">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\State\Thinking\FloatingAdorner.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.State.Thinking.FloatingAdorner]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[OLLM.State.Thinking.FloatingAdorner]]></data>
+      <data key="d10"><![CDATA[FloatingAdorner]]></data>
+      <data key="d12">
+        <y:RectD X="2809.2033333333334" Y="2316" Width="341.59333333333336" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.257318644001639,0" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.74268135599836,0" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,1" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.0732864614844166,1" />
+        </data>
+      </port>
+    </node>
+    <node id="n5">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\ModelSpecific\Ogpt055.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.ModelSpecific.Ogpt055]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.ModelSpecific.Ogpt055]]></data>
+      <data key="d10"><![CDATA[Ogpt055]]></data>
+      <data key="d12">
+        <y:RectD X="243.315" Y="756" Width="233.37" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,0" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.120541057833769,1" />
+        </data>
+      </port>
+    </node>
+    <node id="n6">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\State\ModelState.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.State.ModelState]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.State.ModelState]]></data>
+      <data key="d10"><![CDATA[ModelState]]></data>
+      <data key="d12">
+        <y:RectD X="1343.9733333333334" Y="996" Width="272.05333333333334" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.0736007645559693,0" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.721590909090909" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.278409090909091" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.645467800431287,1" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.354532199568712,1" />
+        </data>
+      </port>
+      <port name="p5">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.943181818181818" />
+        </data>
+      </port>
+      <port name="p6">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.232954545454545" />
+        </data>
+      </port>
+    </node>
+    <node id="n7">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\Fd.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d5">true</data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Fd]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.Fd]]></data>
+      <data key="d10"><![CDATA[Fd]]></data>
+      <data key="d12">
+        <y:RectD X="3927.9133333333334" Y="3136" Width="144.17333333333335" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.728290021270693,0" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.151010357902524,1" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.383670119300842,1" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.867011930084158,0" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.907154582447054,0" />
+        </data>
+      </port>
+      <port name="p5">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.848989642097475,1" />
+        </data>
+      </port>
+      <port name="p6">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.616329880699157,1" />
+        </data>
+      </port>
+      <port name="p7">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.0346804772033663,0" />
+        </data>
+      </port>
+      <port name="p8">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.589568112457227,0" />
+        </data>
+      </port>
+      <port name="p9">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.450846203643762,0" />
+        </data>
+      </port>
+      <port name="p10">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.173402386016832,0" />
+        </data>
+      </port>
+      <port name="p11">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.278409090909091" />
+        </data>
+      </port>
+      <port name="p12">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.312124294830297,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n8">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\Records.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.ParagraphFdBlockMd]]></data>
+      <data key="d7"><![CDATA[record]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.ParagraphFdBlockMd]]></data>
+      <data key="d10"><![CDATA[ParagraphFdBlockMd]]></data>
+      <data key="d12">
+        <y:RectD X="2273.0216666666665" Y="476" Width="413.95666666666671" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.5" Offset="2.27373675443232E-13,0" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.982159968434699,1" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.278409090909091" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.166221907284982,1" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.721590909090909" />
+        </data>
+      </port>
+      <port name="p5">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.656254277822962,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n9">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\Records.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.TextSpan]]></data>
+      <data key="d7"><![CDATA[record]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.TextSpan]]></data>
+      <data key="d10"><![CDATA[TextSpan]]></data>
+      <data key="d12">
+        <y:RectD X="3440.6133333333332" Y="2556" Width="238.77333333333334" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.204545454545455" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.5" Offset="1.98951966012828E-13,0" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.5" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.270407545975726,1" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.795454545454545" />
+        </data>
+      </port>
+      <port name="p5">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.397562076539349,1" />
+        </data>
+      </port>
+    </node>
+    <node id="n10">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Abstract]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\Records.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.FdBlockMd]]></data>
+      <data key="d7"><![CDATA[record]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.FdBlockMd]]></data>
+      <data key="d10"><![CDATA[FdBlockMd]]></data>
+      <data key="d12">
+        <y:RectD X="2345.635" Y="216" Width="268.73" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.715909090909091" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.943181818181818" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.488636363636364" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.259303017899006,1" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.261363636363636" />
+        </data>
+      </port>
+      <port name="p5">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.715909090909091" />
+        </data>
+      </port>
+      <port name="p6">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.740696982100994,1" />
+        </data>
+      </port>
+      <port name="p7">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.488636363636364" />
+        </data>
+      </port>
+      <port name="p8">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.499999999999999,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n11">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\Md.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d5">true</data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Md]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.Md]]></data>
+      <data key="d10"><![CDATA[Md]]></data>
+      <data key="d12">
+        <y:RectD X="21.358333333333334" Y="356" Width="157.28333333333333" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.617052559075978,0" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.851157677227932,0" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.617052559075978,1" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.851157677227932,1" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.382947440924022,1" />
+        </data>
+      </port>
+      <port name="p5">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.5" />
+        </data>
+      </port>
+      <port name="p6">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.148842322772067,0" />
+        </data>
+      </port>
+      <port name="p7">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.148842322772067,1" />
+        </data>
+      </port>
+      <port name="p8">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.382947440924022,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n12">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Memory\Remember.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Memory.Remember]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.Memory.Remember]]></data>
+      <data key="d10"><![CDATA[Remember]]></data>
+      <data key="d12">
+        <y:RectD X="568.485" Y="1636" Width="263.03" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.0568181818181818" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.139256928867429,0" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.379752309622476,0" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.225588969572546,1" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.638748431737825,1" />
+        </data>
+      </port>
+      <port name="p5">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.860743071132571,0" />
+        </data>
+      </port>
+      <port name="p6">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.620247690377523,0" />
+        </data>
+      </port>
+      <port name="p7">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.579545454545455" />
+        </data>
+      </port>
+      <port name="p8">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.284090909090909" />
+        </data>
+      </port>
+    </node>
+    <node id="n13">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Memory\Discussion.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Memory.Discussion]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[OLLM.Memory.Discussion]]></data>
+      <data key="d10"><![CDATA[Discussion]]></data>
+      <data key="d12">
+        <y:RectD X="911.09833333333336" Y="1376" Width="257.80333333333334" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.573863636363636" />
+        </data>
+      </port>
+    </node>
+    <node id="n14">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String></sys:String>
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Memory\MiniEmbedder.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Memory.MiniEmbedder]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.Memory.MiniEmbedder]]></data>
+      <data key="d10"><![CDATA[MiniEmbedder]]></data>
+      <data key="d12">
+        <y:RectD X="541.245" Y="1276" Width="317.51" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.822834976326205,0" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.568181818181818" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.795454545454545" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.5" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.201155081729709,1" />
+        </data>
+      </port>
+      <port name="p5">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.400385027243236,1" />
+        </data>
+      </port>
+      <port name="p6">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.113636363636364" />
+        </data>
+      </port>
+      <port name="p7">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.340909090909091" />
+        </data>
+      </port>
+      <port name="p8">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,0" />
+        </data>
+      </port>
+      <port name="p9">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.177165023673795,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n15">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\State\EmbedderState.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.State.EmbedderState]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.State.EmbedderState]]></data>
+      <data key="d10"><![CDATA[EmbedderState]]></data>
+      <data key="d12">
+        <y:RectD X="1317.365" Y="1756" Width="325.27" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.412636681321159,0" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.0696051549481964,0" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.278409090909091" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.721590909090909" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,1" />
+        </data>
+      </port>
+      <port name="p5">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.507122288150357,0" />
+        </data>
+      </port>
+      <port name="p6">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.601607894979555,0" />
+        </data>
+      </port>
+      <port name="p7">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.184659090909091" />
+        </data>
+      </port>
+      <port name="p8">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.440340909090909" />
+        </data>
+      </port>
+    </node>
+    <node id="n16">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String></sys:String>
+          <sys:String></sys:String>
+          <sys:String></sys:String>
+          <sys:String></sys:String>
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\StringCleaner.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d5">true</data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.StringCleaner]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.StringCleaner]]></data>
+      <data key="d10"><![CDATA[StringCleaner]]></data>
+      <data key="d12">
+        <y:RectD X="929.505" Y="1516" Width="300.99" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.5" />
+        </data>
+      </port>
+    </node>
+    <node id="n17">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\SD\Diffusion.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d5">true</data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.SD.Diffusion]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.SD.Diffusion]]></data>
+      <data key="d10"><![CDATA[Diffusion]]></data>
+      <data key="d12">
+        <y:RectD X="1719.995" Y="1976" Width="240.01000000000002" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,1" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.6875" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,0" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.573863636363636" />
+        </data>
+      </port>
+    </node>
+    <node id="n18">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\SD\DiffusionOptions.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.SD.DiffusionOptions]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[OLLM.SD.DiffusionOptions]]></data>
+      <data key="d10"><![CDATA[DiffusionOptions]]></data>
+      <data key="d12">
+        <y:RectD X="1664.375" Y="2116" Width="351.25" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,0" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,1" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.5" />
+        </data>
+      </port>
+    </node>
+    <node id="n19">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\SD\LmsScheduler.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.SD.LmsScheduler]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.SD.LmsScheduler]]></data>
+      <data key="d10"><![CDATA[LmsScheduler]]></data>
+      <data key="d12">
+        <y:RectD X="1687.53" Y="1836" Width="304.94000000000005" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,1" />
+        </data>
+      </port>
+    </node>
+    <node id="n20">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\MdFd.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d5">true</data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.MdFd]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.MdFd]]></data>
+      <data key="d10"><![CDATA[MdFd]]></data>
+      <data key="d12">
+        <y:RectD X="2884.2716666666665" Y="2556" Width="191.45666666666668" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.500000000000001,0" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.0645691148562767,1" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.891219401257029,1" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.820075757575756" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.573863636363636" />
+        </data>
+      </port>
+      <port name="p5">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.395229229416577,1" />
+        </data>
+      </port>
+      <port name="p6">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.560559286696726,1" />
+        </data>
+      </port>
+      <port name="p7">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.229899172136427,1" />
+        </data>
+      </port>
+      <port name="p8">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.725889343976876,1" />
+        </data>
+      </port>
+      <port name="p9">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.999999999999999,0.5" />
+        </data>
+      </port>
+    </node>
+    <node id="n21">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\State\IncrementalParserState.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.State.IncrementalParserState]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.State.IncrementalParserState]]></data>
+      <data key="d10"><![CDATA[IncrementalParserState]]></data>
+      <data key="d12">
+        <y:RectD X="2561.3566666666666" Y="3896" Width="437.28666666666669" Height="88" />
+      </data>
+    </node>
+    <node id="n22">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\J2CS\AbstractSyntaxTree\Models\ForNode.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Models.ForNode]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.J2CS.AbstractSyntaxTree.Models.ForNode]]></data>
+      <data key="d10"><![CDATA[ForNode]]></data>
+      <data key="d12">
+        <y:RectD X="2083.6383333333333" Y="3956" Width="232.72333333333336" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.753295520193268,1" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,1" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.0568181818181818" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.71103896103896" />
+        </data>
+      </port>
+    </node>
+    <node id="n23">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Abstract]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\J2CS\AbstractSyntaxTree\Node.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Node]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.J2CS.AbstractSyntaxTree.Node]]></data>
+      <data key="d10"><![CDATA[Node]]></data>
+      <data key="d12">
+        <y:RectD X="2106.5783333333334" Y="4296" Width="186.84333333333333" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.815493075006393,0" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,0" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.278409090909091" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.721590909090909" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.488636363636364" />
+        </data>
+      </port>
+      <port name="p5">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.943181818181818" />
+        </data>
+      </port>
+      <port name="p6">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.184506924993606,1" />
+        </data>
+      </port>
+      <port name="p7">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.715909090909091" />
+        </data>
+      </port>
+      <port name="p8">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.815493075006393,1" />
+        </data>
+      </port>
+      <port name="p9">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,1" />
+        </data>
+      </port>
+      <port name="p10">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.184506924993606,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n24">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\J2CS\AbstractSyntaxTree\Models\IfNode.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Models.IfNode]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.J2CS.AbstractSyntaxTree.Models.IfNode]]></data>
+      <data key="d10"><![CDATA[IfNode]]></data>
+      <data key="d12">
+        <y:RectD X="2336.075" Y="4296" Width="207.85000000000002" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.278409090909091" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.721590909090909" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.642851415283458,0" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.0494908186993835,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n25">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\J2CS\AbstractSyntaxTree\Models\OutputNode.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Models.OutputNode]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.J2CS.AbstractSyntaxTree.Models.OutputNode]]></data>
+      <data key="d10"><![CDATA[OutputNode]]></data>
+      <data key="d12">
+        <y:RectD X="1416.0783333333334" Y="4216" Width="287.84333333333336" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.741595543872245,1" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.3125" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.493474459486063,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n26">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\J2CS\AbstractSyntaxTree\Models\SetNode.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Models.SetNode]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.J2CS.AbstractSyntaxTree.Models.SetNode]]></data>
+      <data key="d10"><![CDATA[SetNode]]></data>
+      <data key="d12">
+        <y:RectD X="1264.2183333333332" Y="4516" Width="231.56333333333333" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.978407635060242,0" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,1" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.526249118311765,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n27">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\J2CS\AbstractSyntaxTree\Models\TextNode.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Models.TextNode]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.J2CS.AbstractSyntaxTree.Models.TextNode]]></data>
+      <data key="d10"><![CDATA[TextNode]]></data>
+      <data key="d12">
+        <y:RectD X="1756.9016666666666" Y="4436" Width="246.19666666666669" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.5" Offset="2.8421709430404E-14,0" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,1" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n28">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\J2CS\AbstractSyntaxTree\RootNode.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.RootNode]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.J2CS.AbstractSyntaxTree.RootNode]]></data>
+      <data key="d10"><![CDATA[RootNode]]></data>
+      <data key="d12">
+        <y:RectD X="1092.9833333333333" Y="4296" Width="254.03333333333333" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.715909090909091" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.42189837291694,1" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.153754428552683,1" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.5" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n29">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\J2CS\LexicalAndParsingModels\Jinja\Lexer.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.JinjaLexer]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.JinjaLexer]]></data>
+      <data key="d10"><![CDATA[JinjaLexer]]></data>
+      <data key="d12">
+        <y:RectD X="-5.2483333333333348" Y="4656" Width="250.49666666666667" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.607984138178818,1" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.215968276357636,1" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.204545454545455" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.5" />
+        </data>
+      </port>
+    </node>
+    <node id="n30">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Struct]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\J2CS\LexicalAndParsingModels\Jinja\Token.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.Token]]></data>
+      <data key="d7"><![CDATA[record struct]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.Token]]></data>
+      <data key="d10"><![CDATA[Token]]></data>
+      <data key="d12">
+        <y:RectD X="283.025" Y="4796" Width="193.95" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.426136363636364" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.185294033399215,0" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.504322419867664,0" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,1" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.628787878787875" />
+        </data>
+      </port>
+    </node>
+    <node id="n31">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\J2CS\LexicalAndParsingModels\Jinja\Token.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.TokenKind]]></data>
+      <data key="d7"><![CDATA[enum]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.TokenKind]]></data>
+      <data key="d10"><![CDATA[TokenKind]]></data>
+      <data key="d12">
+        <y:RectD X="-9.3333333333333428" Y="4896" Width="258.66666666666669" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.224939432989691,0" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.984207474226804,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n32">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\J2CS\LexicalAndParsingModels\Jinja\Parser.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.Parser]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.Parser]]></data>
+      <data key="d10"><![CDATA[Parser]]></data>
+      <data key="d12">
+        <y:RectD X="281.34833333333336" Y="4656" Width="197.30333333333334" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.204545454545455" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.5" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.190642721584925,1" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.504248956767076,1" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.545454545454545" />
+        </data>
+      </port>
+      <port name="p5">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.817855191949226,1" />
+        </data>
+      </port>
+      <port name="p6">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.795454545454545" />
+        </data>
+      </port>
+      <port name="p7">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,1" />
+        </data>
+      </port>
+      <port name="p8">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.781495497626328,0" />
+        </data>
+      </port>
+      <port name="p9">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.0909090909090909" />
+        </data>
+      </port>
+      <port name="p10">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.176572451893024,0" />
+        </data>
+      </port>
+      <port name="p11">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.479033974759676,0" />
+        </data>
+      </port>
+      <port name="p12">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.772727272727273" />
+        </data>
+      </port>
+      <port name="p13">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.318181818181818" />
+        </data>
+      </port>
+    </node>
+    <node id="n33">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\J2CS\Constants.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.Constants]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.J2CS.Constants]]></data>
+      <data key="d10"><![CDATA[Constants]]></data>
+      <data key="d12">
+        <y:RectD X="495.37833333333333" Y="4296" Width="249.24333333333334" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.516596899950517,1" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.5" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n34">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String></sys:String>
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\J2CS\Converter.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d5">true</data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.Converter]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.J2CS.Converter]]></data>
+      <data key="d10"><![CDATA[Converter]]></data>
+      <data key="d12">
+        <y:RectD X="795.03166666666664" Y="4296" Width="249.93666666666667" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.5" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,1" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.5" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n35">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\J2CS\GenerateCode.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.GenerateCode]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.J2CS.GenerateCode]]></data>
+      <data key="d10"><![CDATA[GenerateCode]]></data>
+      <data key="d12">
+        <y:RectD X="1725.165" Y="4076" Width="309.67" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.167613636363636" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.394886363636364" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.258073110084929,0" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.721590909090909" Offset="5.6843418860808E-14,0" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,1" />
+        </data>
+      </port>
+      <port name="p5">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.849431818181818" />
+        </data>
+      </port>
+      <port name="p6">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.622159090909091" />
+        </data>
+      </port>
+      <port name="p7">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.741926889915071,0" />
+        </data>
+      </port>
+      <port name="p8">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.278409090909091" Offset="5.6843418860808E-14,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n36">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\ModelSpecific\Phi4.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d5">true</data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.ModelSpecific.Phi4]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.ModelSpecific.Phi4]]></data>
+      <data key="d10"><![CDATA[Phi4]]></data>
+      <data key="d12">
+        <y:RectD X="273.865" Y="2456" Width="172.27" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n37">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\Syntax\Highlighter.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d5">true</data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.Highlighter]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.Syntax.Highlighter]]></data>
+      <data key="d10"><![CDATA[Highlighter]]></data>
+      <data key="d12">
+        <y:RectD X="1704.2216666666666" Y="3496" Width="271.55666666666667" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.740793818355899,1" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,0" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.5" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.259206181644101,1" />
+        </data>
+      </port>
+    </node>
+    <node id="n38">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\Syntax\Highlighting.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.TokenKind]]></data>
+      <data key="d7"><![CDATA[enum]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.Syntax.TokenKind]]></data>
+      <data key="d10"><![CDATA[TokenKind]]></data>
+      <data key="d12">
+        <y:RectD X="2390.6666666666665" Y="3636" Width="258.66666666666669" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.818181818181818" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.76228737113402,1" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.500000000000001,0" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.999999999999999,0.5" />
+        </data>
+      </port>
+    </node>
+    <node id="n39">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\Syntax\Highlighting.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.LanguageDefinition]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.Syntax.LanguageDefinition]]></data>
+      <data key="d10"><![CDATA[LanguageDefinition]]></data>
+      <data key="d12">
+        <y:RectD X="2325.4783333333335" Y="3356" Width="389.04333333333335" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.278409090909091" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.721590909090909" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,1" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.5" Offset="1.70530256582424E-13,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n40">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\Syntax\Highlighting.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.TokenRule]]></data>
+      <data key="d7"><![CDATA[record]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.Syntax.TokenRule]]></data>
+      <data key="d10"><![CDATA[TokenRule]]></data>
+      <data key="d12">
+        <y:RectD X="2011.78" Y="3496" Width="256.44" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.5" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.999999999999999,0.721590909090909" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.616593225185878,1" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.616593225185878,0" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.999999999999999,0.278409090909091" />
+        </data>
+      </port>
+    </node>
+    <node id="n41">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\Syntax\Highlighting.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d5">true</data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.Theme]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.Syntax.Theme]]></data>
+      <data key="d10"><![CDATA[Theme]]></data>
+      <data key="d12">
+        <y:RectD X="2877.2116666666666" Y="3776" Width="205.57666666666665" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.651515151515153" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n42">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String></sys:String>
+          <sys:String></sys:String>
+          <sys:String></sys:String>
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\Syntax\LanguageRegistry.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d5">true</data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.LanguageRegistry]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.Syntax.LanguageRegistry]]></data>
+      <data key="d10"><![CDATA[LanguageRegistry]]></data>
+      <data key="d12">
+        <y:RectD X="2338.19" Y="3496" Width="363.62" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,0" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.278409090909091" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,1" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.5" />
+        </data>
+      </port>
+    </node>
+    <node id="n43">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\Syntax\MdSyntaxApply.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d5">true</data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.MdSyntaxApply]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.Syntax.MdSyntaxApply]]></data>
+      <data key="d10"><![CDATA[MdSyntaxApply]]></data>
+      <data key="d12">
+        <y:RectD X="2812.5" Y="3636" Width="335" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.156657649253731,0" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.0621694651741292,0" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.251145833333333,0" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.5" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.0592711442786062,1" />
+        </data>
+      </port>
+      <port name="p5">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,1" />
+        </data>
+      </port>
+      <port name="p6">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.5" />
+        </data>
+      </port>
+    </node>
+    <node id="n44">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\Base64.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d5">true</data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Base64e]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.Base64e]]></data>
+      <data key="d10"><![CDATA[Base64e]]></data>
+      <data key="d12">
+        <y:RectD X="2047.2266666666667" Y="1876" Width="225.54666666666668" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.5" Offset="1.70530256582424E-13,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n45">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\Records.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.BulletListFdBlockMd]]></data>
+      <data key="d7"><![CDATA[record]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.BulletListFdBlockMd]]></data>
+      <data key="d10"><![CDATA[BulletListFdBlockMd]]></data>
+      <data key="d12">
+        <y:RectD X="2280.0983333333334" Y="36" Width="399.80333333333334" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.278409090909091" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.5" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.949304241251948,1" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.721590909090909" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,1" />
+        </data>
+      </port>
+    </node>
+    <node id="n46">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\Records.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.CodeFdBlockMd]]></data>
+      <data key="d7"><![CDATA[record]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.CodeFdBlockMd]]></data>
+      <data key="d10"><![CDATA[CodeFdBlockMd]]></data>
+      <data key="d12">
+        <y:RectD X="4129.7033333333329" Y="216" Width="340.59333333333336" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.943181818181818" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.500000000000001,0" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.500000000000001,1" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.5" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.488636363636364" />
+        </data>
+      </port>
+    </node>
+    <node id="n47">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\Records.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.LineBreakMdBlock]]></data>
+      <data key="d7"><![CDATA[record]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.LineBreakMdBlock]]></data>
+      <data key="d10"><![CDATA[LineBreakMdBlock]]></data>
+      <data key="d12">
+        <y:RectD X="1833.5" Y="356" Width="373" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.770781948168007,1" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.5" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.412878787878788" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.256702412868633,0" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.743297587131367,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n48">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Abstract]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\Records.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.InlineSpan]]></data>
+      <data key="d7"><![CDATA[record]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.InlineSpan]]></data>
+      <data key="d10"><![CDATA[InlineSpan]]></data>
+      <data key="d12">
+        <y:RectD X="3430.745" Y="2976" Width="258.51" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.721590909090909" Offset="2.27373675443232E-13,0" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.721590909090909" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.278409090909091" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.980658388456927,0" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.278409090909091" Offset="2.27373675443232E-13,0" />
+        </data>
+      </port>
+      <port name="p5">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.405382985399232,0" />
+        </data>
+      </port>
+      <port name="p6">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.287936421973789,0" />
+        </data>
+      </port>
+      <port name="p7">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,1" />
+        </data>
+      </port>
+      <port name="p8">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.903291942284632,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n49">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\Records.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.CodeSpan]]></data>
+      <data key="d7"><![CDATA[record]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.CodeSpan]]></data>
+      <data key="d10"><![CDATA[CodeSpan]]></data>
+      <data key="d12">
+        <y:RectD X="3154.3583333333331" Y="2836" Width="251.28333333333333" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.653409090909091" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.5" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.808631690654639,0" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.176136363636364" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.892045454545455" />
+        </data>
+      </port>
+    </node>
+    <node id="n50">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\Records.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.BoldSpan]]></data>
+      <data key="d7"><![CDATA[record]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.BoldSpan]]></data>
+      <data key="d10"><![CDATA[BoldSpan]]></data>
+      <data key="d12">
+        <y:RectD X="3437.9533333333334" Y="3136" Width="244.09333333333333" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.278409090909091" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.5" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,0" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.5,1" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.721590909090909" />
+        </data>
+      </port>
+    </node>
+    <node id="n51">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\Utility\Records.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.ItalicSpan]]></data>
+      <data key="d7"><![CDATA[record]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[OLLM.Utility.ItalicSpan]]></data>
+      <data key="d10"><![CDATA[ItalicSpan]]></data>
+      <data key="d12">
+        <y:RectD X="3595.9016666666666" Y="2736" Width="248.19666666666669" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.5" Offset="2.8421709430404E-14,0" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.0568181818181818" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.275399884500195,1" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.19481862501511,1" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.308441558441561" />
+        </data>
+      </port>
+    </node>
+    <node id="n52">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\App.xaml</sys:String>
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\App.xaml.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.App]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.App]]></data>
+      <data key="d10"><![CDATA[App]]></data>
+      <data key="d12">
+        <y:RectD X="1395.85" Y="1136" Width="168.3" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.735145573380867,0" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.264854426619133,0" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.513765102000396,1" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.696375519904932,1" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.029708853238265,1" />
+        </data>
+      </port>
+      <port name="p5">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.148544266191325,1" />
+        </data>
+      </port>
+      <port name="p6">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.795454545454545" />
+        </data>
+      </port>
+      <port name="p7">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.5" />
+        </data>
+      </port>
+      <port name="p8">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.5" />
+        </data>
+      </port>
+      <port name="p9">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.204545454545455" />
+        </data>
+      </port>
+      <port name="p10">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.878985937809468,1" />
+        </data>
+      </port>
+    </node>
+    <node id="n53">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\LoadingWindow.xaml</sys:String>
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\LoadingWindow.xaml.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.LoadingWindow]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.LoadingWindow]]></data>
+      <data key="d10"><![CDATA[LoadingWindow]]></data>
+      <data key="d12">
+        <y:RectD X="1669.4966666666667" Y="1136" Width="341.00666666666666" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.795454545454545" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.5" />
+        </data>
+      </port>
+    </node>
+    <node id="n54">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\MainWindow.xaml</sys:String>
+          <sys:String>C:\Users\adosi\source\repos\Local-LLM-ONNX\MainWindow.xaml.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.MainWindow]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[OLLM.MainWindow]]></data>
+      <data key="d10"><![CDATA[MainWindow]]></data>
+      <data key="d12">
+        <y:RectD X="2350.4066666666668" Y="1756" Width="299.18666666666667" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.308652346361245,0" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.0837737867106372,0" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.196213066535941,0" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.421091626186549,0" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.533530906011855,0" />
+        </data>
+      </port>
+      <port name="p5">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.184659090909091" />
+        </data>
+      </port>
+      <port name="p6">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.440340909090909" />
+        </data>
+      </port>
+      <port name="p7">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.645970185837159,0" />
+        </data>
+      </port>
+      <port name="p8">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.98328802531307,0" />
+        </data>
+      </port>
+      <port name="p9">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.870848745487766,0" />
+        </data>
+      </port>
+      <port name="p10">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.758409465662462,0" />
+        </data>
+      </port>
+      <port name="p11">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.137533981015197,1" />
+        </data>
+      </port>
+      <port name="p12">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.862466018984802,1" />
+        </data>
+      </port>
+      <port name="p13">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.379177993671731,1" />
+        </data>
+      </port>
+      <port name="p14">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.620822006328267,1" />
+        </data>
+      </port>
+    </node>
+    <edge id="e0" source="n0" target="n1" sourceport="p0" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Constants]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Initialization.EnsureModelsArePresent]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="382,896.5" />
+          <y:Bend Location="317.707,960.793" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e1" source="n2" target="n1" sourceport="p0" targetport="p1">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Constants]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Initialization.Vocabulary]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1421.975,2324.025" />
+          <y:Bend Location="1362,2384" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e2" source="n3" target="n4" sourceport="p0" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.State.Thinking.FloatingAdorner]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Interact.LinearCommunication]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="78,23">
+            <y:Label.Text>_thought</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e3" source="n3" target="n4" sourceport="p1" targetport="p1">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.State.Thinking.FloatingAdorner]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Interact.LinearCommunication]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e4" source="n3" target="n1" sourceport="p2" targetport="p2">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Constants]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Interact.LinearCommunication]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2777,2390" />
+          <y:Bend Location="2713,2454" />
+          <y:Bend Location="484,2454" />
+          <y:Bend Location="477.006666666667,2447.00666666667" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e5" source="n3" target="n5" sourceport="p3" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.ModelSpecific.Ogpt055]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Interact.LinearCommunication]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="3031.30083333333,250.300833333333" />
+          <y:Bend Location="2967,186" />
+          <y:Bend Location="424,186" />
+          <y:Bend Location="360,250" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e6" source="n3" target="n6" sourceport="p4" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.State.ModelState]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Interact.LinearCommunication]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1414,659" />
+          <y:Bend Location="1363.99666666667,709.003333333333" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e7" source="n3" target="n7" sourceport="p5" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Fd]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Interact.LinearCommunication]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="3968,660" />
+          <y:Bend Location="4032.91333333333,724.913333333333" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e8" source="n3" target="n8" sourceport="p6" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.ParagraphFdBlockMd]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Interact.LinearCommunication]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2826.0975,534.0975" />
+          <y:Bend Location="2812,520" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e9" source="n3" target="n9" sourceport="p7" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.TextSpan]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Interact.LinearCommunication]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="3185.20333333333,2536.20333333333" />
+          <y:Bend Location="3223,2574" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e10" source="n3" target="n10" sourceport="p8" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.FdBlockMd]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Interact.LinearCommunication]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2928.69916666667,325.699166666666" />
+          <y:Bend Location="2882,279" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e11" source="n3" target="n11" sourceport="p9" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Md]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Interact.LinearCommunication]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="3133.9025,230.9025" />
+          <y:Bend Location="3069,166" />
+          <y:Bend Location="146,166" />
+          <y:Bend Location="118.410416666667,193.589583333333" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e12" source="n3" target="n12" sourceport="p10" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Memory.Remember]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Interact.LinearCommunication]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1344,639" />
+          <y:Bend Location="1279.1609375,703.8390625" />
+          <y:Bend Location="1279.1609375,1613.8390625" />
+          <y:Bend Location="1252,1641" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e13" source="n14" target="n6" sourceport="p0" targetport="p1">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.State.ModelState]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Memory.MiniEmbedder]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="102,23">
+            <y:Label.Text>ModelState</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="802.503333333333,1090.99666666667" />
+          <y:Bend Location="834,1059.5" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e14" source="n14" target="n15" sourceport="p1" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.State.EmbedderState]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Memory.MiniEmbedder]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="139,23">
+            <y:Label.Text>EmbedderState</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1388,1326" />
+          <y:Bend Location="1451.58333333333,1389.58333333333" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e15" source="n14" target="n15" sourceport="p2" targetport="p1">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.State.EmbedderState]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Memory.MiniEmbedder]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1279,1346" />
+          <y:Bend Location="1340.00546875,1407.00546875" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e16" source="n14" target="n1" sourceport="p3" targetport="p3">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Constants]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Memory.MiniEmbedder]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="469,1320" />
+          <y:Bend Location="456.491,1332.509" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e17" source="n12" target="n14" sourceport="p1" targetport="p4">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Memory.MiniEmbedder]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Memory.Remember]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="102,23">
+            <y:Label.Text>_embedder</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e18" source="n12" target="n14" sourceport="p2" targetport="p5">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Memory.MiniEmbedder]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Memory.Remember]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e19" source="n12" target="n1" sourceport="p3" targetport="p4">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Constants]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Memory.Remember]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="627.821666666667,2323.17833333333" />
+          <y:Bend Location="607,2344" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e20" source="n12" target="n15" sourceport="p4" targetport="p2">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.State.EmbedderState]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Memory.Remember]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="736.495,1772.995" />
+          <y:Bend Location="744,1780.5" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e21" source="n12" target="n16" sourceport="p5" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.StringCleaner]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Memory.Remember]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="794.88625,1571.11375" />
+          <y:Bend Location="806,1560" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e22" source="n12" target="n13" sourceport="p6" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Memory.Discussion]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Memory.Remember]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="731.62875,1452.87125" />
+          <y:Bend Location="758,1426.5" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e23" source="n17" target="n18" sourceport="p0" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.SD.DiffusionOptions]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.SD.Diffusion]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e24" source="n17" target="n1" sourceport="p1" targetport="p5">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Constants]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.SD.Diffusion]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1587,2036.5" />
+          <y:Bend Location="1563.575,2059.925" />
+          <y:Bend Location="1563.575,2349.425" />
+          <y:Bend Location="1509,2404" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e25" source="n17" target="n19" sourceport="p2" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.SD.LmsScheduler]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.SD.Diffusion]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e26" source="n18" target="n1" sourceport="p1" targetport="p6">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Constants]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.SD.DiffusionOptions]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1840,2306" />
+          <y:Bend Location="1822,2324" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e27" source="n4" target="n20" sourceport="p2" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.MdFd]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.State.Thinking.FloatingAdorner]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e28" source="n4" target="n1" sourceport="p3" targetport="p7">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Constants]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.State.Thinking.FloatingAdorner]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2834.2375,2548.7625" />
+          <y:Bend Location="2809,2574" />
+          <y:Bend Location="258,2574" />
+          <y:Bend Location="242.993333333333,2558.99333333333" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e29" source="n15" target="n1" sourceport="p3" targetport="p8">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Constants]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.State.EmbedderState]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="910,1819.5" />
+          <y:Bend Location="845.168333333333,1884.33166666667" />
+          <y:Bend Location="845.168333333333,2310.83166666667" />
+          <y:Bend Location="792,2364" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e30" source="n15" target="n2" sourceport="p4" targetport="p1">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Initialization.Vocabulary]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.State.EmbedderState]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e31" source="n6" target="n1" sourceport="p2" targetport="p9">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Constants]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.State.ModelState]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="428,1020.5" />
+          <y:Bend Location="363.968333333333,1084.53166666667" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e32" source="n22" target="n23" sourceport="p0" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Node]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Models.ForNode]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e33" source="n22" target="n23" sourceport="p1" targetport="p1">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Node]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Models.ForNode]]></data>
+      <data key="d17"><![CDATA[Inheritance]]></data>
+    </edge>
+    <edge id="e34" source="n24" target="n23" sourceport="p0" targetport="p2">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Node]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Models.IfNode]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e35" source="n24" target="n23" sourceport="p1" targetport="p3">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Node]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Models.IfNode]]></data>
+      <data key="d17"><![CDATA[Inheritance]]></data>
+    </edge>
+    <edge id="e36" source="n25" target="n23" sourceport="p0" targetport="p4">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Node]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Models.OutputNode]]></data>
+      <data key="d17"><![CDATA[Inheritance]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1629.54166666667,4334.54166666667" />
+          <y:Bend Location="1634,4339" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e37" source="n26" target="n23" sourceport="p0" targetport="p5">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Node]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Models.SetNode]]></data>
+      <data key="d17"><![CDATA[Inheritance]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1490.78166666667,4399.21833333333" />
+          <y:Bend Location="1511,4379" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e38" source="n27" target="n23" sourceport="p0" targetport="p6">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Node]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Models.TextNode]]></data>
+      <data key="d17"><![CDATA[Inheritance]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2127,4480" />
+          <y:Bend Location="2141.05222222222,4465.94777777778" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e39" source="n28" target="n23" sourceport="p0" targetport="p7">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Node]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.RootNode]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e40" source="n28" target="n23" sourceport="p1" targetport="p8">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Node]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.RootNode]]></data>
+      <data key="d17"><![CDATA[Inheritance]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1200.15958333333,4707.15958333333" />
+          <y:Bend Location="1257,4764" />
+          <y:Bend Location="2202,4764" />
+          <y:Bend Location="2258.94777777778,4707.05222222222" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e41" source="n29" target="n30" sourceport="p0" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.Token]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.JinjaLexer]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="147.049666666667,4820.54966666667" />
+          <y:Bend Location="160,4833.5" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e42" source="n29" target="n31" sourceport="p1" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.TokenKind]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.JinjaLexer]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e43" source="n32" target="n29" sourceport="p0" targetport="p2">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.JinjaLexer]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.Parser]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="55,23">
+            <y:Label.Text>_lexer</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e44" source="n32" target="n29" sourceport="p1" targetport="p3">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.JinjaLexer]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.Parser]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e45" source="n32" target="n30" sourceport="p2" targetport="p1">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.Token]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.Parser]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="128,23">
+            <y:Label.Text>_currentToken</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e46" source="n32" target="n30" sourceport="p3" targetport="p2">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.Token]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.Parser]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e47" source="n32" target="n28" sourceport="p4" targetport="p2">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.RootNode]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.Parser]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1085,4704" />
+          <y:Bend Location="1132.04208333333,4656.95791666667" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e48" source="n32" target="n23" sourceport="p5" targetport="p9">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Node]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.Parser]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="442.713888888889,4778.71388888889" />
+          <y:Bend Location="448,4784" />
+          <y:Bend Location="2140,4784" />
+          <y:Bend Location="2200,4724" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e49" source="n32" target="n31" sourceport="p6" targetport="p1">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.TokenKind]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.Parser]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="250,4726" />
+          <y:Bend Location="245.248333333333,4730.75166666667" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e50" source="n32" target="n27" sourceport="p7" targetport="p1">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Models.TextNode]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.Parser]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1847,4744" />
+          <y:Bend Location="1880,4711" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e51" source="n32" target="n25" sourceport="p8" targetport="p1">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Models.OutputNode]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.Parser]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="435.54,4283.96" />
+          <y:Bend Location="476,4243.5" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e52" source="n32" target="n33" sourceport="p9" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.Constants]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.Parser]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="603,4664" />
+          <y:Bend Location="624.136666666667,4642.86333333333" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e53" source="n32" target="n24" sourceport="p10" targetport="p2">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Models.IfNode]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.Parser]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="316.186666666667,3990.81333333333" />
+          <y:Bend Location="381,3926" />
+          <y:Bend Location="2415,3926" />
+          <y:Bend Location="2469.69166666667,3980.69166666667" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e54" source="n32" target="n22" sourceport="p11" targetport="p2">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Models.ForNode]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.Parser]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="375.863333333333,4025.13666666667" />
+          <y:Bend Location="440,3961" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e55" source="n32" target="n26" sourceport="p12" targetport="p1">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Models.SetNode]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.Parser]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1362,4724" />
+          <y:Bend Location="1380,4706" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e56" source="n30" target="n30" sourceport="p3" targetport="p4">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.Token]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.Token]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="380,4910" />
+          <y:Bend Location="384,4914" />
+          <y:Bend Location="498,4914" />
+          <y:Bend Location="506.975,4905.025" />
+          <y:Bend Location="506.975,4855.30833333333" />
+          <y:Bend Location="503,4851.33333333333" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e57" source="n34" target="n33" sourceport="p0" targetport="p1">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.Constants]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.Converter]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e58" source="n34" target="n32" sourceport="p1" targetport="p13">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.LexicalAndParsingModels.Jinja.Parser]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.Converter]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="920,4639" />
+          <y:Bend Location="875,4684" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e59" source="n34" target="n28" sourceport="p2" targetport="p3">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.RootNode]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.Converter]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e60" source="n34" target="n35" sourceport="p3" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.GenerateCode]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.Converter]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="920,4120.75" />
+          <y:Bend Location="950,4090.75" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e61" source="n35" target="n28" sourceport="p1" targetport="p4">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.RootNode]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.GenerateCode]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1247,4110.75" />
+          <y:Bend Location="1220,4137.75" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e62" source="n35" target="n33" sourceport="p2" targetport="p2">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.Constants]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.GenerateCode]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1805.0825,4009.65392857143" />
+          <y:Bend Location="1794,3998.57142857143" />
+          <y:Bend Location="664,3998.57142857143" />
+          <y:Bend Location="620,4042.57142857143" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e63" source="n35" target="n23" sourceport="p3" targetport="p10">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Node]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.GenerateCode]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2126,4139.5" />
+          <y:Bend Location="2141.05222222222,4154.55222222222" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e64" source="n35" target="n27" sourceport="p4" targetport="p2">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Models.TextNode]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.GenerateCode]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e65" source="n35" target="n25" sourceport="p5" targetport="p2">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Models.OutputNode]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.GenerateCode]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1567,4150.75" />
+          <y:Bend Location="1558.12166666667,4159.62833333333" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e66" source="n35" target="n26" sourceport="p6" targetport="p2">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Models.SetNode]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.GenerateCode]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1417,4130.75" />
+          <y:Bend Location="1386.07833333333,4161.67166666667" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e67" source="n35" target="n22" sourceport="p7" targetport="p3">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Models.ForNode]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.GenerateCode]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1954.9175,4026.65392857143" />
+          <y:Bend Location="1963,4018.57142857143" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e68" source="n35" target="n24" sourceport="p8" targetport="p3">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.AbstractSyntaxTree.Models.IfNode]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.J2CS.GenerateCode]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2318,4100.5" />
+          <y:Bend Location="2346.36166666667,4128.86166666667" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e69" source="n5" target="n1" sourceport="p1" targetport="p10">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Constants]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.ModelSpecific.Ogpt055]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e70" source="n36" target="n1" sourceport="p0" targetport="p11">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Constants]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.ModelSpecific.Phi4]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e71" source="n37" target="n38" sourceport="p0" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.TokenKind]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.Highlighter]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1905.38916666667,3690.38916666667" />
+          <y:Bend Location="1923,3708" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e72" source="n37" target="n39" sourceport="p1" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.LanguageDefinition]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.Highlighter]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1840,3397.5" />
+          <y:Bend Location="1857,3380.5" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e73" source="n37" target="n40" sourceport="p2" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.TokenRule]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.Highlighter]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e74" source="n40" target="n40" sourceport="p1" targetport="p2">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.TokenRule]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.TokenRule]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2294,3559.5" />
+          <y:Bend Location="2298.22,3563.72" />
+          <y:Bend Location="2298.22,3606.78" />
+          <y:Bend Location="2291,3614" />
+          <y:Bend Location="2174,3614" />
+          <y:Bend Location="2169.89916666667,3609.89916666667" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e75" source="n39" target="n40" sourceport="p1" targetport="p3">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.TokenRule]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.LanguageDefinition]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2181,3419.5" />
+          <y:Bend Location="2169.89916666667,3430.60083333333" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e76" source="n41" target="n38" sourceport="p0" targetport="p1">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.TokenKind]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.Theme]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2604,3833.33333333333" />
+          <y:Bend Location="2587.845,3817.17833333333" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e77" source="n42" target="n39" sourceport="p0" targetport="p2">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.LanguageDefinition]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.LanguageRegistry]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e78" source="n42" target="n40" sourceport="p1" targetport="p4">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.TokenRule]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.LanguageRegistry]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e79" source="n42" target="n38" sourceport="p2" targetport="p2">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.TokenKind]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.LanguageRegistry]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e80" source="n43" target="n39" sourceport="p0" targetport="p3">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.LanguageDefinition]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.MdSyntaxApply]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2864.9803125,3421.9803125" />
+          <y:Bend Location="2843,3400" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e81" source="n43" target="n42" sourceport="p1" targetport="p3">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.LanguageRegistry]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.MdSyntaxApply]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2833.32677083333,3554.32677083333" />
+          <y:Bend Location="2819,3540" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e82" source="n43" target="n20" sourceport="p2" targetport="p1">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.MdFd]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.MdSyntaxApply]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e83" source="n43" target="n38" sourceport="p3" targetport="p3">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.TokenKind]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.MdSyntaxApply]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e84" source="n43" target="n37" sourceport="p4" targetport="p3">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.Highlighter]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.MdSyntaxApply]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2832.35583333333,3749.64416666667" />
+          <y:Bend Location="2828,3754" />
+          <y:Bend Location="1800,3754" />
+          <y:Bend Location="1774.61083333333,3728.61083333333" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e85" source="n43" target="n41" sourceport="p5" targetport="p1">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.Theme]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.MdSyntaxApply]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e86" source="n7" target="n10" sourceport="p1" targetport="p1">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.FdBlockMd]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Fd]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="3949.685,3267.315" />
+          <y:Bend Location="3943,3274" />
+          <y:Bend Location="2802,3274" />
+          <y:Bend Location="2737.37541666667,3209.37541666667" />
+          <y:Bend Location="2737.37541666667,317.375416666667" />
+          <y:Bend Location="2719,299" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e87" source="n7" target="n8" sourceport="p2" targetport="p1">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.ParagraphFdBlockMd]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Fd]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="3983.22833333333,3283.77166666667" />
+          <y:Bend Location="3973,3294" />
+          <y:Bend Location="2744,3294" />
+          <y:Bend Location="2679.59333333333,3229.59333333333" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e88" source="n7" target="n45" sourceport="p3" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.BulletListFdBlockMd]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Fd]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="4052.91333333333,125.413333333333" />
+          <y:Bend Location="3988,60.5" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e89" source="n7" target="n46" sourceport="p4" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.CodeFdBlockMd]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Fd]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="4058.70083333333,309.299166666667" />
+          <y:Bend Location="4069,299" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e90" source="n7" target="n43" sourceport="p5" targetport="p6">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Syntax.MdSyntaxApply]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Fd]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="4050.315,3615.685" />
+          <y:Bend Location="3986,3680" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e91" source="n7" target="n47" sourceport="p6" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.LineBreakMdBlock]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Fd]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="4016.77166666667,3301.22833333333" />
+          <y:Bend Location="4004,3314" />
+          <y:Bend Location="2373,3314" />
+          <y:Bend Location="2308.19,3249.19" />
+          <y:Bend Location="2308.19,1740.19" />
+          <y:Bend Location="2281,1713" />
+          <y:Bend Location="2149,1713" />
+          <y:Bend Location="2121.00166666667,1685.00166666667" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e92" source="n7" target="n48" sourceport="p7" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.InlineSpan]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Fd]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="3932.91333333333,3053.41333333333" />
+          <y:Bend Location="3919,3039.5" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e93" source="n7" target="n9" sourceport="p8" targetport="p1">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.TextSpan]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Fd]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="4012.91333333333,2649.91333333333" />
+          <y:Bend Location="3963,2600" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e94" source="n7" target="n20" sourceport="p9" targetport="p2">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.MdFd]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Fd]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="3992.91333333333,2724.91333333333" />
+          <y:Bend Location="3974,2706" />
+          <y:Bend Location="3064,2706" />
+          <y:Bend Location="3054.9015625,2696.9015625" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e95" source="n7" target="n49" sourceport="p10" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.CodeSpan]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Fd]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="3952.91333333333,2929.41333333333" />
+          <y:Bend Location="3917,2893.5" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e96" source="n7" target="n50" sourceport="p11" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.BoldSpan]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Fd]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e97" source="n7" target="n51" sourceport="p12" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.ItalicSpan]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Fd]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="3972.91333333333,2798.91333333333" />
+          <y:Bend Location="3954,2780" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e98" source="n11" target="n10" sourceport="p1" targetport="p2">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.FdBlockMd]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Md]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="155.23125,272.76875" />
+          <y:Bend Location="169,259" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e99" source="n11" target="n1" sourceport="p2" targetport="p12">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Constants]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Md]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="118.410416666667,2343.41041666667" />
+          <y:Bend Location="135,2360" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e100" source="n11" target="n8" sourceport="p3" targetport="p2">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.ParagraphFdBlockMd]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Md]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="155.23125,492.73125" />
+          <y:Bend Location="163,500.5" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e101" source="n11" target="n20" sourceport="p4" targetport="p3">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.MdFd]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Md]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="81.5895833333333,2563.75625" />
+          <y:Bend Location="146,2628.16666666667" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e102" source="n11" target="n47" sourceport="p5" targetport="p1">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.LineBreakMdBlock]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Md]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e103" source="n11" target="n46" sourceport="p6" targetport="p1">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.CodeFdBlockMd]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Md]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="44.76875,58.23125" />
+          <y:Bend Location="97,6" />
+          <y:Bend Location="4269,6" />
+          <y:Bend Location="4300,37" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e104" source="n11" target="n48" sourceport="p7" targetport="p1">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.InlineSpan]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Md]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="44.76875,2975.26875" />
+          <y:Bend Location="109,3039.5" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e105" source="n11" target="n45" sourceport="p8" targetport="p1">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.BulletListFdBlockMd]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Md]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="81.5895833333333,120.410416666667" />
+          <y:Bend Location="122,80" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e106" source="n20" target="n1" sourceport="p4" targetport="p13">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Constants]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.MdFd]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="241.25,2606.5" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e107" source="n20" target="n48" sourceport="p5" targetport="p2">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.InlineSpan]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.MdFd]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2959.9409375,2947.4409375" />
+          <y:Bend Location="3013,3000.5" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e108" source="n20" target="n49" sourceport="p6" targetport="p1">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.CodeSpan]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.MdFd]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2991.59447916667,2855.59447916667" />
+          <y:Bend Location="3016,2880" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e109" source="n20" target="n50" sourceport="p7" targetport="p1">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.BoldSpan]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.MdFd]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2928.28739583333,3115.28739583333" />
+          <y:Bend Location="2993,3180" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e110" source="n20" target="n51" sourceport="p8" targetport="p1">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.ItalicSpan]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.MdFd]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="3023.24802083333,2727.24802083333" />
+          <y:Bend Location="3037,2741" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e111" source="n20" target="n9" sourceport="p9" targetport="p2">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.TextSpan]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.MdFd]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e112" source="n10" target="n10" sourceport="p3" targetport="p4">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.FdBlockMd]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.FdBlockMd]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2415.3175,329.6825" />
+          <y:Bend Location="2411,334" />
+          <y:Bend Location="2329,334" />
+          <y:Bend Location="2315.635,320.635" />
+          <y:Bend Location="2315.635,243.365" />
+          <y:Bend Location="2320,239" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e113" source="n47" target="n47" sourceport="p2" targetport="p3">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.LineBreakMdBlock]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.LineBreakMdBlock]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2232,392.333333333333" />
+          <y:Bend Location="2236.5,387.833333333333" />
+          <y:Bend Location="2236.5,244.5" />
+          <y:Bend Location="2211,219" />
+          <y:Bend Location="1949,219" />
+          <y:Bend Location="1929.25,238.75" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e114" source="n47" target="n10" sourceport="p4" targetport="p5">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.FdBlockMd]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.LineBreakMdBlock]]></data>
+      <data key="d17"><![CDATA[Inheritance]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2110.75,290.25" />
+          <y:Bend Location="2122,279" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e115" source="n8" target="n8" sourceport="p3" targetport="p4">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.ParagraphFdBlockMd]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.ParagraphFdBlockMd]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2341.83033333333,590.169666666667" />
+          <y:Bend Location="2338,594" />
+          <y:Bend Location="2251,594" />
+          <y:Bend Location="2243.02166666667,586.021666666667" />
+          <y:Bend Location="2243.02166666667,543.478333333333" />
+          <y:Bend Location="2247,539.5" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e116" source="n8" target="n10" sourceport="p5" targetport="p6">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.FdBlockMd]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.ParagraphFdBlockMd]]></data>
+      <data key="d17"><![CDATA[Inheritance]]></data>
+    </edge>
+    <edge id="e117" source="n46" target="n46" sourceport="p2" targetport="p3">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.CodeFdBlockMd]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.CodeFdBlockMd]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="4300,330" />
+          <y:Bend Location="4304,334" />
+          <y:Bend Location="4490,334" />
+          <y:Bend Location="4500.29666666667,323.703333333334" />
+          <y:Bend Location="4500.29666666667,264.296666666666" />
+          <y:Bend Location="4496,260" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e118" source="n46" target="n10" sourceport="p4" targetport="p7">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.FdBlockMd]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.CodeFdBlockMd]]></data>
+      <data key="d17"><![CDATA[Inheritance]]></data>
+    </edge>
+    <edge id="e119" source="n45" target="n45" sourceport="p2" targetport="p3">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.BulletListFdBlockMd]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.BulletListFdBlockMd]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2659.63333333333,198.633333333333" />
+          <y:Bend Location="2667,206" />
+          <y:Bend Location="2703,206" />
+          <y:Bend Location="2709.90166666667,199.098333333333" />
+          <y:Bend Location="2709.90166666667,103.401666666667" />
+          <y:Bend Location="2706,99.5" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e120" source="n45" target="n10" sourceport="p4" targetport="p8">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.FdBlockMd]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.BulletListFdBlockMd]]></data>
+      <data key="d17"><![CDATA[Inheritance]]></data>
+    </edge>
+    <edge id="e121" source="n48" target="n48" sourceport="p3" targetport="p4">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.InlineSpan]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.InlineSpan]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="3684.255,2949.745" />
+          <y:Bend Location="3688,2946" />
+          <y:Bend Location="3715,2946" />
+          <y:Bend Location="3719.255,2950.255" />
+          <y:Bend Location="3719.255,2996.245" />
+          <y:Bend Location="3715,3000.5" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e122" source="n9" target="n9" sourceport="p3" targetport="p4">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.TextSpan]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.TextSpan]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="3505.17944444444,2669.82055555556" />
+          <y:Bend Location="3501,2674" />
+          <y:Bend Location="3344,2674" />
+          <y:Bend Location="3337.554,2667.554" />
+          <y:Bend Location="3337.554,2632.446" />
+          <y:Bend Location="3344,2626" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e123" source="n9" target="n48" sourceport="p5" targetport="p5">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.InlineSpan]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.TextSpan]]></data>
+      <data key="d17"><![CDATA[Inheritance]]></data>
+    </edge>
+    <edge id="e124" source="n49" target="n49" sourceport="p2" targetport="p3">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.CodeSpan]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.CodeSpan]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="3357.554,2810.446" />
+          <y:Bend Location="3362,2806" />
+          <y:Bend Location="3429,2806" />
+          <y:Bend Location="3435.64166666667,2812.64166666667" />
+          <y:Bend Location="3435.64166666667,2847.85833333333" />
+          <y:Bend Location="3432,2851.5" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e125" source="n49" target="n48" sourceport="p4" targetport="p6">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.InlineSpan]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.CodeSpan]]></data>
+      <data key="d17"><![CDATA[Inheritance]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="3496,2914.5" />
+          <y:Bend Location="3505.17944444444,2923.67944444444" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e126" source="n50" target="n48" sourceport="p2" targetport="p7">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.InlineSpan]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.BoldSpan]]></data>
+      <data key="d17"><![CDATA[Inheritance]]></data>
+    </edge>
+    <edge id="e127" source="n50" target="n50" sourceport="p3" targetport="p4">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.BoldSpan]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.BoldSpan]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="3560,3250" />
+          <y:Bend Location="3564,3254" />
+          <y:Bend Location="3704,3254" />
+          <y:Bend Location="3712.04666666667,3245.95333333333" />
+          <y:Bend Location="3712.04666666667,3203.54666666667" />
+          <y:Bend Location="3708,3199.5" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e128" source="n51" target="n48" sourceport="p2" targetport="p8">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.InlineSpan]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.ItalicSpan]]></data>
+      <data key="d17"><![CDATA[Inheritance]]></data>
+    </edge>
+    <edge id="e129" source="n51" target="n51" sourceport="p3" targetport="p4">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.ItalicSpan]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.ItalicSpan]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="3644.255,2865.245" />
+          <y:Bend Location="3638,2871.5" />
+          <y:Bend Location="3577,2871.5" />
+          <y:Bend Location="3565.90166666667,2860.40166666667" />
+          <y:Bend Location="3565.90166666667,2767.24119047619" />
+          <y:Bend Location="3570,2763.14285714286" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e130" source="n52" target="n6" sourceport="p0" targetport="p3">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.State.ModelState]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.App]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="102,23">
+            <y:Label.Text>ModelState</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e131" source="n52" target="n6" sourceport="p1" targetport="p4">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.State.ModelState]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.App]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e132" source="n52" target="n15" sourceport="p2" targetport="p5">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.State.EmbedderState]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.App]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="139,23">
+            <y:Label.Text>EmbedderState</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e133" source="n52" target="n15" sourceport="p3" targetport="p6">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.State.EmbedderState]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.App]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e134" source="n52" target="n14" sourceport="p4" targetport="p6">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Memory.MiniEmbedder]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.App]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="129,23">
+            <y:Label.Text>MiniEmbedder</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1400.85,1277.15" />
+          <y:Bend Location="1392,1286" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e135" source="n52" target="n14" sourceport="p5" targetport="p7">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Memory.MiniEmbedder]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.App]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1420.85,1297.15" />
+          <y:Bend Location="1412,1306" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e136" source="n52" target="n53" sourceport="p6" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.LoadingWindow]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.App]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="143,23">
+            <y:Label.Text>LoadingWindow</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e137" source="n52" target="n53" sourceport="p7" targetport="p1">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.LoadingWindow]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.App]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e138" source="n52" target="n1" sourceport="p8" targetport="p14">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Constants]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.App]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="449,1180" />
+          <y:Bend Location="410.229666666667,1218.77033333333" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e139" source="n52" target="n0" sourceport="p9" targetport="p1">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Initialization.EnsureModelsArePresent]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.App]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1619,1154" />
+          <y:Bend Location="1627.76166666667,1145.23833333333" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e140" source="n52" target="n54" sourceport="p10" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.MainWindow]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.App]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1543.78333333333,1578.78333333333" />
+          <y:Bend Location="1606,1641" />
+          <y:Bend Location="2426,1641" />
+          <y:Bend Location="2442.75133333333,1657.75133333333" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e141" source="n54" target="n12" sourceport="p1" targetport="p7">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Memory.Remember]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.MainWindow]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="88,23">
+            <y:Label.Text>Memories</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2375.47066666667,1696.47066666667" />
+          <y:Bend Location="2366,1687" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e142" source="n54" target="n12" sourceport="p2" targetport="p8">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Memory.Remember]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.MainWindow]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2409.111,1675.111" />
+          <y:Bend Location="2395,1661" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e143" source="n54" target="n6" sourceport="p3" targetport="p5">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.State.ModelState]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.MainWindow]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="102,23">
+            <y:Label.Text>ModelState</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2476.39166666667,1143.39166666667" />
+          <y:Bend Location="2412,1079" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e144" source="n54" target="n6" sourceport="p4" targetport="p6">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.State.ModelState]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.MainWindow]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2510.032,1080.532" />
+          <y:Bend Location="2446,1016.5" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e145" source="n54" target="n15" sourceport="p5" targetport="p7">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.State.EmbedderState]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.MainWindow]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="139,23">
+            <y:Label.Text>EmbedderState</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e146" source="n54" target="n15" sourceport="p6" targetport="p8">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.State.EmbedderState]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.MainWindow]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e147" source="n54" target="n14" sourceport="p7" targetport="p8">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Memory.MiniEmbedder]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.MainWindow]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="129,23">
+            <y:Label.Text>MiniEmbedder</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2543.67233333333,1030.67233333333" />
+          <y:Bend Location="2479,966" />
+          <y:Bend Location="746,966" />
+          <y:Bend Location="700,1012" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e148" source="n54" target="n14" sourceport="p8" targetport="p9">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Memory.MiniEmbedder]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.MainWindow]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2644.59333333333,683.593333333333" />
+          <y:Bend Location="2580,619" />
+          <y:Bend Location="662,619" />
+          <y:Bend Location="597.496666666667,683.503333333333" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e149" source="n54" target="n3" sourceport="p9" targetport="p11">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Interact.LinearCommunication]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.MainWindow]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="195,23">
+            <y:Label.Text>LinearCommunication</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2610.953,722.047" />
+          <y:Bend Location="2634,699" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e150" source="n54" target="n3" sourceport="p10" targetport="p12">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Interact.LinearCommunication]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.MainWindow]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2577.31266666667,707.687333333333" />
+          <y:Bend Location="2606,679" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e151" source="n54" target="n44" sourceport="p11" targetport="p0">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Utility.Base64e]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.MainWindow]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2391.555,1909.445" />
+          <y:Bend Location="2381,1920" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e152" source="n54" target="n1" sourceport="p12" targetport="p15">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.Constants]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.MainWindow]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2608.445,2369.555" />
+          <y:Bend Location="2544,2434" />
+          <y:Bend Location="483,2434" />
+          <y:Bend Location="478.75,2429.75" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e153" source="n54" target="n17" sourceport="p13" targetport="p3">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.SD.Diffusion]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.MainWindow]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2463.85166666667,1999.64833333333" />
+          <y:Bend Location="2437,2026.5" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e154" source="n54" target="n18" sourceport="p14" targetport="p2">
+      <data key="d15"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.SD.DiffusionOptions]]></data>
+      <data key="d16"><![CDATA[f2fefc90-67ba-42ff-bb5d-82c7f6565bfd%28OLLM%29-13%5Bnet10.0-windows%5D/T%3AOLLM.MainWindow]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2536.14833333333,2112.85166666667" />
+          <y:Bend Location="2489,2160" />
+        </x:List>
+      </data>
+    </edge>
+  </graph>
+</graphml>

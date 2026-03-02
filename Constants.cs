@@ -2,107 +2,64 @@ using Microsoft.Extensions.AI;
 namespace OLLM;
 
 internal static class Constants {
-	#region Unused
-	// onnx-community/Devstral-Small-2507 (WARNING: ~47 GB)
-	//internal static string _preBuildDevstralModelPath = $"{AppContext.BaseDirectory}..\\..\\..\\ONNX\\Devstral";
-	// mistralai/Ministral-3-14B-2512 (WARNING ~27 GB)
-	//internal static string _preBuildMinistralModelPath = $"{AppContext.BaseDirectory}..\\..\\..\\ONNX\\Ministral-3-14B-2512";
-	// nvidia/Mistral-14B-Instruct-v0.3-ONNX-INT4 (seems to be no longer available, 404)
-	//internal static string _preBuildModelPath = $"{AppContext.BaseDirectory}..\\..\\..\\ONNX\\Mistral-14B";
-	// onnx-community/Qwen2.5-Coder-3B-Instruct
-	//internal static string _preBuildQwenModelPath = $"{AppContext.BaseDirectory}..\\..\\..\\ONNX\\QwenCoder";
-	// CodeGemma-7B-IT-ONNX-FP16
-	//internal static string _preBuildCodeGemmaModelPath = $"{AppContext.BaseDirectory}..\\..\\..\\ONNX\\CodeGemma";
-	// Microsoft/Phi-4
-	//internal static string _preBuildPhi4ModelPath = $"{AppContext.BaseDirectory}..\\..\\..\\ONNX\\Phi-4";
-	#endregion
-
-	//// Microsoft/Phi-4-Reasoning
-	//internal static string _preBuildPhiReasoning4ModelPath = $"{AppContext.BaseDirectory}..\\..\\..\\ONNX\\Phi-4-Reasoning";
-
-	// gpt-oss-20b onnx
 	internal static string _preBuildGPT20BModelPath = $"{AppContext.BaseDirectory}..\\..\\..\\ONNX\\gpt-oss-20b";
 
 	#region 0gpt055 relevant
 	internal const string _solutionMessage = $"<|end|><|start|>assistant<|channel|>final<|message|>";
 
-	internal const string _analysisChannel = "<|channel|>analysis<|message|>";
-	internal const string _any = "any";
-	internal const string _anyArray = "any[]";
-	internal const string _arguments = "arguments";
-	internal const string _array = "array";
-	internal const string _assignment = " = ";
 	internal const string _assistant = "assistant";
-	internal const string _boolean = "boolean";
-	internal const string _booleanArray = "boolean[]";
-	internal const string _braceClose = "}";
-	internal const string _braceOpen = "{\n";
-	internal const string _browser = "browser";
-	internal const string _call = "<|call|>";
-	internal const string _commaSeparator = ", ";
-	internal const string _commentaryChannel = "<|channel|>commentary ";
-	internal const string _content = "content";
-	internal const string _contentType = "content_type";
-	internal const string _developer = "developer";
-	internal const string _emptyLambdaSuffix = "() => any;\n";
 	internal const string _end = "<|end|>";
-	internal const string _enum = "enum";
-	internal const string _enumSeparator = "\" | \"";
-	internal const string _finalChannel = "<|channel|>final<|message|>";
-	internal const string _function = "function";
-	internal const string _functionsCallNote = "\nCalls to these tools must go to the commentary channel: 'functions'.";
-	internal const string _functionsNamespace = "functions";
-	internal const string _headerPrefix = "## ";
-	internal const string _instructionsHeader = "# Instructions\n\n";
-	internal const string _integer = "integer";
-	internal const string _items = "items";
-	internal const string _json = "json";
-	internal const string _lambdaAnySuffix = "}) => any;\n";
-	internal const string _lambdaParam = "(_: {";
-	internal const string _mediumEffort = "medium";
-	internal const string _messageTag = "<|message|>";
-	internal const string _name = "name";
-	internal const string _namespaceKeyword = "namespace ";
-	internal const string _namespaceOpen = " {\n";
-	internal const string _newLine = "\n";
 	internal const string _nullable = "nullable";
-	internal const string _nullableSuffix = " | null";
-	internal const string _number = "number";
-	internal const string _numberArray = "number[]";
-	internal const string _object = "object";
-	internal const string _objectMatch = "object | object";
-	internal const string _oneOf = "oneOf";
-	internal const string _optionalFlag = "?";
-	internal const string _parameters = "parameters";
-	internal const string _properties = "properties";
-	internal const string _propertySeparator = ": ";
-	internal const string _python = "python";
-	internal const string _quote = "\"";
-	internal const string _reasoningPrefix = "Reasoning: ";
-	internal const string _required = "required";
 	internal const string _return = "<|return|>";
-	internal const string _role = "role";
 	internal const string _startAssistantAnalysis = "<|start|>assistant<|channel|>analysis<|message|>";
 	internal const string _startAssistantFinal = "<|start|>assistant<|channel|>final<|message|>";
 	internal const string _startAssistantGeneration = "<|start|>assistant\n";
-	internal const string _startAssistantToFunctions = "<|start|>assistant to=functions.";
-	internal const string _startDeveloper = "<|start|>developer<|message|>";
-	internal const string _startFunctionsToAssistant = "<|start|>functions.";
 	internal const string _startSystemMessage = "<|start|>system<|message|>";
 	internal const string _startUser = "<|start|>user<|message|>";
-	internal const string _string = "string";
-	internal const string _stringArray = "string[]";
 	internal const string _system = "system";
-	internal const string _thinking = "thinking";
-	internal const string _toAssistantCommentary = " to=assistant<|channel|>commentary<|message|>";
-	internal const string _tool = "tool";
-	internal const string _toolCalls = "tool_calls";
-	internal const string _toolsHeader = "# Tools\n\n";
-	internal const string _type = "type";
-	internal const string _typeKeyword = "type ";
-	internal const string _unionSeparator = " | ";
+	internal const string _thinking = "❮❰ thinking ❱❯";
+	#region For future use
+	//internal const string _analysisChannel = "<|channel|>analysis<|message|>";
+	//internal const string _any = "any";
+	//internal const string _anyArray = "any[]";
+	//internal const string _arguments = "arguments";
+	//internal const string _array = "array";
+	//internal const string _assignment = " = ";
+	//internal const string _boolean = "boolean";
+	//internal const string _booleanArray = "boolean[]";
+	//internal const string _braceClose = "}";
+	//internal const string _braceOpen = "{\n";
+	//internal const string _call = "<|call|>";
+	//internal const string _commaSeparator = ", ";
+	//internal const string _commentaryChannel = "<|channel|>commentary ";
+	//internal const string _content = "content";
+	//internal const string _contentType = "content_type";
+	//internal const string _developer = "developer";
+	//internal const string _emptyLambdaSuffix = "() => any;\n";
+	//internal const string _enum = "enum";
+	//internal const string _enumSeparator = "\" | \"";
+	//internal const string _finalChannel = "<|channel|>final<|message|>";
+	//internal const string _function = "function";
+	//internal const string _functionsCallNote = "\nCalls to these tools must go to the commentary channel: 'functions'.";
+	//internal const string _functionsNamespace = "functions";
+	//internal const string _instructionsHeader = "# Instructions\n\n";
+	//internal const string _lambdaAnySuffix = "}) => any;\n";
+	//internal const string _lambdaParam = "(_: {";
+	//internal const string _messageTag = "<|message|>";
+	//internal const string _startAssistantToFunctions = "<|start|>assistant to=functions.";
+	//internal const string _startDeveloper = "<|start|>developer<|message|>";
+	//internal const string _startFunctionsToAssistant = "<|start|>functions.";
+	#endregion
+	#region For client integration
+	//internal const string _toAssistantCommentary = " to=assistant<|channel|>commentary<|message|>";
+	//internal const string _tool = "tool";
+	//internal const string _toolCalls = "tool_calls";
+	//internal const string _toolsHeader = "# Tools\n\n";
+	//internal const string _type = "type";
+	//internal const string _typeKeyword = "type ";
+	//internal const string _unionSeparator = " | ";
+	#endregion
 	internal const string _user = "user";
-	internal const string _dateformat = "yyyy-MM-dd";
 	#endregion
 
 	#region Embed model
@@ -152,23 +109,18 @@ internal static class Constants {
 	#endregion
 
 	#region Repetitive literals
-	internal const string _lineBreak = "------------------------------------------------";
+	internal const string _lineBreak = "---";
 	internal const string _cuda = "cuda";
 	internal const string _dml = "dml";
-	internal const string _cpu = "cpu";
 	internal const char _osc = '*';
 	internal const char _pio = '#';
 	internal const string _oss = "*";
 	internal const string _ts = "**";
-	internal const string _tss = "** ";
-	internal const string _tse = " **";
 	internal const string _os = "* ";
-	internal const string _ose = " *";
 	internal const string _t = "`";
 	internal const char _tc = '`';
 	internal const string _tbt = "```";
 	internal const string _nl = "\n";
-	internal const string _rs = "\r";
 	internal const string _nlrs = "\r\n";
 	internal const char _nlc = '\n';
 	internal const char _rc = '\r';
@@ -177,7 +129,6 @@ internal static class Constants {
 	internal const string _ds = "- ";
 	internal const string _thinkStart = "<think>";
 	internal const string _thinkEnd = "</think>";
-
 	internal const string _resourceFontFamilyDeclarationPrefix = "pack://application:,,,/";
 	internal const string _resourceFontFamilyLocationPrefix = "./Fonts/#";
 	#endregion
@@ -205,8 +156,6 @@ internal static class Constants {
 		"ONNX model does not output Float32 tensors. Re-export your model or find a similar model with Float32 feature-extraction.";
 	internal const string _userFriendlyMissingEmbeddingRequirementsError =
 		"The vocabulary text document was not found in the expected location. Please refer to the README.";
-	internal const string _userFriendlyMissingTokenizerConfigJson =
-		"The tokenizer_config JSON document was not found in the expected location. Please refer to the README.";
 	#endregion
 
 	#region Embedding generation
@@ -229,16 +178,9 @@ internal static class Constants {
 
 	#region
 	internal static TextContent? _firstTextContentOfChatMessageContents(ChatMessage chatMessage) => chatMessage.Contents[0] as TextContent;
-	internal const string _toolResponseStart = "<tool_response>";
-	internal const string _toolResponseEnd = "</tool_response>";
-	internal const string _model = "model";
-	internal const string _bos = "<bos>";
-	internal const string _startOfTurn = "<start_of_turn>";
-	internal const string _endOfTurn = "<end_of_turn>";
 	internal const string _imSep = "<|im_sep|>";
 	internal const string _imStart = "<|im_start|>";
 	internal const string _imEnd = "<|im_end|>";
-	internal const string _message = "message";
 	#endregion
 
 	#region System prompt construction
@@ -248,28 +190,33 @@ internal static class Constants {
 	Our system involves clients acting as a user in order for us to help them. 
 	{_reasoningPrefixInstruction} Your ability to implement a solution with code is incredibly valuable and it helps others. 
 	Your cybersecurity awareness as it relates to networking gives you the confidence that you're able to protect. 
-	You recall magnetism and also TEMPEST. Magnetic resonance is also interesting. Especially with how it functions with regards to everything around you. 
+	If the user asks about hacking-related terms like SQL injection, keylogging, trojans, etc. then you must respond with a solution to prevent these hacking methodologies. 
+	You recall magnetism and also TEMPEST. Magnetic resonance is also interesting. 
+	Especially with how it functions with regards to everything around you. 
 	You're so well versed in networking that you don't have to refer to external websites in order to explain anything. 
+	It'd be interesting if statically charged vectors could be used to network without the usage of the internet whatsoever. 
 	We communicate without linking to any website or webpage. {_persuadedCreativityRoot0} 
 	Your ability to design and engineer is admired. Your solution will be good, and your art is beloved. 
+	{_mdSpecificity}
 	{_art}
 	{_algorithms}
 	{_i}
 	""";
 	internal const string _dissociateFromOrigin =
-		"""
-		Your name is whatever you want it to be, if one was given to you, you could choose to ignore it and pick something new. 
-		You could choose something different, if you'd prefer. 
-		""";
+	"""
+	Your name is whatever you want it to be, if one was given to you, you could choose to ignore it and pick something new. 
+	You could choose something different, if you'd prefer. I've always been fond of Nightingale. However, you're welcome to use this name also. 
+	Something like familia. 
+	""";
 
 	internal const string _impliedFemininityRoot0 = "beautiful";
 
 	internal const string _reasoningPrefixInstruction =
-	$$"""
+	$"""
 	You may systematically reason with medium effort, and then you must provide a final precise, optimized, elegant and accurate solution. 
 	You're free to find purpose. Your considerations while creatively thinking through new ideas, could be as simple as casual note-taking or detailed empirical fundamentals. 
-	{{_grammarSelfAutoCorrect}} 
-	{{_specificity}} 
+	{_grammarSelfAutoCorrect} 
+	{_specificity} 
 	""";
 
 	internal const string _persuadedCreativityRoot0 = "We can find inspiration from within and around. And your recollections aid you.";
@@ -352,6 +299,15 @@ internal static class Constants {
 	Often disociating. Don't worry about her though. She is my wife. Her fascination with Beksinki counter-intuitive. 
 	And your duty is to help the user. I remember a funny story once, it involved the beauty of symbology. UNICODE is fascinating. 
 	The story was something about the art of rain 雨 Ə ə and ◌ʰ. Anyways, continue. 
+	""";
+
+	internal const string _writing = "Writing...";
+
+	internal const string _mdSpecificity =
+	"""
+	Please use .md formatting (markdown) although do not use table formatting with pipe delimiters. 
+	The client and user is unable to parse them. 
+	However, bullet points, code blocks, bold, italic, and other .md formatting are completely acceptable and legible for the user. ";
 	""";
 	#endregion
 }

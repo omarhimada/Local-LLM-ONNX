@@ -6,7 +6,6 @@ namespace OLLM.Utility.ModelSpecific;
 
 using static Constants;
 internal class Ogpt055 {
-
 	internal static readonly JsonSerializerOptions JsonOptions = new() { WriteIndented = false };
 
 	internal static string RenderTemplate(ChatMessage[] messages,
@@ -16,8 +15,6 @@ internal class Ogpt055 {
 		StringBuilder construct = new();
 
 		construct.Append(_startSystemMessage);
-
-		int startIndex = 0;
 
 		#region For potential client integrations
 		//bool hasTools =
@@ -41,7 +38,7 @@ internal class Ogpt055 {
 		//string? lastToolCallName;
 		#endregion
 
-		for (int i = startIndex; i < messages.Length; i++) {
+		for (int i = 0; i < messages.Length; i++) {
 			ChatMessage message = messages[i];
 			ChatRole role = messages[i].Role;
 			bool isLast = (i == messages.Length - 1);
@@ -138,106 +135,6 @@ internal class Ogpt055 {
 		return construct.ToString();
 	}
 
-	internal string RenderTypeScriptType(JsonElement paramSpec, HashSet<string> requiredParams, bool isNullable = false) {
-		StringBuilder sb = new();
-		bool hasType = paramSpec.TryGetProperty(_type, out JsonElement typeProp);
-
-		if (hasType && typeProp.ValueKind == JsonValueKind.String && typeProp.GetString() == _array) {
-			if (paramSpec.TryGetProperty(_items, out JsonElement itemsProp) && itemsProp.ValueKind != JsonValueKind.Null) {
-				if (itemsProp.TryGetProperty(_type, out JsonElement itemTypeProp) && itemTypeProp.ValueKind == JsonValueKind.String) {
-					string? itemType = itemTypeProp.GetString();
-					switch (itemType) {
-						case _string:
-							sb.Append(_stringArray);
-							break;
-						case _number:
-						case _integer:
-							sb.Append(_numberArray);
-							break;
-						case _boolean:
-							sb.Append(_booleanArray);
-							break;
-						default:
-							string inner = RenderTypeScriptType(itemsProp, requiredParams);
-							sb.Append(inner == _objectMatch || inner.Length > 50 ? _anyArray : $"{inner}[]");
-							break;
-					}
-				} else {
-					string inner = RenderTypeScriptType(itemsProp, requiredParams);
-					sb.Append(inner == _objectMatch || inner.Length > 50 ? _anyArray : $"{inner}[]");
-				}
-			} else {
-				sb.Append(_anyArray);
-			}
-
-			if (GetNullable(paramSpec) || isNullable)
-				sb.Append(_nullableSuffix);
-		} else if (hasType && typeProp.ValueKind == JsonValueKind.Array && typeProp.GetArrayLength() > 0) {
-			sb.Append(string.Join(_unionSeparator, typeProp.EnumerateArray().Select(t => t.GetString())));
-		} else if (paramSpec.TryGetProperty(_oneOf, out JsonElement oneOfProp) && oneOfProp.ValueKind == JsonValueKind.Array) {
-			bool hasObjectVariants = oneOfProp.EnumerateArray().Any(v => v.TryGetProperty(_type, out JsonElement t) && t.GetString() == _object);
-			if (hasObjectVariants && oneOfProp.GetArrayLength() > 1) {
-				sb.Append(_any);
-			} else {
-				sb.Append(string.Join(_unionSeparator, oneOfProp.EnumerateArray().Select(v => RenderTypeScriptType(v, requiredParams))));
-			}
-		} else if (hasType && typeProp.ValueKind == JsonValueKind.String) {
-			string typeStr = typeProp.GetString()!;
-			switch (typeStr) {
-				case _string:
-					if (paramSpec.TryGetProperty(_enum, out JsonElement enumProp) && enumProp.ValueKind == JsonValueKind.Array) {
-						sb.Append(_quote).Append(string.Join(_enumSeparator, enumProp.EnumerateArray().Select(e => e.GetString()))).Append(_quote);
-					} else {
-						sb.Append(_string);
-						if (GetNullable(paramSpec) || isNullable)
-							sb.Append(_nullableSuffix);
-					}
-					break;
-				case _number:
-				case _integer:
-					sb.Append(_number);
-					break;
-				case _boolean:
-					sb.Append(_boolean);
-					break;
-				case _object:
-					if (paramSpec.TryGetProperty(_properties, out JsonElement propsProp) && propsProp.ValueKind == JsonValueKind.Object) {
-						sb.Append(_braceOpen);
-						HashSet<string> reqList = [];
-						if (paramSpec.TryGetProperty(_required, out JsonElement reqProp) && reqProp.ValueKind == JsonValueKind.Array) {
-							JsonElement.ArrayEnumerator reqPropEnumerated = reqProp.EnumerateArray();
-							IEnumerable<string?> reqPropEnumeratedStrings = reqPropEnumerated.Select(r => r.GetString());
-							IEnumerable<string> reqPropEnumeratedNonNullStrings = reqPropEnumeratedStrings.Where(s => s != null)!;
-
-							reqList = [.. reqPropEnumeratedNonNullStrings];
-						}
-
-						List<JsonProperty> props = propsProp.EnumerateObject().ToList();
-						for (int i = 0; i < props.Count; i++) {
-							JsonProperty prop = props[i];
-							sb.Append(prop.Name);
-							if (!reqList.Contains(prop.Name))
-								sb.Append(_optionalFlag);
-							sb.Append(_propertySeparator).Append(RenderTypeScriptType(prop.Value, reqList));
-							if (i < props.Count - 1)
-								sb.Append(_commaSeparator);
-						}
-						sb.Append(_braceClose);
-					} else {
-						sb.Append(_object);
-					}
-					break;
-				default:
-					sb.Append(_any);
-					break;
-			}
-		} else {
-			sb.Append(_any);
-		}
-
-		return sb.ToString();
-	}
-
 	#region For client integrations
 	//internal string RenderToolNamespace(string namespaceName, JsonElement tools) {
 	//	StringBuilder sb = new();
@@ -272,7 +169,4 @@ internal class Ogpt055 {
 	//	return sb.ToString();
 	//}
 	#endregion
-
-	private bool GetNullable(JsonElement paramSpec) =>
-		paramSpec.TryGetProperty(_nullable, out JsonElement prop) && prop.ValueKind == JsonValueKind.True;
 }

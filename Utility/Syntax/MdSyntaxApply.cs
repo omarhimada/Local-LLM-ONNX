@@ -9,11 +9,11 @@ internal static class MdSyntaxApply {
 	internal static Block RenderCodeBlock(
 		string code,
 		string? fenceLang,
-		double fontSize = 14) {
+		double fontSize = 12) {
 		LanguageDefinition lang = LanguageRegistry.Resolve(fenceLang);
 
 		Section section = new() {
-			Margin = new Thickness(0, 8, 0, 8)
+			Padding = new Thickness(4, 4, 4, 4)
 		};
 
 		Paragraph codeBlockPara = new() {

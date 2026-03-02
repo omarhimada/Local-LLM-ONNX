@@ -8,7 +8,7 @@
 		<AssemblyTitle>OLLM</AssemblyTitle>
 		<ApplicationIcon>.Images\iconv1.ico</ApplicationIcon>
 		<EnableGamingTargetSupport>false</EnableGamingTargetSupport>
-		<RepositoryUrl>https://github.com/omarhimada/OnnxLocalLLM</RepositoryUrl>
+		<RepositoryUrl>https://github.com/readydos/Local-LLM-ONNX</RepositoryUrl>
 		<PackageTags>llm;ml.net;ml;ai;chat;rag;vector;onnx;local;embed</PackageTags>
 		<IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
 		<WarningsAsErrors>False</WarningsAsErrors>
@@ -51,6 +51,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Compile Remove="learn_attempt_2.cs" />
 		<Compile Remove="Utility\ModelSpecific\CodeGemma.cs" />
 		<Compile Remove="Utility\ModelSpecific\Mistral.cs" />
 		<Compile Remove="Utility\ModelSpecific\QwenCoder.cs" />
@@ -62,6 +63,8 @@
 		<None Remove="Fonts\overpass-mono-light.otf" />
 		<None Remove="Fonts\overpass-mono-regular.otf" />
 		<None Remove="Fonts\overpass-mono-semibold.otf" />
+		<None Remove="learn_attempt_0.txt" />
+		<None Remove="learn_attempt_1.txt" />
 	</ItemGroup>
 
 	<ItemGroup>

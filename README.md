@@ -1,8 +1,11 @@
 # OLLM
-- **Completely local** LLM chat desktop application that uses the *ONNX Generative AI Runtime*. **Does not make any networking requests outside of the local machine.**
-- **Zero HTTP** *(e.g.: API calls to OpenAI, Gemini)*, **zero REST API middle-layer** *(e.g.: GPT4All)* **zero WebSocket middle-layer** *(Ollama, LM Studio, etc.)*.
+- **Completely local** LLM chat desktop application that uses the *ONNX Generative AI Runtime*. 
+- **Does not make any networking requests outside of the local machine.**
+- **Zero HTTP** *(e.g.: API calls to OpenAI, Gemini)*, 
+- **Zero REST API middle-layer** *(e.g.: GPT4All)* 
+- **Zero WebSocket middle-layer** *(Ollama, LM Studio, etc.)*.
 - Loads a local LLM model. 
-- The latest release utilizes **Phi-4-Reasoning** from Microsoft.
+- The latest release utilizes **gpt-oss-20b**.
 
 ![Reasoning example GIF](.Images/ReasoningExample.gif)
 
@@ -25,10 +28,9 @@
 
 ### Setup
 - Your directory setup should look something like the diagram below, although the `model.onnx` and `model.onnx_data` will be absent. This is due to size (gigabytes).
- - See [**Microsoft's Phi-4-Reasoning** @ huggingface](https://huggingface.co/microsoft/Phi-4-reasoning-onnx/tree/main/gpu/gpu-int4-rtn-block-32) to download the `model.onnx` and `model.onnx_data`.
 ```
         ,______________________________________________________
-        | OnnxLocalLLM\ONNX\Phi-4-Reasoning
+        | OnnxLocalLLM\ONNX\gpt-oss-20b
         |
         | model.onnx        <------------------ Download this 
         | model.onnx_data   <------------------ Download this 

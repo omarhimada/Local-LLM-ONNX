@@ -18,8 +18,6 @@ using static MdFd;
 /// </summary>
 public sealed class FloatingAdorner : Adorner {
 	// For creating logs of their thinking so we can correct with instructions.
-	internal string GetBodyText() => _body.Text;
-
 	private readonly VisualCollection _visuals;
 
 	// Obstruction layer (blurred snapshot + dim tint)
@@ -34,9 +32,9 @@ public sealed class FloatingAdorner : Adorner {
 	private readonly TextBlock _body;
 
 	// Auto-scroll / batching
-	private readonly DispatcherTimer _flushTimer;
+	private readonly DispatcherTimer _writeBufferTimer;
 	private string _pending = string.Empty;
-	private bool _dirty;
+	private bool _canAppend;
 
 	public FloatingAdorner(UIElement adornedElement) : base(adornedElement) {
 		_visuals = new VisualCollection(this);
@@ -113,7 +111,12 @@ public sealed class FloatingAdorner : Adorner {
 				Children =
 				{
 					_title,
-					new Border { Height = 1, Margin = new Thickness(0, 3, 0, 3), Background = _readyDosPurple, Opacity = 1 },
+					new Border {
+						Height = 1,
+						Margin = new Thickness(0, 3, 0, 3),
+						Background = _readyDosPurple,
+						Opacity = 1
+					},
 					_scroll
 				}
 			},
@@ -124,27 +127,36 @@ public sealed class FloatingAdorner : Adorner {
 					new ScaleTransform(1,1),
 					new TranslateTransform(0,0)
 				]
-
 			},
 			Opacity = 0
 		};
 
-		_flushTimer = new DispatcherTimer(DispatcherPriority.Background) {
-			Interval = TimeSpan.FromMilliseconds(48)
+		_writeBufferTimer = new DispatcherTimer(DispatcherPriority.Normal) {
+			Interval = TimeSpan.FromMilliseconds(80)
 		};
-		_flushTimer.Tick += (_, _) => {
-			if (!_dirty)
+		_writeBufferTimer.Tick += (_, _) => {
+			if (!_canAppend)
 				return;
-			_dirty = false;
-			FlushPendingToUi();
+			_canAppend = false;
+			WriteBufferedToUI();
 		};
 
 		_visuals.Add(_veilRoot);
 		_visuals.Add(_bubble);
 	}
 
-	public void SetTitle(string title)
-		=> _title.Text = title;
+	private void WriteBufferedToUI() {
+		string text = _pending;
+		if (string.IsNullOrEmpty(text))
+			return;
+
+		_pending = string.Empty;
+
+		Application.Current.Dispatcher.InvokeAsync(() => {
+			_body.Text += text;
+			AutoScrollToBottom();
+		}, DispatcherPriority.Background);
+	}
 
 	public void SetText(string text) {
 		_body.Text = text;
@@ -156,23 +168,11 @@ public sealed class FloatingAdorner : Adorner {
 			return;
 
 		_pending += chunk;
-		_dirty = true;
+		_canAppend = true;
 
-		if (!_flushTimer.IsEnabled)
-			_flushTimer.Start();
-	}
-
-	private void FlushPendingToUi() {
-		string text = _pending;
-		if (string.IsNullOrEmpty(text))
-			return;
-
-		_pending = string.Empty;
-
-		Application.Current.Dispatcher.InvokeAsync(() => {
-			_body.Text += text;
-			AutoScrollToBottom();
-		}, DispatcherPriority.Background);
+		if (!_writeBufferTimer.IsEnabled) {
+			_writeBufferTimer.Start();
+		}
 	}
 
 	private void AutoScrollToBottom() {
@@ -233,9 +233,9 @@ public sealed class FloatingAdorner : Adorner {
 
 	public async Task AnimateOut() {
 		await Application.Current.Dispatcher.InvokeAsync(new Action(() => {
-			_flushTimer.Stop();
+			_writeBufferTimer.Stop();
 			_pending = string.Empty;
-			_dirty = false;
+			_canAppend = false;
 
 			DoubleAnimation veilFade = new(0, TimeSpan.FromMilliseconds(140));
 			_veilRoot.BeginAnimation(OpacityProperty, veilFade);

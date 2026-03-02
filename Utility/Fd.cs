@@ -1,5 +1,6 @@
 using OLLM.Utility.Syntax;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Documents;
 
 namespace OLLM.Utility;
@@ -25,8 +26,11 @@ internal static class Fd {
 				case CodeFdBlockMd c:
 					doc.Blocks.Add(MdSyntaxApply.RenderCodeBlock(
 						c.Code,
-						c.Lang,
-						14d));
+						c.Lang));
+					break;
+
+				case LineBreakMdBlock lb:
+					doc.Blocks.Add(new BlockUIContainer(new Separator { Height = 1, Margin = new Thickness(2, 8, 2, 8) }));
 					break;
 			}
 		}
@@ -68,18 +72,6 @@ internal static class Fd {
 		}
 
 		return list;
-	}
-
-	internal static Paragraph RenderCodeBlock(CodeFdBlockMd c) {
-		Paragraph para = new(new Run(c.Code)) {
-			FontFamily = _fontFamily0x,
-			Background = _black,
-			Foreground = _readyDosPink,
-			Padding = new Thickness(10),
-			Margin = new Thickness(0, 8, 0, 8),
-			LineHeight = 14,
-		};
-		return para;
 	}
 
 	internal static IEnumerable<Inline> RenderInlines(IEnumerable<InlineSpan> spans) {

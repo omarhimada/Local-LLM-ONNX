@@ -16,8 +16,9 @@
         <!-- Brand colors -->
         <SolidColorBrush x:Key="ReadyDOSOrange" Color="#FCA469" options:Freeze="True" />
         <SolidColorBrush x:Key="ReadyDOSPurple" Color="#3C2491" options:Freeze="True" />
-        <SolidColorBrush x:Key="ReadyDOSPink" Color="#ECB3CD" options:Freeze="True" />
-        <!-- Gray -->
+		<SolidColorBrush x:Key="ReadyDOSPink" Color="#ECB3CD" options:Freeze="True" />
+		<SolidColorBrush x:Key="Black" Color="#000000" options:Freeze="True" />
+		<!-- Gray -->
         <SolidColorBrush x:Key="DarkerSCB" Color="#050505" options:Freeze="True" />
         <SolidColorBrush x:Key="DarkSCB" Color="#171717" options:Freeze="True" />
         <SolidColorBrush x:Key="GraySCB" Color="#747474" options:Freeze="True"/>
@@ -78,7 +79,7 @@
             </Setter>
         </Style>
         <Style x:Key="TextBoxStyle" TargetType="{x:Type TextBox}">
-            <Setter Property="Background" Value="{StaticResource DarkerSCB}"/>
+			<Setter Property="Background" Value="{StaticResource Black}"/>
             <Setter Property="BorderBrush" Value="{StaticResource ReadyDOSPurple}"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="CaretBrush" Value="{StaticResource LightSCB}"/>
@@ -91,7 +92,7 @@
             <Setter Property="Margin" Value="0,0,0,0"/>
             <Setter Property="MaxHeight" Value="256" />
             <Setter Property="MinWidth" Value="800" />
-            <Setter Property="Padding" Value="0,0,0,0"/>
+            <Setter Property="Padding" Value="8,8,8,8"/>
             <Setter Property="SelectionBrush" Value="{StaticResource GraySCB}"/>
             <Setter Property="SelectionTextBrush" Value="{StaticResource LightSCB}"/>
             <Setter Property="TextWrapping" Value="Wrap" />
@@ -126,7 +127,7 @@
             </Setter>
         </Style>
         <Style x:Key="RichTextBoxStyle" TargetType="{x:Type RichTextBox}">
-            <Setter Property="Background" Value="{StaticResource DarkerSCB}"/>
+			<Setter Property="Background" Value="{StaticResource Black}"/>
             <Setter Property="BorderBrush" Value="{StaticResource ReadyDOSPurple}"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="CaretBrush" Value="{StaticResource LightSCB}"/>
@@ -139,7 +140,7 @@
             <Setter Property="Margin" Value="0,0,0,0"/>
             <Setter Property="MinHeight" Value="256" />
             <Setter Property="MinWidth" Value="800" />
-            <Setter Property="Padding" Value="0,0,0,0"/>
+            <Setter Property="Padding" Value="8,8,8,8"/>
             <Setter Property="SelectionBrush" Value="{StaticResource GraySCB}"/>
             <Setter Property="SelectionTextBrush" Value="{StaticResource LightSCB}"/>
             <Setter Property="VerticalAlignment" Value="Stretch" />
@@ -180,7 +181,7 @@
 	                  GlassFrameThickness="0"/>
     </WindowChrome.WindowChrome>
     <Border x:Name="Boundary" BorderThickness="1" BorderBrush="{StaticResource ReadyDOSPurple}">
-        <Grid x:Name="OuterGrid" Background="Black">
+		<Grid x:Name="OuterGrid" Background="{StaticResource DarkSCB}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="*"/>
@@ -202,7 +203,7 @@
                     FontFamily="pack://application:,,,/Fonts/#0xProto"
                     ToolTip="Lowers the temperature hyperparameter. Useful for producing code." 
                     Background="Black" 
-                    IsChecked="True" 
+                    IsChecked="False" 
                     BorderBrush="#FF414141" 
                     Padding="5,0,0,0" 
                     WindowChrome.IsHitTestVisibleInChrome="True"
@@ -228,19 +229,8 @@
                          Style="{StaticResource TextBoxStyle}" />
 
                 <StackPanel x:Name="ButtonsPanel" 
-                            Grid.Row="1"
-                            Orientation="Horizontal" HorizontalAlignment="Center" Width="818">
-
-                    <ProgressBar x:Name="Thinking" Height="10" MinWidth="52" HorizontalAlignment="Stretch"
-								 Foreground="#FFA4FFCE" 
-								 Background="{x:Null}" 
-								 VerticalAlignment="Center"
-								 BorderThickness="0,0,0,0" 
-								 FlowDirection="RightToLeft" 
-								 IsEnabled="False" 
-								 Visibility="Hidden" 
-								 IsIndeterminate="True" 
-								 IsHitTestVisible="False"/>
+                            Grid.Row="1" 
+                            Orientation="Horizontal" Width="Auto" HorizontalAlignment="Center">
 
                     <Button x:Name="ChatButton" Content=" chat " IsDefault="True" 
 							Click="ChatButtonClick" AutomationProperties.Name="ChatButton"

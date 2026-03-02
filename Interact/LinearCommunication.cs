@@ -13,7 +13,6 @@ using OLLM.Memory;
 using OLLM.Utility.ModelSpecific;
 using State;
 using State.Thinking;
-using System.IO;
 using Utility;
 using static Constants;
 
@@ -46,7 +45,8 @@ internal partial class LinearCommunication(ModelState modelState, Remember? _mem
 		if (_thought is null || ct.IsCancellationRequested) {
 			return;
 		}
-		_thought.SetText(text);
+
+		_thought.Append(text);
 		await _thought.ShowAtTopRight();
 	}
 
@@ -56,13 +56,9 @@ internal partial class LinearCommunication(ModelState modelState, Remember? _mem
 		}
 
 		await _thought.AnimateOut();
-		await Application.Current.Dispatcher.InvokeAsync(async () => {
-			await Task.Delay(180);
-			File.WriteAllLines($"thinking_{DateTime.UtcNow.Ticks}.log", _thought.GetBodyText().Split(Environment.NewLine));
-			_layer.Remove(_thought);
-			_thought = null;
-			_layer = null;
-		});
+		_layer.Remove(_thought);
+		_thought = null;
+		_layer = null;
 	}
 
 	internal async Task _interact(TextBox userInputText, RichTextBox theirResponse, Button chatButton) {
@@ -85,6 +81,7 @@ internal partial class LinearCommunication(ModelState modelState, Remember? _mem
 			theirResponse.Document = new FlowDocument();
 			chatButton.IsEnabled = true;
 			ToggleInterruptButton();
+			_cts.TryReset();
 		} catch (Exception) {
 			SomethingWentWrong(theirResponse, false);
 		} finally {
@@ -96,8 +93,8 @@ internal partial class LinearCommunication(ModelState modelState, Remember? _mem
 		string systemAndUserMessage = string.Empty;
 		try {
 			List<ChatMessage> chatMessages = [
-				new ChatMessage(ChatRole.System, _defaultInstruction),
-				new ChatMessage(ChatRole.User, userInputText.Trim())
+				new (ChatRole.System, _defaultInstruction),
+				new (ChatRole.User, userInputText.Trim())
 			];
 
 			systemAndUserMessage = Ogpt055.RenderTemplate(chatMessages.ToArray());
@@ -132,7 +129,6 @@ internal partial class LinearCommunication(ModelState modelState, Remember? _mem
 		}, DispatcherPriority.Render, ct);
 
 		await Task.Run(() => {
-
 			using Sequences sequences = modelState.Tokenizer!.Encode(systemAndUserMessage);
 			modelState.SetGeneratorParameterSearchOptions();
 			modelState.RefreshGenerator();
@@ -157,7 +153,7 @@ internal partial class LinearCommunication(ModelState modelState, Remember? _mem
 							if (think.IsCanceled) {
 								theirResponse.Document = new FlowDocument();
 							}
-						}, DispatcherPriority.Normal, ct);
+						}, DispatcherPriority.Render, ct);
 						break;
 					default:
 						// Construct final response
@@ -169,19 +165,19 @@ internal partial class LinearCommunication(ModelState modelState, Remember? _mem
 
 		string response = thinkingTextBuilder.ToString();
 
-		var s = response.Split(_solutionMessage);
+		string[] s = response.Split(_solutionMessage);
 		response = s[1];
 
 		await Application.Current.Dispatcher.InvokeAsync(() => {
 			_ = EndThinkingOverlay(theirResponse);
+			theirResponse.Document = Fd.Render([new ParagraphFdBlockMd([new TextSpan(_writing)])]);
 			theirResponse.ScrollToEnd();
-		}, DispatcherPriority.Normal, ct);
-
-		List<FdBlockMd> finalParagraphBlocks = Md.Parse(response);
+		}, DispatcherPriority.Render, ct);
 
 		await Application.Current.Dispatcher.InvokeAsync(() => {
+			List<FdBlockMd> finalParagraphBlocks = Md.Parse(response);
 			theirResponse.Document = Fd.Render(finalParagraphBlocks);
-			theirResponse.ScrollToEnd();
+			theirResponse.ScrollToHome();
 		}, DispatcherPriority.Render, ct);
 
 		try {
@@ -190,9 +186,9 @@ internal partial class LinearCommunication(ModelState modelState, Remember? _mem
 					_ = _memories?.MemorizeDiscussionAsync(response, ct);
 				}
 			}, DispatcherPriority.Background, ct);
-		} catch (Exception memoryExpception) {
+		} catch (Exception memoryException) {
 			// Continue;
-			MessageBox.Show(memoryExpception.Message);
+			MessageBox.Show(memoryException.Message);
 		}
 	}
 

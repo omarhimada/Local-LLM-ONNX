@@ -44,15 +44,15 @@ public static class Theme {
 
 	public static readonly SolidColorBrush Plain = new(Color.FromRgb(242, 232, 223));
 	public static readonly SolidColorBrush Keyword = new(Color.FromRgb(242, 178, 99));
-	public static readonly SolidColorBrush TypeName = new(Color.FromRgb(1, 175, 210));
-	public static readonly SolidColorBrush String = new(Color.FromRgb(242, 198, 194));
+	public static readonly SolidColorBrush TypeName = new(Color.FromRgb(88, 211, 219));
+	public static readonly SolidColorBrush String = new(Color.FromRgb(193, 168, 224));
 	public static readonly SolidColorBrush Number = new(Color.FromRgb(137, 226, 164));
 	public static readonly SolidColorBrush Comment = new(Color.FromRgb(134, 166, 157));
 	public static readonly SolidColorBrush Punctuation = new(Color.FromRgb(242, 232, 223));
 	public static readonly SolidColorBrush Operator = new(Color.FromRgb(242, 232, 223));
 	public static readonly SolidColorBrush Identifier = new(Color.FromRgb(242, 232, 223));
 	public static readonly SolidColorBrush Preprocessor = new(Color.FromRgb(246, 220, 153));
-	public static readonly SolidColorBrush Attribute = new(Color.FromRgb(242, 198, 194));
+	public static readonly SolidColorBrush Attribute = new(Color.FromRgb(242, 0, 82));
 
 	public static Brush For(TokenKind kind) => kind switch {
 		TokenKind.Keyword => Keyword,

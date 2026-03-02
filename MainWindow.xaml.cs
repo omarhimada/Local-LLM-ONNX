@@ -39,17 +39,13 @@ internal partial class MainWindow : Window {
 	}
 	#endregion
 	internal async void ChatButtonClick(object sender, RoutedEventArgs e) {
-		_thinking();
 		await Task.Yield();
 		await LinearCommunication!._interact(UserInputText, TheirResponse, ChatButton);
-		_doneThinking();
 	}
 
 	internal async void InterruptButtonClick(object sender, RoutedEventArgs e) {
 		await LinearCommunication!._interrupt(TheirResponse, ChatButton);
-		_doneThinking();
 	}
-
 	internal async void SDButtonClick(object sender, RoutedEventArgs e) {
 		try {
 			string positive = Base64e.DecodeFromBase64(_sdPrompt);
@@ -66,7 +62,6 @@ internal partial class MainWindow : Window {
 			}
 			SDButton.IsEnabled = false;
 		}
-		_doneThinking();
 	}
 	internal void CloseButtonClick(object sender, RoutedEventArgs e) => Application.Current.Shutdown();
 
@@ -76,15 +71,4 @@ internal partial class MainWindow : Window {
 		}
 		ModelState?.ExpectingCodeResponse = checkBox.IsChecked ?? false;
 	}
-
-	#region 'thinking' animation
-	private void _thinking() {
-		Thinking.IsEnabled = true;
-		Thinking.Visibility = Visibility.Visible;
-	}
-	private void _doneThinking() {
-		Thinking.IsEnabled = false;
-		Thinking.Visibility = Visibility.Hidden;
-	}
-	#endregion
 }

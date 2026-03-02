@@ -1,7 +1,4 @@
-using SQLitePCL;
 using System.Text;
-using System.Windows.Controls;
-using System.Windows.Documents;
 
 namespace OLLM.Utility;
 
@@ -57,12 +54,15 @@ public static class Md {
 			lines = lines.Except(thinkingLineRange).ToArray();
 		}
 
-
-
 		string? lang = null;
 		foreach (string raw in lines) {
+			if (raw == _lineBreak) {
+				blocks.Add(new LineBreakMdBlock());
+				continue;
+			}
+
 			bool tbt = raw.StartsWith(_tbt);
-			if (tbt || raw.StartsWith(_lineBreak)) {
+			if (tbt) {
 				if (!inCode) {
 					FlushBullets();
 					FlushParagraph();

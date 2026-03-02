@@ -17,7 +17,7 @@ internal class ModelState {
 	internal ModelState(string modelDirectory) {
 		ModelDirectory = modelDirectory;
 		Config config = new(ModelDirectory);
-		config.AppendProvider("cuda");
+		config.AppendProvider(_cuda);
 		//config.AppendProvider(_dml);
 		#region Point to the direct ONNX model itself to instantiate the inference session
 		string? modelFilePath = Directory.GetFiles(modelDirectory, _onnxSearch).FirstOrDefault();

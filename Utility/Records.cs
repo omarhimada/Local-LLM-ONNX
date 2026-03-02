@@ -1,6 +1,7 @@
 namespace OLLM.Utility;
 
 public abstract record FdBlockMd;
+public record LineBreakMdBlock() : FdBlockMd;
 public record ParagraphFdBlockMd(List<InlineSpan> Inlines, int HeadingLevel = 0) : FdBlockMd;
 public record CodeFdBlockMd(string Code, string? Lang) : FdBlockMd;
 public record BulletListFdBlockMd(List<List<InlineSpan>> Items) : FdBlockMd;
