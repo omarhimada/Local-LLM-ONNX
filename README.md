@@ -7,7 +7,7 @@
 - Loads a local LLM model. 
 - The latest release utilizes **gpt-oss-20b**.
 
-![Reasoning example GIF](.Images/ReasoningExample.gif)
+![Reasoning example GIF](.Images/example.gif)
 
 ## Roadmap 
 - **High Priority**
