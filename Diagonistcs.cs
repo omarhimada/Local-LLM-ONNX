@@ -6,6 +6,200 @@ using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
 
+/*
+
+# ML.NET Image Pattern Detector
+
+A simple image classification project built with **ML.NET** and **Microsoft.ML.Vision** that detects whether a target pattern exists in an image.
+
+This project uses transfer learning (ResNet) to train a classifier on labeled images and then predicts whether new images contain the pattern of interest.
+
+---
+
+## Features
+
+- Train a custom image classifier using ML.NET
+- Uses transfer learning with ResNet
+- Supports PNG and JPG images
+- Save and load trained models
+- Evaluate model accuracy
+- Predict labels on new images
+
+---
+
+## Requirements
+
+- .NET 8.0 (or newer)
+- Visual Studio 2022 / Rider / VS Code
+
+NuGet packages:
+
+```bash
+dotnet add package Microsoft.ML
+dotnet add package Microsoft.ML.ImageAnalytics
+dotnet add package Microsoft.ML.Vision
+```
+
+---
+
+## Dataset Structure
+
+Organize images into folders named after their labels.
+
+Example:
+
+```text
+data/
+├── pattern/
+│   ├── image1.png
+│   ├── image2.png
+│   └── image3.png
+│
+└── no_pattern/
+    ├── image1.png
+    ├── image2.png
+    └── image3.png
+```
+
+Folder names become classification labels automatically.
+
+---
+
+## Training
+
+Run the application:
+
+```bash
+dotnet run
+```
+
+The training pipeline will:
+
+1. Load images from the dataset
+2. Split data into train/test sets
+3. Train a ResNet-based classifier
+4. Evaluate accuracy
+5. Save the model
+
+Example output:
+
+```text
+MicroAccuracy: 95.4%
+MacroAccuracy: 94.8%
+```
+
+Generated model:
+
+```text
+pattern-model.zip
+```
+
+---
+
+## Making Predictions
+
+After training:
+
+```csharp
+var result = engine.Predict(new ImageData
+{
+    ImagePath = "test.png"
+});
+
+Console.WriteLine(result.PredictedLabel);
+```
+
+Example:
+
+```text
+pattern
+```
+
+---
+
+## Model Architecture
+
+The default implementation uses:
+
+```csharp
+ImageClassificationTrainer.Architecture.ResnetV2101
+```
+
+Other available architectures include:
+
+```csharp
+ResnetV250
+InceptionV3
+MobilenetV2
+```
+
+---
+
+## Improving Accuracy
+
+For best results:
+
+- Use at least 100-500 images per class
+- Keep class sizes balanced
+- Use varied examples
+- Include difficult negative samples
+- Use consistent image dimensions
+- Increase epochs for larger datasets
+
+Example:
+
+```csharp
+Epoch = 100
+```
+
+---
+
+## Project Structure
+
+```text
+Project/
+│
+├── data/
+│   ├── pattern/
+│   └── no_pattern/
+│
+├── pattern-model.zip
+│
+├── Program.cs
+│
+└── README.md
+```
+
+---
+
+## Limitations
+
+This project performs image classification, not object detection.
+
+Classification answers:
+
+> Does this image contain the pattern?
+
+It does not answer:
+
+> Where is the pattern located?
+
+For localization or bounding boxes, consider:
+
+- ONNX Runtime
+- YOLO
+- Azure Custom Vision
+- TensorFlow Object Detection
+
+---
+
+## License
+
+MIT License
+
+Use at your own risk.
+ 
+*/
 var ml = new MLContext(seed: 1);
 
 var data = ml.Data.LoadFromEnumerable(
