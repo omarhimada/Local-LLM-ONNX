@@ -20,7 +20,8 @@ internal class ModelState {
 		config.AppendProvider(_cuda);
 		//config.AppendProvider(_dml);
 		#region Point to the direct ONNX model itself to instantiate the inference session
-		string? modelFilePath = Directory.GetFiles(modelDirectory, _onnxSearch).FirstOrDefault();
+		var list = Directory.GetFiles(modelDirectory, _onnxSearch);
+		string? modelFilePath = list.FirstOrDefault();
 		if (string.IsNullOrEmpty(modelFilePath)) {
 			MessageBox.Show(_userFriendlyErrorOccurredDuringInitialization);
 			Application.Current.Shutdown();
