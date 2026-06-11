@@ -2,8 +2,8 @@ using Microsoft.Extensions.AI;
 namespace OLLM;
 
 internal static class Constants {
-	internal static string _gemma27BModelPath = $"{AppContext.BaseDirectory}..\\..\\..\\ONNX\\med-gemma-27B";
-
+	//internal static string _gemma27BModelPath = $"{AppContext.BaseDirectory}..\\..\\..\\ONNX\\med-gemma-27B";
+	internal static string _gemma27BModelPath = $"{AppContext.BaseDirectory}..\\..\\..\\ONNX\\gpt-oss-20B";
 	#region MedGemma-27B relevant
 	internal const string _bosToken = "<bos>";
 	internal const string _startOfTurn = "<start_of_turn>";
