@@ -65,6 +65,8 @@
 		<None Remove="Fonts\overpass-mono-semibold.otf" />
 		<None Remove="learn_attempt_0.txt" />
 		<None Remove="learn_attempt_1.txt" />
+		<None Remove="ONNX\med-gemma-27b\model.onnx" />
+		<None Remove="ONNX\med-gemma-27b\model.onnx.data" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -232,6 +234,9 @@
 		<None Update="ONNX\SD\0nnX00Aammnpdxebr\vae_encoder\model.onnx">
 		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="ONNX\med-gemma-27b\" />
 	</ItemGroup>
 
 	<!-- Do not include native PDBs and .lib in published release (for simplicity and UX cleanliness) -->

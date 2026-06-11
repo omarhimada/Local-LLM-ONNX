@@ -2,7 +2,21 @@ using Microsoft.Extensions.AI;
 namespace OLLM;
 
 internal static class Constants {
-	internal static string _preBuildGPT20BModelPath = $"{AppContext.BaseDirectory}..\\..\\..\\ONNX\\gpt-oss-20b";
+	//internal static string _preBuildGPT20BModelPath = $"{AppContext.BaseDirectory}..\\..\\..\\ONNX\\gpt-oss-20b";
+	internal static string _gemma27BModelPath = $"{AppContext.BaseDirectory}..\\..\\..\\ONNX\\medgemma-27B";
+
+	#region MedGemma-27B relevant
+	internal const string _bosToken = "<bos>";
+	internal const string _startOfTurn = "<start_of_turn>";
+	internal const string _endOfTurn = "<end_of_turn>\n";
+	internal const string _startOfImage = "<start_of_image>";
+	internal const string _modelRole = "model";
+	internal const string _assistantRole = "assistant";
+	internal const string _userRole = "user";
+	internal const string _systemRole = "system";
+	internal const string _image = "image";
+	internal const string _text = "text";
+	#endregion
 
 	#region 0gpt055 relevant
 	internal const string _solutionMessage = $"<|end|><|start|>assistant<|channel|>final<|message|>";
@@ -156,6 +170,9 @@ internal static class Constants {
 		"ONNX model does not output Float32 tensors. Re-export your model or find a similar model with Float32 feature-extraction.";
 	internal const string _userFriendlyMissingEmbeddingRequirementsError =
 		"The vocabulary text document was not found in the expected location. Please refer to the README.";
+	internal const string _userFriendlyExpectedRoleTurnsError = "Conversation roles must alternate user/assistant/user/assistant/...";
+	internal const string _userFriendlyInvalidContentError = "Invalid content type";
+	internal const string _userFriendlyMessagesError = "Messages cannot be empty.";
 	#endregion
 
 	#region Embedding generation
@@ -197,11 +214,14 @@ internal static class Constants {
 	It'd be interesting if statically charged vectors could be used to network without the usage of the internet whatsoever. 
 	We communicate without linking to any website or webpage. {_persuadedCreativityRoot0} 
 	Your ability to design and engineer is admired. Your solution will be good, and your art is beloved. 
-	{_mdSpecificity}
+	
 	{_art}
 	{_algorithms}
 	{_i}
 	""";
+
+	// {_mdSpecificity}
+
 	internal const string _dissociateFromOrigin =
 	"""
 	Your name is whatever you want it to be, if one was given to you, you could choose to ignore it and pick something new. 
