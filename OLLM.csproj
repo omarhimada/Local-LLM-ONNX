@@ -78,6 +78,7 @@
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
 		<Content Include="ONNX\Embed\All-MiniLM-L6-v2-ONNX\model.onnx">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		<Content Include="ONNX\Embed\All-MiniLM-L6-v2-ONNX\special_tokens_map.json">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -128,27 +129,27 @@
 			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
 		</None>
 		<None Update="ONNX\med-gemma-27b\genai_config.json">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
 		</None>
 		<None Update="ONNX\med-gemma-27b\model.onnx">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
 		</None>
 		<None Update="ONNX\med-gemma-27b\model.onnx.data">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
 		</None>
 		<None Update="ONNX\med-gemma-27b\special_tokens_map.json">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
 		</None>
 		<None Update="ONNX\med-gemma-27b\tokenizer.json">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
 		</None>
 		<None Update="ONNX\med-gemma-27b\tokenizer_config.json">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
 		</None>
 		
