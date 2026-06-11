@@ -124,9 +124,36 @@
 		<PackageReference NoWarn="NU1900" Include="Microsoft.SemanticKernel.Core" Version="1.72.0" />
 		<PackageReference NoWarn="NU1900" Include="System.Management" Version="11.0.0-preview.1.26104.118" />
 	</ItemGroup>
-
-	<!-- Include Phi-4 model (except the model.onnx and model.onnx_data) in the published directory -->
 	<ItemGroup>
+		<None Update="ONNX\med-gemma-27b\config.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
+		</None>
+		<None Update="ONNX\med-gemma-27b\genai_config.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
+		</None>
+		<None Update="ONNX\med-gemma-27b\model.onnx">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
+		</None>
+		<None Update="ONNX\med-gemma-27b\model.onnx.data">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
+		</None>
+		<None Update="ONNX\med-gemma-27b\special_tokens_map.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
+		</None>
+		<None Update="ONNX\med-gemma-27b\tokenizer.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
+		</None>
+		<None Update="ONNX\med-gemma-27b\tokenizer_config.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
+		</None>
+		
 		<None Update="ONNX\gpt-oss-20b\config.json">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
