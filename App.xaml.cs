@@ -70,5 +70,17 @@ internal partial class App : Application {
 		}
 	}
 
-	internal static void FinishedInitializing() => LoadingWindow.Hide();
+	internal static Thread? winFormsThread = new Thread(() => {
+		System.Windows.Forms.Application.EnableVisualStyles();
+		System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
+		System.Windows.Forms.Application.Run(new FloatingBlurButton());
+	});
+
+	internal static void FinishedInitializing() {
+		LoadingWindow.Hide();
+
+		winFormsThread.SetApartmentState(ApartmentState.STA);
+		winFormsThread.IsBackground = true;
+		winFormsThread.Start();
+	}
 }
