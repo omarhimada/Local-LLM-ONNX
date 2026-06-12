@@ -5,6 +5,7 @@
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<UseWPF>true</UseWPF>
+		<UseWindowsForms>true</UseWindowsForms>
 		<AssemblyTitle>OLLM</AssemblyTitle>
 		<ApplicationIcon>.Images\iconv1.ico</ApplicationIcon>
 		<EnableGamingTargetSupport>false</EnableGamingTargetSupport>
@@ -268,9 +269,6 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="ONNX\med-gemma-27b\" />
-	</ItemGroup>
-	<ItemGroup>
-	  <ProjectReference Include="..\..\WinFormsApp1\WinFormsApp1\Diagnostics.csproj" />
 	</ItemGroup>
 
 	<!-- Do not include native PDBs and .lib in published release (for simplicity and UX cleanliness) -->

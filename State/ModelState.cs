@@ -23,8 +23,8 @@ internal class ModelState {
 		var list = Directory.GetFiles(modelDirectory, _onnxSearch);
 		string? modelFilePath = list.FirstOrDefault();
 		if (string.IsNullOrEmpty(modelFilePath)) {
-			MessageBox.Show(_userFriendlyErrorOccurredDuringInitialization);
-			Application.Current.Shutdown();
+			System.Windows.MessageBox.Show(_userFriendlyErrorOccurredDuringInitialization);
+			System.Windows.Application.Current.Shutdown();
 		}
 		#endregion
 		Model = new(config);

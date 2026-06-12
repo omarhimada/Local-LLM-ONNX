@@ -15,6 +15,11 @@ using State;
 using State.Thinking;
 using Utility;
 using static Constants;
+using Application = System.Windows.Application;
+using Button = System.Windows.Controls.Button;
+using MessageBox = System.Windows.MessageBox;
+using RichTextBox = System.Windows.Controls.RichTextBox;
+using TextBox = System.Windows.Controls.TextBox;
 
 internal partial class LinearCommunication(ModelState modelState, Remember? _memories) {
 #pragma warning disable IDE0051

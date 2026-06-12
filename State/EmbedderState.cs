@@ -2,6 +2,8 @@ using Microsoft.ML.OnnxRuntime;
 using System.IO;
 using System.Windows;
 using static OLLM.Constants;
+using Application = System.Windows.Application;
+using MessageBox = System.Windows.MessageBox;
 namespace OLLM.State;
 
 internal class EmbedderState {

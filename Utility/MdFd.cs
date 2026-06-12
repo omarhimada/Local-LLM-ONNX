@@ -3,6 +3,7 @@ using System.Windows.Media;
 namespace OLLM.Utility;
 
 using static Constants;
+using Color = System.Windows.Media.Color;
 
 internal static class MdFd {
 	static MdFd() {
@@ -12,11 +13,11 @@ internal static class MdFd {
 		_white.Freeze();
 	}
 
-	internal static readonly FontFamily _fontFamilyOverpass = new(
+	internal static readonly System.Windows.Media.FontFamily _fontFamilyOverpass = new(
 		new Uri(_resourceFontFamilyDeclarationPrefix),
 		$"{_resourceFontFamilyLocationPrefix}Overpass");
 
-	internal static readonly FontFamily _fontFamily0x = new(
+	internal static readonly System.Windows.Media.FontFamily _fontFamily0x = new(
 		new Uri(_resourceFontFamilyDeclarationPrefix),
 		$"{_resourceFontFamilyLocationPrefix}0xProto");
 

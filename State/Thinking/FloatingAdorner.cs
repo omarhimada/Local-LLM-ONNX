@@ -11,6 +11,10 @@ namespace OLLM.State.Thinking;
 
 using static Constants;
 using static MdFd;
+using Application = System.Windows.Application;
+using Orientation = System.Windows.Controls.Orientation;
+using Point = System.Windows.Point;
+using Size = System.Windows.Size;
 
 /// <summary>
 /// Represents a visual adorner that displays a floating bubble over an adorned element, providing contextual
@@ -41,8 +45,8 @@ public sealed class FloatingAdorner : Adorner {
 		IsHitTestVisible = false;
 
 		_veilBlur = new Border {
-			HorizontalAlignment = HorizontalAlignment.Stretch,
-			VerticalAlignment = VerticalAlignment.Stretch,
+			HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch,
+			VerticalAlignment = System.Windows.VerticalAlignment.Stretch,
 			Opacity = 0.82,
 			Background = new VisualBrush(adornedElement) {
 				Stretch = Stretch.None,
@@ -56,15 +60,15 @@ public sealed class FloatingAdorner : Adorner {
 		};
 
 		_veilTint = new Border {
-			HorizontalAlignment = HorizontalAlignment.Stretch,
-			VerticalAlignment = VerticalAlignment.Stretch,
-			Background = new SolidColorBrush(Color.FromArgb(140, 0, 0, 0)),
+			HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch,
+			VerticalAlignment = System.Windows.VerticalAlignment.Stretch,
+			Background = new SolidColorBrush(System.Windows.Media.Color.FromArgb(140, 0, 0, 0)),
 			Opacity = 0
 		};
 
 		_veilRoot = new Grid {
-			HorizontalAlignment = HorizontalAlignment.Stretch,
-			VerticalAlignment = VerticalAlignment.Stretch,
+			HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch,
+			VerticalAlignment = System.Windows.VerticalAlignment.Stretch,
 			Opacity = 0,
 			IsHitTestVisible = false
 		};
@@ -97,7 +101,7 @@ public sealed class FloatingAdorner : Adorner {
 		};
 
 		_bubble = new Border {
-			HorizontalAlignment = HorizontalAlignment.Center,
+			HorizontalAlignment = System.Windows.HorizontalAlignment.Center,
 			VerticalAlignment = VerticalAlignment.Center,
 
 			CornerRadius = new CornerRadius(0),
@@ -250,10 +254,10 @@ public sealed class FloatingAdorner : Adorner {
 
 	protected override Size ArrangeOverride(Size finalSize) {
 		_veilRoot.Measure(finalSize);
-		_veilRoot.Arrange(new Rect(new Point(0, 0), finalSize));
+		_veilRoot.Arrange(new Rect(new System.Windows.Point(0, 0), finalSize));
 
 		_bubble.Measure(finalSize);
-		_bubble.Arrange(new Rect(new Point(0, 0), _bubble.DesiredSize));
+		_bubble.Arrange(new Rect(new System.Windows.Point(0, 0), _bubble.DesiredSize));
 		return finalSize;
 	}
 

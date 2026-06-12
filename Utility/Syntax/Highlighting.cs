@@ -1,5 +1,7 @@
 using System.Text.RegularExpressions;
 using System.Windows.Media;
+using Brush = System.Windows.Media.Brush;
+using Color = System.Windows.Media.Color;
 
 namespace OLLM.Utility.Syntax;
 
