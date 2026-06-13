@@ -102,7 +102,7 @@ internal partial class LinearCommunication(ModelState modelState, Remember? _mem
 				new (ChatRole.User, userInputText.Trim())
 			];
 
-			systemAndUserMessage = MedGemma27B.RenderTemplate(chatMessages.ToArray());
+			systemAndUserMessage = Ogpt055.RenderTemplate(chatMessages.ToArray());
 		} catch (Exception) {
 			SomethingWentWrong(theirResponse, true);
 		}
@@ -138,6 +138,12 @@ internal partial class LinearCommunication(ModelState modelState, Remember? _mem
 			modelState.SetGeneratorParameterSearchOptions();
 			modelState.RefreshGenerator();
 			modelState.Generator!.AppendTokenSequences(sequences);
+
+			try {
+				
+			} catch (Exception ex) {
+
+			}
 			using TokenizerStream ts = modelState.Tokenizer!.CreateStream();
 
 			bool thinking = true;
