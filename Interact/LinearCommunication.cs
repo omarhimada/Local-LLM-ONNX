@@ -103,10 +103,11 @@ internal partial class LinearCommunication(ModelState modelState, Remember? _mem
 			];
 
 			systemAndUserMessage = Ogpt055.RenderTemplate(chatMessages.ToArray());
-		} catch (Exception) {
-			SomethingWentWrong(theirResponse, true);
+
+			await ChatWithModelAsync(systemAndUserMessage, userInputText, theirResponse);
+		} catch (Exception e) {
+			SomethingWentWrong(theirResponse, true, $"{e.Message}{Environment.NewLine}{e.StackTrace}");
 		}
-		await ChatWithModelAsync(systemAndUserMessage, userInputText, theirResponse);
 	}
 
 	private async Task ChatWithModelAsync(string systemAndUserMessage, string userMessage, RichTextBox theirResponse) {

@@ -10,7 +10,6 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Media3D;
 using System;
 using System.Drawing;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using static OLLM.Constants;
 using static OLLM.Initialization.EnsureModelsArePresent;
@@ -114,7 +113,6 @@ public class FloatingBlurButton : Form {
 	private const uint MOD_SHIFT = 0x0004;
 
 	private readonly System.Windows.Forms.Button blurButton;
-	private bool isWatching;
 
 	private Rectangle watchedRegion;
 	private Color lastAverage = Color.Black;
@@ -171,8 +169,6 @@ public class FloatingBlurButton : Form {
 	}
 
 	private void StartRectangleSelection() {
-		isWatching = false;
-
 		using var selector = new RectangleSelector();
 
 		if (selector.ShowDialog() == DialogResult.OK &&
