@@ -138,12 +138,7 @@ internal partial class LinearCommunication(ModelState modelState, Remember? _mem
 			modelState.SetGeneratorParameterSearchOptions();
 			modelState.RefreshGenerator();
 			modelState.Generator!.AppendTokenSequences(sequences);
-
-			try {
-				
-			} catch (Exception ex) {
-
-			}
+			
 			using TokenizerStream ts = modelState.Tokenizer!.CreateStream();
 
 			bool thinking = true;
