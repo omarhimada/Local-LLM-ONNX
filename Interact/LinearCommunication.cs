@@ -102,7 +102,7 @@ internal partial class LinearCommunication(ModelState modelState, Remember? _mem
 				new (ChatRole.User, userInputText.Trim())
 			];
 
-			systemAndUserMessage = Ogpt055.RenderTemplate(chatMessages.ToArray());
+			systemAndUserMessage = MedGemma27B.RenderTemplate(chatMessages.ToArray());
 
 			await ChatWithModelAsync(systemAndUserMessage, userInputText, theirResponse);
 		} catch (Exception e) {
