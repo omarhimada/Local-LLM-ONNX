@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<OutputType>WinExe</OutputType>
 		<TargetFramework>net10.0-windows</TargetFramework>
@@ -138,7 +138,7 @@
 			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
 		</None>
 		<None Update="ONNX\gpt-oss-20b\model.onnx.data">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
 		</None>
 		<None Update="ONNX\gpt-oss-20b\special_tokens_map.json">
