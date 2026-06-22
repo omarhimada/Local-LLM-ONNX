@@ -117,16 +117,17 @@
 		</Resource>
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference NoWarn="NU1900" Include="Microsoft.Data.Sqlite.Core" Version="11.0.0-preview.1.26104.118" />
+		<PackageReference NoWarn="NU1900" Include="Microsoft.Data.Sqlite.Core" Version="10.0.9" />
 		<PackageReference NoWarn="NU1900" Include="Microsoft.Extensions.AI" Version="10.7.0" />
 		<PackageReference NoWarn="NU1900" Include="Microsoft.Extensions.DependencyInjection" Version="11.0.0-preview.1.26104.118" />
 		<PackageReference NoWarn="NU1900" Include="Microsoft.Extensions.VectorData.Abstractions" Version="10.7.0" />
-		<PackageReference Include="Microsoft.ML.OnnxRuntime.Gpu.Windows" Version="1.26.0" />
+		<PackageReference Include="Microsoft.ML.OnnxRuntime.Gpu.Windows" Version="1.27.0" />
 		<PackageReference Include="Microsoft.ML.OnnxRuntimeGenAI.Cuda" Version="0.14.1" />
 		<PackageReference Include="Microsoft.ML.OnnxRuntimeGenAI.Managed" Version="0.14.1" />
-		<PackageReference NoWarn="NU1900" Include="Microsoft.ML.Tokenizers" Version="2.0.0" />
-		<PackageReference NoWarn="NU1900" Include="Microsoft.SemanticKernel.Connectors.SqliteVec" Version="1.72.0-preview" />
+		<PackageReference NoWarn="NU1900" Include="Microsoft.ML.Tokenizers" Version="3.0.0-preview.26160.2" />
+		<PackageReference NoWarn="NU1900" Include="Microsoft.SemanticKernel.Connectors.SqliteVec" Version="1.74.0-preview" />
 		<PackageReference NoWarn="NU1900" Include="Microsoft.SemanticKernel.Core" Version="1.77.0" />
+		<PackageReference Include="SourceGear.sqlite3" Version="3.50.4.5" />
 		<PackageReference NoWarn="NU1900" Include="System.Management" Version="11.0.0-preview.1.26104.118" />
 	</ItemGroup>
 	<ItemGroup>
