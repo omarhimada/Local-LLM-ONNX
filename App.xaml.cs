@@ -1,20 +1,22 @@
 using OLLM.Memory;
 using OLLM.State;
 using System.Drawing;
-using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Forms;
+using System.Windows.Input;
+using System.Windows.Interop;
+using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Media3D;
-using System;
-using System.Drawing;
-using System.Windows.Forms;
+using System.Windows.Threading;
 using static OLLM.Constants;
 using static OLLM.Initialization.EnsureModelsArePresent;
-using Point = System.Drawing.Point;
-using FontStyle = System.Drawing.FontStyle;
+using Brushes = System.Windows.Media.Brushes;
+using Color = System.Windows.Media.Color;
+using FontFamily = System.Windows.Media.FontFamily;
+using Pen = System.Windows.Media.Pen;
+using Point = System.Windows.Point;
 
 namespace OLLM;
 
@@ -72,6 +74,34 @@ internal partial class App : System.Windows.Application {
 			mainWindow.Initialize(ModelState!, EmbedderState!, MiniEmbedder!);
 			MainWindow = mainWindow;
 
+			// Start floating blur window on its own STA UI thread
+			var blurAreaFormsThread = new Thread(() =>
+			{
+				var blurWindow = new FloatingBlurButton();
+
+				blurWindow.Show();
+
+				// Creates a Dispatcher message loop for this thread
+				System.Windows.Threading.Dispatcher.Run();
+			});
+
+			blurAreaFormsThread.SetApartmentState(ApartmentState.STA);
+			blurAreaFormsThread.IsBackground = true;
+			blurAreaFormsThread.Start();// Start floating blur window on its own STA UI thread
+
+			var overlayThread = new Thread(() => {
+				var overlay = new OverlayWindow();
+
+				overlay.Show();
+
+				// Creates a Dispatcher message loop for this thread
+				System.Windows.Threading.Dispatcher.Run();
+			});
+
+			overlayThread.SetApartmentState(ApartmentState.STA);
+			overlayThread.IsBackground = true;
+			overlayThread.Start();
+
 			mainWindow.Show();
 			FinishedInitializing();
 		} catch (Exception exception) {
@@ -80,141 +110,110 @@ internal partial class App : System.Windows.Application {
 		}
 	}
 
-	internal static Thread? blurAreaFormsThread = new Thread(() => {
-		System.Windows.Forms.Application.EnableVisualStyles();
-		System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
-		System.Windows.Forms.Application.Run(new FloatingBlurButton());
-	});
-
-	internal static Thread? overlayFormsThread = new Thread(() => {
-		System.Windows.Forms.Application.EnableVisualStyles();
-		System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
-		System.Windows.Forms.Application.Run(new OverlayForm());
-	});
-
-	internal static void FinishedInitializing() {
-		LoadingWindow.Hide();
-
-		overlayFormsThread.SetApartmentState(ApartmentState.STA);
-		overlayFormsThread.IsBackground = true;
-		overlayFormsThread.Start();
-
-		blurAreaFormsThread.SetApartmentState(ApartmentState.STA);
-		blurAreaFormsThread.IsBackground = true;
-		blurAreaFormsThread.Start();
-	}
+	internal static void FinishedInitializing() => LoadingWindow.Hide();
 }
 
-
-
-public class FloatingBlurButton : Form {
+public sealed class FloatingBlurButton : Window {
 	private const int HOTKEY_ID = 9000;
 	private const uint MOD_CONTROL = 0x0002;
 	private const uint MOD_SHIFT = 0x0004;
+	private const int WM_HOTKEY = 0x0312;
 
-	private readonly System.Windows.Forms.Button blurButton;
+	private readonly Button blurButton;
 
-	private Rectangle watchedRegion;
-	private Color lastAverage = Color.Black;
+	private Rect watchedRegion;
 	private BlurRectangleOverlay? activeOverlay;
 
 	public FloatingBlurButton() {
-		FormBorderStyle = FormBorderStyle.None;
-		TopMost = true;
+		Width = 145;
+		Height = 28;
+
+		Left = 15;
+		Top = 15;
+
+		WindowStyle = WindowStyle.None;
+		ResizeMode = ResizeMode.NoResize;
 		ShowInTaskbar = false;
-		StartPosition = FormStartPosition.Manual;
-		BackColor = Color.FromArgb(32, 32, 32);
-		Bounds = new Rectangle(40, 140, 260, 70);
+		Topmost = true;
 
-		var layout = new TableLayoutPanel {
-			Dock = DockStyle.Fill,
-			RowCount = 2,
-			ColumnCount = 1,
-			BackColor = Color.FromArgb(32, 32, 32),
-			Margin = Padding.Empty,
-			Padding = Padding.Empty
+		Background = new SolidColorBrush(
+			Color.FromRgb(225, 225, 225));
+
+		Grid grid = new();
+
+		blurButton = new Button {
+			Content = "Blur Area (Ctrl+Shift+B)",
+			FontFamily = new FontFamily("Consolas"),
+			FontSize = 10,
+			FontWeight = FontWeights.Bold
 		};
-
-		layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 42));
-		layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 28));
-
-		blurButton = new System.Windows.Forms.Button {
-			Text = "Blur Area (Ctrl+Shift+B)",
-			Dock = DockStyle.Fill,
-			FlatStyle = FlatStyle.Flat,
-			UseVisualStyleBackColor = false,
-			BackColor = Color.FromArgb(45, 45, 48),
-			ForeColor = Color.White,
-			Font = new Font("Consolas", 10f, System.Drawing.FontStyle.Bold),
-			Cursor = Cursors.Hand,
-			TabStop = false,
-			Margin = Padding.Empty
-		};
-
-		blurButton.FlatAppearance.BorderSize = 1;
-		blurButton.FlatAppearance.BorderColor = Color.FromArgb(70, 70, 70);
-		blurButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(60, 60, 64);
-		blurButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(30, 30, 30);
 
 		blurButton.Click += (_, _) => StartRectangleSelection();
 
-		blurButton.Resize += (_, _) => {
-			blurButton.Region = new Region(
-				new Rectangle(0, 0, blurButton.Width, blurButton.Height)
-			);
-		};
+		grid.Children.Add(blurButton);
 
-		layout.Controls.Add(blurButton, 0, 0);
-		Controls.Add(layout);
+		Content = grid;
+	}
+
+	protected override void OnSourceInitialized(EventArgs e) {
+		base.OnSourceInitialized(e);
+
+		IntPtr handle = new WindowInteropHelper(this).Handle;
+
+		RegisterHotKey(
+			handle,
+			HOTKEY_ID,
+			MOD_CONTROL | MOD_SHIFT,
+			(uint)KeyInterop.VirtualKeyFromKey(
+				System.Windows.Input.Key.B));
+
+		HwndSource source =
+			HwndSource.FromHwnd(handle)!;
+
+		source.AddHook(WndProc);
+	}
+
+	private IntPtr WndProc(
+		IntPtr hwnd,
+		int msg,
+		IntPtr wParam,
+		IntPtr lParam,
+		ref bool handled) {
+		if (msg == WM_HOTKEY &&
+			wParam.ToInt32() == HOTKEY_ID) {
+			blurButton.RaiseEvent(
+				new RoutedEventArgs(Button.ClickEvent));
+
+			handled = true;
+		}
+
+		return IntPtr.Zero;
 	}
 
 	private void StartRectangleSelection() {
-		using var selector = new RectangleSelector();
+		RectangleSelector selector = new();
 
-		if (selector.ShowDialog() == DialogResult.OK &&
-			selector.SelectedRectangle.Width > 0 &&
-			selector.SelectedRectangle.Height > 0) {
+		if (selector.ShowDialog() == true) {
 			watchedRegion = selector.SelectedRectangle;
 
 			activeOverlay?.Close();
-			activeOverlay = new BlurRectangleOverlay(watchedRegion);
+
+			activeOverlay =
+				new BlurRectangleOverlay(watchedRegion);
+
 			activeOverlay.Show();
 		}
 	}
 
-	protected override void OnShown(EventArgs e) {
-		base.OnShown(e);
+	protected override void OnClosed(EventArgs e) {
+		IntPtr handle =
+			new WindowInteropHelper(this).Handle;
 
-		Region = new Region(new Rectangle(0, 0, Width, Height));
-		blurButton.Region = new Region(new Rectangle(0, 0, blurButton.Width, blurButton.Height));
-	}
+		UnregisterHotKey(handle, HOTKEY_ID);
 
-	protected override void OnHandleCreated(EventArgs e) {
-		base.OnHandleCreated(e);
-
-		RegisterHotKey(
-			Handle,
-			HOTKEY_ID,
-			MOD_CONTROL | MOD_SHIFT,
-			(uint)Keys.B
-		);
-	}
-
-	protected override void WndProc(ref Message message) {
-		const int WM_HOTKEY = 0x0312;
-
-		if (message.Msg == WM_HOTKEY && message.WParam.ToInt32() == HOTKEY_ID) {
-			blurButton.PerformClick();
-		}
-
-		base.WndProc(ref message);
-	}
-
-	protected override void OnFormClosing(FormClosingEventArgs e) {
-		UnregisterHotKey(Handle, HOTKEY_ID);
 		activeOverlay?.Close();
 
-		base.OnFormClosing(e);
+		base.OnClosed(e);
 	}
 
 	[DllImport("user32.dll")]
@@ -222,161 +221,174 @@ public class FloatingBlurButton : Form {
 		IntPtr hWnd,
 		int id,
 		uint fsModifiers,
-		uint vk
-	);
+		uint vk);
 
 	[DllImport("user32.dll")]
 	private static extern bool UnregisterHotKey(
 		IntPtr hWnd,
-		int id
-	);
+		int id);
 }
 
-public class RectangleSelector : Form {
-	public Rectangle SelectedRectangle { get; private set; }
+public sealed class RectangleSelector : Window {
+	public Rect SelectedRectangle { get; private set; }
 
-	private System.Drawing.Point startPoint;
-	private Rectangle currentRectangle;
-	private bool isDragging;
+	private Point startPoint;
+	private Rect currentRect;
+	private bool dragging;
 
 	public RectangleSelector() {
-		FormBorderStyle = FormBorderStyle.None;
-		WindowState = FormWindowState.Maximized;
-		TopMost = true;
+		WindowStyle = WindowStyle.None;
+		WindowState = WindowState.Maximized;
+
+		Topmost = true;
 		ShowInTaskbar = false;
-		BackColor = Color.Black;
-		Opacity = 0.15;
+
+		AllowsTransparency = true;
+
+		Background = new SolidColorBrush(
+			Color.FromArgb(
+				90, // alpha
+				0,
+				0,
+				0));
 		Cursor = Cursors.Cross;
-		DoubleBuffered = true;
 	}
 
-	protected override void OnMouseDown(MouseEventArgs e) {
-		isDragging = true;
-		startPoint = e.Location;
-		currentRectangle = new Rectangle(e.Location,
-								   size: System.Drawing.Size.Empty);
-		Invalidate();
+	protected override void OnMouseDown(MouseButtonEventArgs e) {
+		dragging = true;
+
+		startPoint = e.GetPosition(this);
+
+		InvalidateVisual();
 	}
 
 	protected override void OnMouseMove(MouseEventArgs e) {
-		if (!isDragging)
+		if (!dragging)
 			return;
 
-		currentRectangle = GetRectangle(startPoint, e.Location);
-		Invalidate();
+		currentRect = CreateRect(
+			startPoint,
+			e.GetPosition(this));
+
+		InvalidateVisual();
 	}
 
-	protected override void OnMouseUp(MouseEventArgs e) {
-		isDragging = false;
-		SelectedRectangle = GetRectangle(startPoint, e.Location);
+	protected override void OnMouseUp(MouseButtonEventArgs e) {
+		dragging = false;
 
-		DialogResult = DialogResult.OK;
+		SelectedRectangle =
+			CreateRect(startPoint, e.GetPosition(this));
+
+		DialogResult = true;
 		Close();
 	}
 
-	protected override void OnPaint(PaintEventArgs e) {
-		using var pen = new Pen(Color.Red, 2);
-		e.Graphics.DrawRectangle(pen, currentRectangle);
+	protected override void OnRender(DrawingContext dc) {
+		base.OnRender(dc);
+
+		dc.DrawRectangle(
+			null,
+			new Pen(Brushes.Red, 2),
+			currentRect);
 	}
 
-	private static Rectangle GetRectangle(System.Drawing.Point firstPoint, System.Drawing.Point secondPoint) {
-		return new Rectangle(
-			Math.Min(firstPoint.X, secondPoint.X),
-			Math.Min(firstPoint.Y, secondPoint.Y),
-			Math.Abs(firstPoint.X - secondPoint.X),
-			Math.Abs(firstPoint.Y - secondPoint.Y)
-		);
+	private static Rect CreateRect(
+		Point p1,
+		Point p2) {
+		return new Rect(
+			new Point(
+				Math.Min(p1.X, p2.X),
+				Math.Min(p1.Y, p2.Y)),
+			new Point(
+				Math.Max(p1.X, p2.X),
+				Math.Max(p1.Y, p2.Y)));
 	}
 }
-public class OverlayForm : Form {
-	private readonly System.Windows.Forms.Timer watchTimer = new();
-	private readonly System.Windows.Forms.Timer messageTimer = new();
 
-	private readonly Rectangle watchedRegion = new Rectangle(100, 100, 100, 100);
+public sealed partial class OverlayWindow : Window {
 
 	private Bitmap? previousFrame;
 	private bool showMessage;
 
-	public OverlayForm() {
-		FormBorderStyle = FormBorderStyle.None;
-		TopMost = true;
+	public OverlayWindow() {
+		WindowStyle = WindowStyle.None;
+		ResizeMode = ResizeMode.NoResize;
+
+		Topmost = true;
 		ShowInTaskbar = false;
-		BackColor = Color.Magenta;
-		TransparencyKey = Color.Magenta;
-		Bounds = Screen.PrimaryScreen!.Bounds;
-		DoubleBuffered = true;
 
-		watchTimer.Interval = 250;
-		watchTimer.Tick += (_, _) => CheckPixelChange();
+		AllowsTransparency = true;
+		Background = Brushes.Transparent;
 
-		messageTimer.Interval = 1200;
-		messageTimer.Tick += (_, _) => {
-			messageTimer.Stop();
-			showMessage = false;
-			Invalidate();
-		};
+		Left = 0;
+		Top = 0;
 
-		Shown += (_, _) => {
-			previousFrame = CaptureRegion(watchedRegion);
-			watchTimer.Start();
-		};
+		Width = SystemParameters.PrimaryScreenWidth;
+		Height = SystemParameters.PrimaryScreenHeight;
 	}
 
-	protected override CreateParams CreateParams {
-		get {
-			CreateParams parameters = base.CreateParams;
-			parameters.ExStyle |= 0x80000;    // WS_EX_LAYERED
-			parameters.ExStyle |= 0x20;       // WS_EX_TRANSPARENT
-			parameters.ExStyle |= 0x80;       // WS_EX_TOOLWINDOW
-			parameters.ExStyle |= 0x08000000; // WS_EX_NOACTIVATE
-			return parameters;
-		}
+	protected override void OnSourceInitialized(EventArgs e) {
+		base.OnSourceInitialized(e);
+
+		nint hwnd = new WindowInteropHelper(this).Handle;
+
+		nint style = GetWindowLongPtr(hwnd, GWL_EXSTYLE);
+
+		SetWindowLongPtr(
+			hwnd,
+			GWL_EXSTYLE,
+			style
+			| WS_EX_LAYERED
+			| WS_EX_TRANSPARENT
+			| WS_EX_TOOLWINDOW
+			| WS_EX_NOACTIVATE);
 	}
 
-	private void CheckPixelChange() {
-		using Bitmap currentFrame = CaptureRegion(watchedRegion);
-
-		if (previousFrame != null &&
-			HasMeaningfulChange(previousFrame, currentFrame)) {
-			showMessage = true;
-			Invalidate();
-
-			messageTimer.Stop();
-			messageTimer.Start();
-		}
-
+	protected override void OnClosed(EventArgs e) {
 		previousFrame?.Dispose();
-		previousFrame = (Bitmap)currentFrame.Clone();
+
+		base.OnClosed(e);
 	}
 
 	private static Bitmap CaptureRegion(Rectangle region) {
-		Bitmap bitmap = new Bitmap(region.Width, region.Height);
+		Bitmap bitmap = new(
+			region.Width,
+			region.Height);
 
-		using Graphics graphics = Graphics.FromImage(bitmap);
+		using Graphics graphics =
+			Graphics.FromImage(bitmap);
+
 		graphics.CopyFromScreen(
 			region.Location,
 			System.Drawing.Point.Empty,
 			region.Size,
-			CopyPixelOperation.SourceCopy
-		);
+			CopyPixelOperation.SourceCopy);
 
 		return bitmap;
 	}
 
-	private static bool HasMeaningfulChange(Bitmap previous, Bitmap current) {
+	private static bool HasMeaningfulChange(
+		Bitmap previous,
+		Bitmap current) {
 		int changedPixels = 0;
 
 		const int colorDiffThreshold = 30;
 		const int requiredChangedPixels = 25;
 		const int sampleStep = 2;
 
-		int width = Math.Min(previous.Width, current.Width);
-		int height = Math.Min(previous.Height, current.Height);
+		int width =
+			Math.Min(previous.Width, current.Width);
+
+		int height =
+			Math.Min(previous.Height, current.Height);
 
 		for (int x = 0; x < width; x += sampleStep) {
 			for (int y = 0; y < height; y += sampleStep) {
-				Color a = previous.GetPixel(x, y);
-				Color b = current.GetPixel(x, y);
+				System.Drawing.Color a =
+					previous.GetPixel(x, y);
+
+				System.Drawing.Color b =
+					current.GetPixel(x, y);
 
 				int diff =
 					Math.Abs(a.R - b.R) +
@@ -395,60 +407,102 @@ public class OverlayForm : Form {
 		return false;
 	}
 
-	protected override void OnPaint(PaintEventArgs e) {
-		using Pen pen = new Pen(Color.Red, 2);
-		e.Graphics.DrawRectangle(pen, watchedRegion);
-
-		if (!showMessage)
-			return;
-
-		using Font font = new Font("Segoe UI", 18, FontStyle.Bold);
-
-		//// Important: this is outside the watched 100,100,100,100 area
-		//e.Graphics.DrawString(
-		//	"Pixel change detected",
-		//	font,
-		//	Brushes.Lime,
-		//	100,
-		//	230
-		//);
+	private static Rectangle ToRectangle(Rect rect) {
+		return new Rectangle(
+			(int)rect.X,
+			(int)rect.Y,
+			(int)rect.Width,
+			(int)rect.Height);
 	}
 
-	protected override void OnFormClosed(FormClosedEventArgs e) {
-		watchTimer.Stop();
-		messageTimer.Stop();
+	private const int GWL_EXSTYLE = -20;
 
-		previousFrame?.Dispose();
+	private const nint WS_EX_LAYERED = 0x80000;
+	private const nint WS_EX_TRANSPARENT = 0x20;
+	private const nint WS_EX_TOOLWINDOW = 0x80;
+	private const nint WS_EX_NOACTIVATE = 0x08000000;
 
-		watchTimer.Dispose();
-		messageTimer.Dispose();
+	[LibraryImport(
+		"user32.dll",
+		EntryPoint = "GetWindowLongPtrW",
+		SetLastError = true)]
+	private static partial nint GetWindowLongPtr(
+		nint hWnd,
+		int nIndex);
 
-		base.OnFormClosed(e);
-	}
+	[LibraryImport(
+		"user32.dll",
+		EntryPoint = "SetWindowLongPtrW",
+		SetLastError = true)]
+	private static partial nint SetWindowLongPtr(
+		nint hWnd,
+		int nIndex,
+		nint dwNewLong);
 }
 
-public class BlurRectangleOverlay : Form {
-	public BlurRectangleOverlay(Rectangle bounds) {
-		FormBorderStyle = FormBorderStyle.None;
-		StartPosition = FormStartPosition.Manual;
-		Bounds = bounds;
-		TopMost = true;
+public sealed partial class BlurRectangleOverlay : Window {
+	private const int GWL_EXSTYLE = -20;
+
+	private const nint WS_EX_TRANSPARENT = 0x20;
+	private const nint WS_EX_TOOLWINDOW = 0x80;
+	private const nint WS_EX_NOACTIVATE = 0x08000000;
+
+	public BlurRectangleOverlay(Rect bounds) {
+		Left = bounds.X;
+		Top = bounds.Y;
+
+		Width = bounds.Width;
+		Height = bounds.Height;
+
+		WindowStyle = WindowStyle.None;
+		ResizeMode = ResizeMode.NoResize;
+
 		ShowInTaskbar = false;
-		BackColor = Color.Black;
-		Opacity = 0.55;
+		Topmost = true;
 
-		Region = new Region(new Rectangle(0, 0, bounds.Width, bounds.Height));
+		AllowsTransparency = true;
+
+		// Equivalent to:
+		// BackColor = Black
+		// Opacity = 0.55
+		Background = new SolidColorBrush(
+			Color.FromArgb(
+				(byte)(0.88 * 255),
+				0,
+				0,
+				0));
+
+		// Optional:
+		Focusable = false;
 	}
 
-	protected override CreateParams CreateParams {
-		get {
-			CreateParams parameters = base.CreateParams;
+	protected override void OnSourceInitialized(EventArgs e) {
+		base.OnSourceInitialized(e);
 
-			parameters.ExStyle |= 0x00000020; // WS_EX_TRANSPARENT
-			parameters.ExStyle |= 0x00000080; // WS_EX_TOOLWINDOW
-			parameters.ExStyle |= 0x08000000; // WS_EX_NOACTIVATE
+		nint hwnd = new WindowInteropHelper(this).Handle;
 
-			return parameters;
-		}
+		nint style = GetWindowLongPtr(
+			hwnd,
+			GWL_EXSTYLE);
+
+		SetWindowLongPtr(
+			hwnd,
+			GWL_EXSTYLE,
+			style
+			| WS_EX_TRANSPARENT
+			| WS_EX_TOOLWINDOW
+			| WS_EX_NOACTIVATE);
 	}
+
+	[DllImport("user32.dll", EntryPoint = "GetWindowLongPtrW")]
+	private static extern nint GetWindowLongPtr(
+	nint hWnd,
+	int nIndex);
+
+
+	[DllImport("user32.dll", EntryPoint = "SetWindowLongPtrW")]
+	private static extern nint SetWindowLongPtr(
+		nint hWnd,
+		int nIndex,
+		nint dwNewLong);
 }
