@@ -4,6 +4,7 @@ namespace OLLM;
 internal static class Constants {
 	//internal static string _gemma27BModelPath = $"{AppContext.BaseDirectory}..\\..\\..\\ONNX\\med-gemma-27B";
 	internal static string _gptOssModelPath = $"{AppContext.BaseDirectory}..\\..\\..\\ONNX\\gpt-oss-20B";
+	//internal static string _deepseekModelPath = $"{AppContext.BaseDirectory}..\\..\\..\\ONNX\\deepseek-r1-distill-qwen";
 	#region MedGemma-27B relevant
 	internal const string _bosToken = "<bos>";
 	internal const string _startOfTurn = "<start_of_turn>";

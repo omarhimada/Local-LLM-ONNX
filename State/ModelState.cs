@@ -15,9 +15,6 @@ internal class ModelState {
 	internal float _getTemperature() => ExpectingCodeResponse ? 0.225f : 0.7f;
 	#endregion
 	internal ModelState(string modelDirectory) {
-		ModelDirectory = modelDirectory;
-		Config config = new(ModelDirectory);
-		config.AppendProvider(_cuda);
 		//config.AppendProvider(_dml);
 		#region Point to the direct ONNX model itself to instantiate the inference session
 		var list = Directory.GetFiles(modelDirectory, _onnxSearch);
@@ -26,7 +23,16 @@ internal class ModelState {
 			System.Windows.MessageBox.Show(_userFriendlyErrorOccurredDuringInitialization);
 			System.Windows.Application.Current.Shutdown();
 		}
+
+		var pathParts = modelFilePath.Split("\\");
+		var path = string.Join("\\", pathParts[0..(pathParts.Length - 1)]);
+
+		modelDirectory = path;
 		#endregion
+		ModelDirectory = modelDirectory;
+
+		Config config = new(ModelDirectory);
+		config.AppendProvider(_cuda);
 		Model = new(config);
 		Tokenizer = new(Model);
 		GeneratorParams = new(Model);
