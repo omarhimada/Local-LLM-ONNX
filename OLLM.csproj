@@ -131,6 +131,15 @@
 		<PackageReference NoWarn="NU1900" Include="System.Management" Version="11.0.0-preview.1.26104.118" />
 	</ItemGroup>
 	<ItemGroup>
+		<None Update="ONNX\gpt-oss-20b\chat_template.jinja">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="ONNX\gpt-oss-20b\generation_config.json">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="ONNX\gpt-oss-20b\model.safetensors.index.json">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
 		<None Update="ONNX\med-gemma-27b\config.json">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
@@ -161,11 +170,11 @@
 		</None>
 		
 		<None Update="ONNX\gpt-oss-20b\config.json">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
 		</None>
 		<None Update="ONNX\gpt-oss-20b\genai_config.json">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
 		</None>
 		<None Update="ONNX\gpt-oss-20b\model.onnx">
@@ -177,15 +186,15 @@
 			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
 		</None>
 		<None Update="ONNX\gpt-oss-20b\special_tokens_map.json">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
 		</None>
 		<None Update="ONNX\gpt-oss-20b\tokenizer.json">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
 		</None>
 		<None Update="ONNX\gpt-oss-20b\tokenizer_config.json">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
 		</None>
 		<None Update="ONNX\Phi-4-Reasoning\config.json">
