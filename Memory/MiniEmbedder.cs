@@ -6,6 +6,7 @@ namespace OLLM.Memory;
 using Microsoft.ML.OnnxRuntime;
 using Microsoft.ML.OnnxRuntime.Tensors;
 using State;
+using MessageBox = System.Windows.MessageBox;
 
 /// <summary>
 /// Provides functionality to generate text embeddings using a locally hosted MiniLM ONNX model and vocabulary file.

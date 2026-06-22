@@ -1,6 +1,7 @@
 using System.IO;
 using System.Windows;
 using static OLLM.Constants;
+using MessageBox = System.Windows.MessageBox;
 namespace OLLM.Initialization;
 
 internal static class Vocabulary {

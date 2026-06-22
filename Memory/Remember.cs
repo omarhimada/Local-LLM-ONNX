@@ -7,6 +7,7 @@ using System.Windows;
 namespace OLLM.Memory;
 
 using static Constants;
+using MessageBox = System.Windows.MessageBox;
 
 internal class Remember : IDisposable {
 #if DEBUG

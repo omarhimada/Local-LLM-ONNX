@@ -15,6 +15,11 @@ using State;
 using State.Thinking;
 using Utility;
 using static Constants;
+using Application = System.Windows.Application;
+using Button = System.Windows.Controls.Button;
+using MessageBox = System.Windows.MessageBox;
+using RichTextBox = System.Windows.Controls.RichTextBox;
+using TextBox = System.Windows.Controls.TextBox;
 
 internal partial class LinearCommunication(ModelState modelState, Remember? _memories) {
 #pragma warning disable IDE0051
@@ -97,11 +102,12 @@ internal partial class LinearCommunication(ModelState modelState, Remember? _mem
 				new (ChatRole.User, userInputText.Trim())
 			];
 
-			systemAndUserMessage = Ogpt055.RenderTemplate(chatMessages.ToArray());
-		} catch (Exception) {
-			SomethingWentWrong(theirResponse, true);
+			systemAndUserMessage = MedGemma27B.RenderTemplate(chatMessages.ToArray());
+
+			await ChatWithModelAsync(systemAndUserMessage, userInputText, theirResponse);
+		} catch (Exception e) {
+			SomethingWentWrong(theirResponse, true, $"{e.Message}{Environment.NewLine}{e.StackTrace}");
 		}
-		await ChatWithModelAsync(systemAndUserMessage, userInputText, theirResponse);
 	}
 
 	private async Task ChatWithModelAsync(string systemAndUserMessage, string userMessage, RichTextBox theirResponse) {
@@ -133,6 +139,7 @@ internal partial class LinearCommunication(ModelState modelState, Remember? _mem
 			modelState.SetGeneratorParameterSearchOptions();
 			modelState.RefreshGenerator();
 			modelState.Generator!.AppendTokenSequences(sequences);
+			
 			using TokenizerStream ts = modelState.Tokenizer!.CreateStream();
 
 			bool thinking = true;

@@ -20,13 +20,13 @@ using Point = System.Windows.Point;
 
 namespace OLLM;
 
-internal partial class App : Application {
+internal partial class App : System.Windows.Application {
 	internal ModelState? ModelState;
 	internal EmbedderState? EmbedderState;
 	internal MiniEmbedder? MiniEmbedder;
 	internal static readonly LoadingWindow LoadingWindow = new();
 
-	private static Task _animateLabelIn(Label label) {
+	private static Task _animateLabelIn(System.Windows.Controls.Label label) {
 		TaskCompletionSource tcs = new();
 		Current.Dispatcher.Invoke(() => {
 			DoubleAnimation fade = new(0, 1, TimeSpan.FromMilliseconds(1000)) {
@@ -105,7 +105,7 @@ internal partial class App : Application {
 			mainWindow.Show();
 			FinishedInitializing();
 		} catch (Exception exception) {
-			MessageBox.Show($"{_userFriendlyErrorOccurredDuringInitialization}\r\n{exception.Message}");
+			System.Windows.MessageBox.Show($"{_userFriendlyErrorOccurredDuringInitialization}\r\n{exception.Message}");
 			Shutdown();
 		}
 	}

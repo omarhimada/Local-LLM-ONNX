@@ -1,3 +1,5 @@
+TODO mainframe mode (password protected)
+
 # OLLM
 - **Completely local** LLM chat desktop application that uses the *ONNX Generative AI Runtime*. 
 - **Does not make any networking requests outside of the local machine.**
@@ -7,7 +9,7 @@
 - Loads a local LLM model. 
 - The latest release utilizes **gpt-oss-20b**.
 
-![Reasoning example GIF](.Images/ReasoningExample.gif)
+![Reasoning example GIF](.Images/example.gif)
 
 ## Roadmap 
 - **High Priority**
