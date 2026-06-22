@@ -121,7 +121,7 @@
 		<PackageReference NoWarn="NU1900" Include="Microsoft.Extensions.AI" Version="10.7.0" />
 		<PackageReference NoWarn="NU1900" Include="Microsoft.Extensions.DependencyInjection" Version="11.0.0-preview.1.26104.118" />
 		<PackageReference NoWarn="NU1900" Include="Microsoft.Extensions.VectorData.Abstractions" Version="10.7.0" />
-		<PackageReference Include="Microsoft.ML.OnnxRuntime.Gpu.Windows" Version="1.26.0" />
+		<PackageReference Include="Microsoft.ML.OnnxRuntime.Gpu.Windows" Version="1.27.0" />
 		<PackageReference Include="Microsoft.ML.OnnxRuntimeGenAI.Cuda" Version="0.14.1" />
 		<PackageReference Include="Microsoft.ML.OnnxRuntimeGenAI.Managed" Version="0.14.1" />
 		<PackageReference NoWarn="NU1900" Include="Microsoft.ML.Tokenizers" Version="2.0.0" />
