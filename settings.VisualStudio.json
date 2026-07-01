@@ -1,0 +1,7 @@
+{
+  "environment.terminal.profiles+defaultItemIndex": 0,
+  "debugging.symbols.location.searchMicrosoftSymbolServer": true,
+  "debugging.symbols.location.searchNuGetOrgSymbolServer": true,
+  "debugging.general.justMyCode": true,
+  "debugging.symbols.load.moduleFilterMode": "loadAllButExcluded"
+}

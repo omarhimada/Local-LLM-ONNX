@@ -1,0 +1,50 @@
+<Window x:Class="OLLM.LoadingWindow"
+        x:ClassModifier="internal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:options="http://schemas.microsoft.com/options"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OLLM"
+        mc:Ignorable="d options"
+        Title="Loading..."
+        Background="Transparent"
+        WindowStyle="None"
+        MaxWidth="521" MaxHeight="292" 
+		HorizontalAlignment="Center"
+		VerticalAlignment="Center"
+        WindowStartupLocation="CenterScreen">
+	<Window.Resources>
+		<SolidColorBrush x:Key="LightSCB" Color="#DADADA" options:Freeze="True"/>
+		<SolidColorBrush x:Key="DarkerSCB" Color="#050505" options:Freeze="True" />
+		<SolidColorBrush x:Key="ReadyDOSOrange" Color="#FCA469" options:Freeze="True" />
+		<SolidColorBrush x:Key="ReadyDOSPurple" Color="#3C2491" options:Freeze="True" />
+
+		<FontFamily x:Key="0xProtoFont">pack://application:,,,/Fonts/#0xProto</FontFamily>
+
+		<Style x:Key="LabelStyle" TargetType="{x:Type Label}">
+			<Setter Property="Width" Value="Auto"/>
+			<Setter Property="Height" Value="25"/>
+			<Setter Property="Background" Value="{StaticResource DarkerSCB}"/>
+			<Setter Property="BorderBrush" Value="{StaticResource ReadyDOSPurple}"/>
+			<Setter Property="Foreground" Value="{StaticResource ReadyDOSOrange}"/>
+			<Setter Property="FontFamily" Value="{StaticResource 0xProtoFont}" />
+			<Setter Property="FontSize" Value="14" />
+			<Setter Property="HorizontalAlignment" Value="Stretch" />
+		</Style>
+	</Window.Resources>
+	<WindowChrome.WindowChrome>
+		<WindowChrome CaptionHeight="30" 
+		              ResizeBorderThickness="5" 
+		              CornerRadius="0"
+		              GlassFrameThickness="0"/>
+	</WindowChrome.WindowChrome>
+	<Border BorderThickness="1" Background="{StaticResource DarkerSCB}" BorderBrush="{StaticResource ReadyDOSPurple}" Padding="35">
+		<StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+			<Label x:Name="CheckingForCUDALabel" Content="Checking for CUDA" Style="{StaticResource LabelStyle}" Opacity="0" />
+			<Label x:Name="LoadingLabel" Content="Loading..." Style="{StaticResource LabelStyle}" Opacity="0" />
+			<Label x:Name="FoundRequiredModelsLabel" Content="Found required model(s)." Style="{StaticResource LabelStyle}" Opacity="0" />
+			<Label x:Name="InitializingLabel" Content="Initializing." Style="{StaticResource LabelStyle}" Opacity="0" />
+        </StackPanel>
+	</Border>
+</Window>

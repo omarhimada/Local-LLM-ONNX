@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "OLLM": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

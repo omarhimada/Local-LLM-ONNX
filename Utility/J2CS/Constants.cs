@@ -1,0 +1,104 @@
+namespace OLLM.Utility.J2CS;
+
+internal class Constants {
+	#region Common
+	public const char _sc = ' ';
+	public const string _space = " ";
+	public const string _addGenerationPrompt = "add_generation_prompt";
+	public const string _context = "context";
+	public const string _getInit = "{ get; init; }";
+	public const string _messages = "messages";
+	public const string _public = "public ";
+	public const string _private = "private ";
+	public const string _locals = "locals";
+	public const string _tools = "tools";
+	public const string _using = "using ";
+	public const string _return = "return ";
+	public const string _emptyBrackets = "();";
+	public const string _generatedTemplate = "GeneratedTemplate";
+	#endregion
+	#region Code generation
+	public const string _usingSystem = $"{_using}System;";
+	public const string _usingCollections = $"{_using}System.Collections;";
+	public const string _usingCollectionsGeneric = $"{_using}System.Collections.Generic;";
+	public const string _usingLinq = $"{_using}System.Linq;";
+	public const string _usingText = $"{_using}System.Text;";
+	public const string _usingJson = $"{_using}System.Text.Json;";
+	public const string _publicSealedClass = $"{_public} sealed class";
+	public const string _getVariableMethodSignature = $"{_private} static object? GetVar(TemplateContext context, Dictionary<string, object?> {_locals}, string name, object? fallback)";
+	public const string _renderMethodSignature = $"{_public}static string Render(TemplateContext context)";
+	public const string _stringBuilderInit = $"StringBuilder sb = new{_emptyBrackets}";
+	public const string _localsInit = $"Dictionary<string, object?> {_locals} = new{_emptyBrackets}";
+	public const string _returnSb = $"{_return}sb.ToString{_emptyBrackets}";
+	public const string _indexInteger = "ii";
+	public const string _if = "if";
+	public const string _elif = "elif";
+	public const string _else = "else";
+	public const string _endif = "endif";
+	public const string _if_ws = $"{_if}{_space}";
+	public const string _for = "for";
+	public const string _set = "set";
+	public const string _o = "{ o }";
+	#region Helper methods
+	public const string _toStringSafe = $"{_private}static string ToStringSafe(object? o) => o?.ToString() ?? string.Empty;";
+	public const string _isDefined = $"{_private}static bool IsDefined(object? o) => o is not null;";
+	public const string _toJson = $"{_private}static string ToJson(object? o) => JsonSerializer.Serialize(o);";
+	public const string _asEnumerableSig = $"{_private}static IEnumerable<object?> AsEnumerable(object? o)";
+	public const string _getPropMethodSignature = $"{_private}static object? GetProp(object? obj, string prop)";
+	public const string _getIndexMethodSignature = $"{_private}static object? GetIndex(object? obj, object? index)";
+	public const string _getTruthyMethodSignature = $"{_private}static bool Truthy(object? o)";
+	public const string _loopInfoRecordSignature = $"{_public}readonly record struct LoopInfo(int index0, int count)";
+	public const string _openBrace = "{";
+	public const string _closeBrace = "}";
+	public const string _asEnumNull = $"{_if_ws}(o is null) {_return}Array.Empty<object?>{_emptyBrackets}";
+	public const string _asEnumString = $"{_if_ws}(o is string) {_return}new object?[] {_o};";
+	public const string _asEnumEnumerable = $"{_if_ws}(o is IEnumerable e) {_return}e.Cast<object?>{_emptyBrackets}";
+	public const string _asEnumFallback = $"{_return}new object?[] {_o};";
+	public const string _getVarTry = $"{_if_ws}(locals.TryGetValue(name, out var v)) {_return}v;";
+	public const string _getVarFallback = $"{_return}fallback;";
+	public const string _getPropNull = $"{_if_ws}(obj is null) {_return}null;";
+	public const string _getPropType = "Type t = obj.GetType{_emptyBrackets}";
+	public const string _getPropertyInfo = "PropertyInfo? pi = t.GetProperty(prop);";
+	public const string _getPropPiReturn = $"{_if_ws}(pi != null) {_return}pi.GetValue(obj);";
+	public const string _getPropFi = "FieldInfo? fieldInfo = t.GetField(prop);";
+	public const string _getPropFiReturn = $"{_if_ws}(fi != null) {_return}fieldInfo.GetValue(obj);";
+	public const string _getPropDict1 = $"{_if_ws}(obj is IDictionary<string, object?> dict1 && dict1.TryGetValue(prop, out var v1)) {_return}v1;";
+	public const string _getPropDict2 = $"{_if_ws}(obj is IDictionary<string, object> dict2 && dict2.TryGetValue(prop, out var v2)) {_return}v2;";
+	public const string _getPropReturnNull = $"{_return}null;";
+	public const string _getIndexNull = $"{_if_ws}(obj is null || index is null) {_return}null;";
+	public const string _getIfIndexIsString = $"{_if_ws}(index is string sk)";
+	public const string _getIndexDict1 = $"{_if_ws}(obj is IDictionary<string, object?> d1 && d1.TryGetValue(sk, out var v1)) {_return}v1;";
+	public const string _getIndexDict2 = $"{_if_ws}(obj is IDictionary<string, object> d2 && d2.TryGetValue(sk, out var v2)) {_return}v2;";
+	public const string _getIndexProp = "PropertyInfo? p = obj.GetType().GetProperty(sk);";
+	public const string _getIndexPropReturn = $"{_if_ws}(p != null) {_return}p.GetValue(obj);";
+	public const string _getIndexStringReturnNull = $"{_return}null;";
+	public const string _getIndexIntCast = $"int? i = index switch {_openBrace} int {_indexInteger} => {_indexInteger}, long ll => (int)ll, double dd => (int)dd, _ => null {_closeBrace};";
+	public const string _getIndexIntNull = $"{_if_ws}(i is null) {_return}null;";
+	public const string _getIfObjectIsList = $"{_if_ws}(obj is IList list)";
+	public const string _getIndexListIi = $"int {_indexInteger} = i.Value;";
+	public const string _getIndexListBounds = $"if ({_indexInteger} < 0 || {_indexInteger} >= list.Count) {_return}null;";
+	public const string _getIndexListReturn = $"{_return}list[{_indexInteger}];";
+	public const string _getIfObjectIsArray = $"{_if_ws}(obj is Array arr)";
+	public const string _getIndexArrayBounds = $"{_if_ws}({_indexInteger} < 0 || {_indexInteger} >= arr.Length) {_return}null;";
+	public const string _getIndexArrayReturn = $"{_return}arr.GetValue({_indexInteger});";
+	public const string _truthyNull = $"{_if_ws}(o is null) {_return}false;";
+	public const string _truthyBool = $"{_if_ws}(o is bool b) {_return}b;";
+	public const string _truthyString = $"{_if_ws}(o is string s) {_return}s.Length != 0;";
+	public const string _truthyInt = $"{_if_ws}(o is int i) {_return}i != 0;";
+	public const string _truthyLong = $"{_if_ws}(o is long l) {_return}l != 0;";
+	public const string _truthyDouble = $"{_if_ws}(o is double d) {_return}Math.Abs(d) > double.Epsilon;";
+	public const string _truthyEnumerable = $"{_if_ws}(o is IEnumerable e) {_return}e.GetEnumerator().MoveNext{_emptyBrackets}";
+	public const string _truthyDefault = $"{_return}true;";
+	public const string _loopInfoFirst = $"{_public}bool first => index0 == 0;";
+	public const string _loopInfoLast = $"{_public}bool last => index0 == count - 1;";
+	public const string _templateContextClass = $"{_public}sealed class TemplateContext";
+	public const string _templateContextTools = $"{_public}object? tools {_getInit}";
+	public const string _templateContextMessages = $"{_public}object? messages {_getInit}";
+	public const string _templateContextAddGen = $"{_public}object? add_generation_prompt {_getInit}";
+	public const string _templateContextComment = "// You may have to add more fields if your template references more than what is included.";
+	#endregion
+	#endregion
+	internal const string _tokenizerConfigJson = "tokenizer_config.json";
+	internal const string _chatTemplateKey = "chat_template";
+	internal const string _exceptionHelpLinkString = "https://github.com/omarhimada/JinjaToCSharp";
+}

@@ -1,0 +1,16 @@
+*.user
+bin/
+obj/
+.vs/
+/temp**
+/Favorites
+/Properties/PublishProfiles/
+/.Images/_notes.txt
+*.bak
+*.onnx
+*.onnx_data
+*.onnx\.data
+/.Images/j2cs-images
+/*.wav
+/ONNX/Phi-4
+*.mp4

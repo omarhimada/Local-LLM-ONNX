@@ -1,0 +1,264 @@
+<Window x:Class="OLLM.MainWindow"
+        x:ClassModifier="internal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:options="http://schemas.microsoft.com/options"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OLLM"
+        mc:Ignorable="d options"
+        Title="OLLM" MaxWidth="820" MinWidth="820" MinHeight="800" MaxHeight="1440"
+        Background="Black"
+        AllowsTransparency="False"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <!-- Brand colors -->
+        <SolidColorBrush x:Key="ReadyDOSOrange" Color="#FCA469" options:Freeze="True" />
+        <SolidColorBrush x:Key="ReadyDOSPurple" Color="#3C2491" options:Freeze="True" />
+		<SolidColorBrush x:Key="ReadyDOSPink" Color="#ECB3CD" options:Freeze="True" />
+		<SolidColorBrush x:Key="Black" Color="#000000" options:Freeze="True" />
+		<!-- Gray -->
+        <SolidColorBrush x:Key="DarkerSCB" Color="#050505" options:Freeze="True" />
+        <SolidColorBrush x:Key="DarkSCB" Color="#171717" options:Freeze="True" />
+        <SolidColorBrush x:Key="GraySCB" Color="#747474" options:Freeze="True"/>
+        <SolidColorBrush x:Key="LightSCB" Color="#DADADA" options:Freeze="True"/>
+
+        <FontFamily x:Key="ProtoFont">pack://application:,,,/Fonts/#0xProto</FontFamily>
+        <FontFamily x:Key="OverpassFont">pack://application:,,,/Fonts/#Overpass</FontFamily>
+
+        <Style x:Key="{x:Type ScrollBar}" TargetType="{x:Type ScrollBar}">
+            <Setter Property="Width" Value="5"/>
+            <Setter Property="MinWidth" Value="5"/>
+            <Setter Property="Background" Value="{StaticResource GraySCB}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource LightSCB}"/>
+        </Style>
+        <Style x:Key="ButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Width" Value="Auto"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Background" Value="{StaticResource DarkSCB}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource GraySCB}"/>
+            <Setter Property="Foreground" Value="{StaticResource LightSCB}"/>
+            <Setter Property="FontFamily" Value="{StaticResource ProtoFont}" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="ButtonBorder"
+						        Background="{TemplateBinding Background}"
+						        BorderBrush="{TemplateBinding BorderBrush}"
+						        BorderThickness="{TemplateBinding BorderThickness}"
+						        CornerRadius="0"
+						        SnapsToDevicePixels="True">
+                            <ContentPresenter x:Name="BorderContent"
+							                  Margin="{TemplateBinding Padding}"
+							                  HorizontalAlignment="Center"
+							                  VerticalAlignment="Center"
+							                  RecognizesAccessKey="True"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="{StaticResource GraySCB}"/>
+                                <Setter Property="Foreground" Value="{StaticResource LightSCB}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="Background" Value="{StaticResource GraySCB}"/>
+                                <Setter Property="Foreground" Value="{StaticResource LightSCB}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="Opacity" Value="1" />
+                                <Setter Property="Foreground" Value="{StaticResource LightSCB}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="ButtonBorder" Property="Opacity" Value="0.55"/>
+                                <Setter Property="Foreground" Value="{StaticResource DarkSCB}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="TextBoxStyle" TargetType="{x:Type TextBox}">
+			<Setter Property="Background" Value="{StaticResource Black}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ReadyDOSPurple}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="CaretBrush" Value="{StaticResource LightSCB}"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="FontFamily" Value="{StaticResource OverpassFont}" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Foreground" Value="{StaticResource LightSCB}"/>
+            <Setter Property="MinHeight" Value="256" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="Margin" Value="0,0,0,0"/>
+            <Setter Property="MaxHeight" Value="256" />
+            <Setter Property="MinWidth" Value="800" />
+            <Setter Property="Padding" Value="8,8,8,8"/>
+            <Setter Property="SelectionBrush" Value="{StaticResource GraySCB}"/>
+            <Setter Property="SelectionTextBrush" Value="{StaticResource LightSCB}"/>
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="Width" Value="Auto" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="UserInputBT"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost" Height="Auto" MinHeight="256" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Hidden" />
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter TargetName="UserInputBT" Property="BorderBrush" Value="{StaticResource ReadyDOSPurple}"/>
+                            </Trigger>
+
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" Value="{StaticResource ReadyDOSPurple}"/>
+                            </Trigger>
+
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="UserInputBT" Property="Opacity" Value="0.55"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+		<Style x:Key="RichTextBoxStyle" TargetType="{x:Type RichTextBox}">
+			<Setter Property="Background" Value="{StaticResource Black}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ReadyDOSPurple}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+			<Setter Property="CaretBrush" Value="{StaticResource LightSCB}"/>
+			<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="FontFamily" Value="{StaticResource OverpassFont}" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Foreground" Value="{StaticResource LightSCB}"/>
+            <Setter Property="Height" Value="Auto" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+			<Setter Property="Margin" Value="0,0,0,0"/>
+			<Setter Property="MinHeight" Value="256" />
+			<Setter Property="MinWidth" Value="800" />
+			<Setter Property="Padding" Value="8,8,8,8"/>
+            <Setter Property="SelectionBrush" Value="{StaticResource GraySCB}"/>
+			<Setter Property="SelectionTextBrush" Value="{StaticResource LightSCB}"/>
+            <Setter Property="VerticalAlignment" Value="Stretch" />
+			<Setter Property="Width" Value="Auto" />
+            <Setter Property="Template">
+                <Setter.Value>
+					<ControlTemplate TargetType="{x:Type RichTextBox}">
+                        <Border x:Name="TheirResponseBT"
+							Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							SnapsToDevicePixels="True">
+							<ScrollViewer x:Name="PART_ContentHost" Height="Auto" MinHeight="256" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Hidden" />
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter Property="BorderBrush" Value="{StaticResource ReadyDOSPurple}"/>
+                            </Trigger>
+
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" Value="{StaticResource ReadyDOSPurple}"/>
+                            </Trigger>
+
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value="0.55"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="30" 
+	                  ResizeBorderThickness="5" 
+	                  CornerRadius="0"
+	                  GlassFrameThickness="0"/>
+    </WindowChrome.WindowChrome>
+    <Border x:Name="Boundary" BorderThickness="1" BorderBrush="{StaticResource ReadyDOSPurple}">
+		<Grid x:Name="OuterGrid" Background="{StaticResource DarkSCB}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid x:Name="TitleBar" Grid.Row="0" Background="Black">
+                <StackPanel x:Name="TitleBarPanel"  Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0">
+                    <TextBlock x:Name="TitleBarText" Text="" Foreground="Gray" FontFamily="./Fonts/#overpass" FontSize="12"/>
+                </StackPanel>
+                <StackPanel x:Name="CloseButtonPanel" Orientation="Horizontal" HorizontalAlignment="Right" WindowChrome.IsHitTestVisibleInChrome="True">
+                    <Button x:Name="CloseButton" Content="✕" Width="45" Background="Transparent" Foreground="#FFFFAECB" BorderThickness="0" Click="CloseButtonClick"/>
+                </StackPanel>
+                <CheckBox 
+                    x:Name="CodeModeEnabled" 
+                    Content="code mode" 
+                    HorizontalAlignment="Left" 
+                    Margin="10,0,0,0" 
+                    VerticalAlignment="Center" 
+                    Foreground="#FF6BE985" 
+                    FontFamily="pack://application:,,,/Fonts/#0xProto"
+                    ToolTip="Lowers the temperature hyperparameter. Useful for producing code." 
+                    Background="Black" 
+                    IsChecked="True" 
+                    BorderBrush="#FF414141" 
+                    Padding="5,0,0,0" 
+                    WindowChrome.IsHitTestVisibleInChrome="True"
+                    Checked="CodeModeToggled"
+                    Unchecked="CodeModeToggled" />
+            </Grid>
+            <Grid x:Name="MainWindowContent" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+					<ColumnDefinition MinWidth="800" Width="*" />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="25" />
+                    <RowDefinition MinHeight="226" Height="*" />
+                </Grid.RowDefinitions>
+
+                <TextBox x:Name="UserInputText"
+                         Grid.Row="0"
+                         Text=""
+                         AcceptsReturn="True" 
+                         AcceptsTab="True"
+                         FocusVisualStyle="{x:Null}" 
+                         Style="{StaticResource TextBoxStyle}" />
+
+                <StackPanel x:Name="ButtonsPanel" 
+                            Grid.Row="1" 
+                            Orientation="Horizontal" Width="Auto" HorizontalAlignment="Center">
+
+                    <Button x:Name="ChatButton" Content=" chat " IsDefault="True" 
+							Click="ChatButtonClick" AutomationProperties.Name="ChatButton"
+							Style="{StaticResource ButtonStyle}" Width="Auto" />
+
+                    <Button x:Name="InterruptButton" Content=" interrupt " 
+							Click="InterruptButtonClick" AutomationProperties.Name="InterruptButton"
+							Style="{StaticResource ButtonStyle}" Width="Auto" />
+
+					<Button x:Name="SDButton" Content=" sd " 
+							Click="SDButtonClick" AutomationProperties.Name="SDButton"
+							Style="{StaticResource ButtonStyle}" Width="Auto" />
+
+				</StackPanel>
+
+				<RichTextBox x:Name="TheirResponse" 
+				             Grid.Row="2"
+							 IsReadOnly="True"
+				             FocusVisualStyle="{x:Null}" 
+				             Style="{StaticResource RichTextBoxStyle}" HorizontalAlignment="Stretch">
+                    <RichTextBox.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1" ScaleY="1"/>
+                            <TranslateTransform Y="0"/>
+                        </TransformGroup>
+                    </RichTextBox.RenderTransform>
+                </RichTextBox>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
