@@ -10,6 +10,7 @@ namespace OLLM;
 
 using static Constants;
 using Application = System.Windows.Application;
+using CheckBox = System.Windows.Controls.CheckBox;
 using MessageBox = System.Windows.MessageBox;
 
 internal partial class MainWindow : Window {
@@ -28,12 +29,10 @@ internal partial class MainWindow : Window {
 		Memories = null;
 		try {
 			Memories = new Remember(MiniEmbedder!);
-		} catch (Exception) { //exception) {
-							  //MessageBox.Show(exception.Message);
-							  // Fail silently, continue
+		} catch (Exception exception) { 
+			MessageBox.Show(exception.Message);
 		}
 		LinearCommunication = new(ModelState, Memories);
-
 	}
 	internal MainWindow() {
 		InitializeComponent();
@@ -44,7 +43,6 @@ internal partial class MainWindow : Window {
 		await Task.Yield();
 		await LinearCommunication!._interact(UserInputText, TheirResponse, ChatButton);
 	}
-
 	internal async void InterruptButtonClick(object sender, RoutedEventArgs e) {
 		await LinearCommunication!._interrupt(TheirResponse, ChatButton);
 	}
@@ -66,9 +64,8 @@ internal partial class MainWindow : Window {
 		}
 	}
 	internal void CloseButtonClick(object sender, RoutedEventArgs e) => Application.Current.Shutdown();
-
 	private void CodeModeToggled(object sender, RoutedEventArgs e) {
-		if (sender is not System.Windows.Controls.CheckBox checkBox) {
+		if (sender is not CheckBox checkBox) {
 			return;
 		}
 		ModelState?.ExpectingCodeResponse = checkBox.IsChecked ?? false;

@@ -22,10 +22,11 @@ using RichTextBox = System.Windows.Controls.RichTextBox;
 using TextBox = System.Windows.Controls.TextBox;
 
 internal partial class LinearCommunication(ModelState modelState, Remember? _memories) {
+
 #pragma warning disable IDE0051
 	private readonly OgaHandle _ogaHandle = new();
 #pragma warning restore IDE0051
-	private readonly CancellationTokenSource _cts = new();
+	private CancellationTokenSource _cts { get; set; } = new();
 	private bool InterruptButtonEnabled { get; set; } = true;
 	private FloatingAdorner? _thought;
 	private AdornerLayer? _layer;
@@ -55,7 +56,7 @@ internal partial class LinearCommunication(ModelState modelState, Remember? _mem
 		await _thought.ShowAtTopRight();
 	}
 
-	public async Task EndThinkingOverlay(RichTextBox theirResponse) {
+	public async Task EndThinkingOverlay() {
 		if (_layer is null || _thought is null) {
 			return;
 		}
@@ -71,9 +72,10 @@ internal partial class LinearCommunication(ModelState modelState, Remember? _mem
 			ToggleInterruptButton();
 			await SendMessage(userInputText.Text, theirResponse);
 		} catch (Exception exception) {
-			SomethingWentWrong(theirResponse, false, exception.Message);
+			SomethingWentWrong(theirResponse, exception.Message);
 		} finally {
 			AllowUserInputEntry(chatButton);
+
 		}
 	}
 
@@ -86,9 +88,9 @@ internal partial class LinearCommunication(ModelState modelState, Remember? _mem
 			theirResponse.Document = new FlowDocument();
 			chatButton.IsEnabled = true;
 			ToggleInterruptButton();
-			_cts.TryReset();
+			_cts = new CancellationTokenSource();
 		} catch (Exception) {
-			SomethingWentWrong(theirResponse, false);
+			SomethingWentWrong(theirResponse);
 		} finally {
 			chatButton.IsEnabled = true;
 		}
@@ -102,12 +104,11 @@ internal partial class LinearCommunication(ModelState modelState, Remember? _mem
 				new (ChatRole.User, userInputText.Trim())
 			];
 
-			systemAndUserMessage = Ogpt055.RenderTemplate(chatMessages.ToArray());
-
-			await ChatWithModelAsync(systemAndUserMessage, userInputText, theirResponse);
-		} catch (Exception e) {
-			SomethingWentWrong(theirResponse, true, $"{e.Message}{Environment.NewLine}{e.StackTrace}");
+			systemAndUserMessage = OGPT1551O52C.RenderTemplate([.. chatMessages]);
+		} catch (Exception) {
+			SomethingWentWrong(theirResponse);
 		}
+		await ChatWithModelAsync(systemAndUserMessage, userInputText, theirResponse);
 	}
 
 	private async Task ChatWithModelAsync(string systemAndUserMessage, string userMessage, RichTextBox theirResponse) {
@@ -139,7 +140,6 @@ internal partial class LinearCommunication(ModelState modelState, Remember? _mem
 			modelState.SetGeneratorParameterSearchOptions();
 			modelState.RefreshGenerator();
 			modelState.Generator!.AppendTokenSequences(sequences);
-			
 			using TokenizerStream ts = modelState.Tokenizer!.CreateStream();
 
 			bool thinking = true;
@@ -176,15 +176,15 @@ internal partial class LinearCommunication(ModelState modelState, Remember? _mem
 		response = s[1];
 
 		await Application.Current.Dispatcher.InvokeAsync(() => {
-			_ = EndThinkingOverlay(theirResponse);
+			_ = EndThinkingOverlay();
 			theirResponse.Document = Fd.Render([new ParagraphFdBlockMd([new TextSpan(_writing)])]);
-			theirResponse.ScrollToEnd();
 		}, DispatcherPriority.Render, ct);
+
+		await Task.Delay(525);
 
 		await Application.Current.Dispatcher.InvokeAsync(() => {
 			List<FdBlockMd> finalParagraphBlocks = Md.Parse(response);
 			theirResponse.Document = Fd.Render(finalParagraphBlocks);
-			theirResponse.ScrollToHome();
 		}, DispatcherPriority.Render, ct);
 
 		try {
@@ -199,7 +199,7 @@ internal partial class LinearCommunication(ModelState modelState, Remember? _mem
 		}
 	}
 
-	private static void SomethingWentWrong(RichTextBox theirResponse, bool? couldNotParseUserInput = false, string? exceptionMessage = null) {
+	private static void SomethingWentWrong(RichTextBox theirResponse, string? exceptionMessage = null) {
 		theirResponse.Document = new FlowDocument();
 		if (exceptionMessage != null) {
 			MessageBox.Show(exceptionMessage);

@@ -69,7 +69,7 @@ internal static class EnsureModelsArePresent {
 		}
 		#endregion
 		// Attempt to retrieve the LLM ONNX
-		if (!TryRequiredModelIsPresent(_gptOssModelPath, out string? modelPathToUse) && modelPathToUse == null) {
+		if (!TryRequiredModelIsPresent(_preBuildGPT20BModelPath, out string? modelPathToUse) && modelPathToUse == null) {
 			potentialFriendlyUserErrorMessage.AppendLine(
 				$"{_userFriendlyModelDirectoryErrorResponse}{Environment.NewLine}{modelPathToUse}");
 		}

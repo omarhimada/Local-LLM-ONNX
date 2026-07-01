@@ -10,7 +10,7 @@
         Title="Loading..."
         Background="Transparent"
         WindowStyle="None"
-        MaxWidth="460" MaxHeight="145" 
+        MaxWidth="521" MaxHeight="292" 
 		HorizontalAlignment="Center"
 		VerticalAlignment="Center"
         WindowStartupLocation="CenterScreen">
@@ -41,9 +41,10 @@
 	</WindowChrome.WindowChrome>
 	<Border BorderThickness="1" Background="{StaticResource DarkerSCB}" BorderBrush="{StaticResource ReadyDOSPurple}" Padding="35">
 		<StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+			<Label x:Name="CheckingForCUDALabel" Content="Checking for CUDA" Style="{StaticResource LabelStyle}" Opacity="0" />
 			<Label x:Name="LoadingLabel" Content="Loading..." Style="{StaticResource LabelStyle}" Opacity="0" />
 			<Label x:Name="FoundRequiredModelsLabel" Content="Found required model(s)." Style="{StaticResource LabelStyle}" Opacity="0" />
 			<Label x:Name="InitializingLabel" Content="Initializing." Style="{StaticResource LabelStyle}" Opacity="0" />
-		</StackPanel>
+        </StackPanel>
 	</Border>
 </Window>

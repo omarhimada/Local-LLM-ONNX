@@ -1,6 +1,5 @@
 using System.Text.RegularExpressions;
 using System.Windows.Media;
-using Brush = System.Windows.Media.Brush;
 using Color = System.Windows.Media.Color;
 
 namespace OLLM.Utility.Syntax;
@@ -56,7 +55,7 @@ public static class Theme {
 	public static readonly SolidColorBrush Preprocessor = new(Color.FromRgb(246, 220, 153));
 	public static readonly SolidColorBrush Attribute = new(Color.FromRgb(242, 0, 82));
 
-	public static Brush For(TokenKind kind) => kind switch {
+	public static System.Windows.Media.Brush For(TokenKind kind) => kind switch {
 		TokenKind.Keyword => Keyword,
 		TokenKind.TypeName => TypeName,
 		TokenKind.String => String,

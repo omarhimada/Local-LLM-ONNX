@@ -54,7 +54,11 @@
 	<ItemGroup>
 		<Compile Remove="learn_attempt_2.cs" />
 		<Compile Remove="Utility\ModelSpecific\CodeGemma.cs" />
+		<Compile Remove="Utility\ModelSpecific\Deepseek.cs" />
+		<Compile Remove="Utility\ModelSpecific\MedGemma.cs" />
 		<Compile Remove="Utility\ModelSpecific\Mistral.cs" />
+		<Compile Remove="Utility\ModelSpecific\Ogpt055.cs" />
+		<Compile Remove="Utility\ModelSpecific\Phi4.cs" />
 		<Compile Remove="Utility\ModelSpecific\QwenCoder.cs" />
 	</ItemGroup>
 

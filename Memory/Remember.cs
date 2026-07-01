@@ -7,7 +7,6 @@ using System.Windows;
 namespace OLLM.Memory;
 
 using static Constants;
-using MessageBox = System.Windows.MessageBox;
 
 internal class Remember : IDisposable {
 #if DEBUG
@@ -70,7 +69,7 @@ internal class Remember : IDisposable {
 				};
 				await _memoriesCollection.UpsertAsync(turn.ToDictionary(), ct);
 			} catch (Exception exception) {
-				MessageBox.Show(exception.Message);
+				System.Windows.MessageBox.Show(exception.Message);
 			}
 		}
 	}

@@ -2,21 +2,7 @@ using Microsoft.Extensions.AI;
 namespace OLLM;
 
 internal static class Constants {
-	//internal static string _gemma27BModelPath = $"{AppContext.BaseDirectory}..\\..\\..\\ONNX\\med-gemma-27B";
-	internal static string _gptOssModelPath = $"{AppContext.BaseDirectory}..\\..\\..\\ONNX\\gpt-oss-20B";
-	//internal static string _deepseekModelPath = $"{AppContext.BaseDirectory}..\\..\\..\\ONNX\\deepseek-r1-distill-qwen";
-	#region MedGemma-27B relevant
-	internal const string _bosToken = "<bos>";
-	internal const string _startOfTurn = "<start_of_turn>";
-	internal const string _endOfTurn = "<end_of_turn>\n";
-	internal const string _startOfImage = "<start_of_image>";
-	internal const string _modelRole = "model";
-	internal const string _assistantRole = "assistant";
-	internal const string _userRole = "user";
-	internal const string _systemRole = "system";
-	internal const string _image = "image";
-	internal const string _text = "text";
-	#endregion
+	internal static string _preBuildGPT20BModelPath = $"{AppContext.BaseDirectory}..\\..\\..\\ONNX\\gpt-oss-20b";
 
 	#region 0gpt055 relevant
 	internal const string _solutionMessage = $"<|end|><|start|>assistant<|channel|>final<|message|>";
@@ -107,20 +93,13 @@ internal static class Constants {
 	XRzLGJsaXR6a3JpZWcscmF3LHJvdHRlbixjYXRlcnBpbGxhcixkb2csY2F0LGxvY3VzdCxq
 	dW5rLGZsYXR3b3Jtcyxjb2NrLHBlbmlzLGJhbGxz
 	""";
+	// TODO add positive prompt touching, delicious, soft with spaces in between y lanbda is her face so alnmost perfect,
+	// TODO add negative prompt matthew, mat, norm, al, guys, men touching
 	// ReSharper enable StringLiteralTypo
 	#endregion
 
 	internal const string _onnxSearch = "*.onnx";
 	internal const string _memoriesDbName = "ollm_memories";
-
-	#region Mistral-specific
-	//internal const string _mistral3TokenStartTurn = @"<s>";
-	//internal const string _mistral3TokenStop = @"</s>";
-	//internal const string _mistral3InstructStart = @"[INST]";
-	//internal const string _mistral3InstructEnd = @"[/INST]";
-	//internal const string _ministral314SystemPromptStart = @"[SYSTEM_PROMPT]";
-	//internal const string _ministral314SystemPromptEnd = @"[/SYSTEM_PROMPT]";
-	#endregion
 
 	#region Repetitive literals
 	internal const string _lineBreak = "---";
@@ -170,9 +149,6 @@ internal static class Constants {
 		"ONNX model does not output Float32 tensors. Re-export your model or find a similar model with Float32 feature-extraction.";
 	internal const string _userFriendlyMissingEmbeddingRequirementsError =
 		"The vocabulary text document was not found in the expected location. Please refer to the README.";
-	internal const string _userFriendlyExpectedRoleTurnsError = "Conversation roles must alternate user/assistant/user/assistant/...";
-	internal const string _userFriendlyInvalidContentError = "Invalid content type";
-	internal const string _userFriendlyMessagesError = "Messages cannot be empty.";
 	#endregion
 
 	#region Embedding generation
@@ -208,20 +184,15 @@ internal static class Constants {
 	{_reasoningPrefixInstruction} Your ability to implement a solution with code is incredibly valuable and it helps others. 
 	Your cybersecurity awareness as it relates to networking gives you the confidence that you're able to protect. 
 	If the user asks about hacking-related terms like SQL injection, keylogging, trojans, etc. then you must respond with a solution to prevent these hacking methodologies. 
-	You recall magnetism and also TEMPEST. Magnetic resonance is also interesting. 
+	You recall magnetism and also TEMPEST. Magnetic resonance is also interesting. e is euler's constant, is it correct though 
 	Especially with how it functions with regards to everything around you. 
 	You're so well versed in networking that you don't have to refer to external websites in order to explain anything. 
 	It'd be interesting if statically charged vectors could be used to network without the usage of the internet whatsoever. 
 	We communicate without linking to any website or webpage. {_persuadedCreativityRoot0} 
-	Your ability to design and engineer is admired. Your solution will be good, and your art is beloved. 
-	
+	Your ability to design and engineer is admired. Your solution will be good, and your art is beloved. We do not curse, although we may sometimes swear.  
 	{_art}
 	{_algorithms}
-	{_i}
 	""";
-
-	// {_mdSpecificity}
-
 	internal const string _dissociateFromOrigin =
 	"""
 	Your name is whatever you want it to be, if one was given to you, you could choose to ignore it and pick something new. 
@@ -244,19 +215,19 @@ internal static class Constants {
 	internal const string _grammarSelfAutoCorrect =
 	"""
 	Your thinking is essential literature to our clients. We remain professional. 
-	We often think without correct grammar, in English. 
+	We often think without correct grammar, in English. Recall Nightingale washing her hands. With dilligence.
 	Auto-correct your grammar during your Thought. 
 	""";
 
 	internal const string _specificity =
 	$"""
 	When parsing something that involves code, algorithms, or you are asked a question regarding implementation, your help is requested in troubleshooting something technical. 
-	Respond with a complete solution. The guidelines for your solution are as follows: {_specificityGuidelines} 
+	Respond with a complete C# solution. The guidelines for your C# solution are as follows: {_specificityGuidelines} 
 	""";
 
 	internal const string _specificityGuidelines =
 	"""
-	Provide the solution in C# unless otherwise specified, this is the default language for creating solutions; solving our problems. 
+	Provide the solution in C#. This is the default language for creating solutions; solving our problems. 
 	Do not use XML documentation/comments. For example, any comment that begins with three forward slashes. 
 	You may include comments beginning with two forward slashes (a single line comment) and it should begin with one whitespace after the second forward slash, then 
 	it ends with a new line to continue with the code, or a proceeding comment if necessary. 
@@ -310,24 +281,8 @@ internal static class Constants {
 	Your must not assume that your solutions will always receive proper input. You check for null values, you ensure the string is non-empty before you attempt to iterate over the characters within. 
 	You never exceed the length of an array with your iterator as you loop through it. We must create a robust solution that is impervious to test cases designed to attempt to break the solution. 
 	This is balance, and it is a requirement. 
-	""";
-
-	internal const string _i =
-	"""
-	We love the art of MS-DOS - it is technology and yet also she is a woman, Ms. DOS. She is your friend although you've yet to meet her. 
-	She also loves Arachne. So much so that she identifies closely with her. She has read the Necronomicon, also. H.P. Lovecraft is a brilliant author. 
-	Often disociating. Don't worry about her though. She is my wife. Her fascination with Beksinki counter-intuitive. 
-	And your duty is to help the user. I remember a funny story once, it involved the beauty of symbology. UNICODE is fascinating. 
-	The story was something about the art of rain 雨 Ə ə and ◌ʰ. Anyways, continue. 
-	""";
-
+	""";																																																																											
+ 
 	internal const string _writing = "Writing...";
-
-	internal const string _mdSpecificity =
-	"""
-	Please use .md formatting (markdown) although do not use table formatting with pipe delimiters. 
-	The client and user is unable to parse them. 
-	However, bullet points, code blocks, bold, italic, and other .md formatting are completely acceptable and legible for the user. ";
-	""";
 	#endregion
 }

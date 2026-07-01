@@ -2,11 +2,11 @@ using Microsoft.ML.OnnxRuntimeGenAI;
 using System.IO;
 using System.Windows;
 using static OLLM.Constants;
+using MessageBox = System.Windows.MessageBox;
 namespace OLLM.State;
-
 internal class ModelState {
 	#region Fields, properties, expressions
-	internal Model? Model;
+	internal Microsoft.ML.OnnxRuntimeGenAI.Model? Model;
 	internal GeneratorParams? GeneratorParams;
 	internal Tokenizer? Tokenizer;
 	internal Generator? Generator;
@@ -15,28 +15,28 @@ internal class ModelState {
 	internal float _getTemperature() => ExpectingCodeResponse ? 0.225f : 0.7f;
 	#endregion
 	internal ModelState(string modelDirectory) {
-		//config.AppendProvider(_dml);
-		#region Point to the direct ONNX model itself to instantiate the inference session
-		var list = Directory.GetFiles(modelDirectory, _onnxSearch);
-		string? modelFilePath = list.FirstOrDefault();
-		if (string.IsNullOrEmpty(modelFilePath)) {
-			System.Windows.MessageBox.Show(_userFriendlyErrorOccurredDuringInitialization);
-			System.Windows.Application.Current.Shutdown();
-		}
-
-		var pathParts = modelFilePath.Split("\\");
-		var path = string.Join("\\", pathParts[0..(pathParts.Length - 1)]);
-
-		modelDirectory = path;
-		#endregion
 		ModelDirectory = modelDirectory;
-
 		Config config = new(ModelDirectory);
 		config.AppendProvider(_cuda);
-		Model = new(config);
+		//config.AppendProvider(_dml);
+		#region Point to the direct ONNX model itself to instantiate the inference session
+		string? modelFilePath = Directory.GetFiles(modelDirectory, _onnxSearch).FirstOrDefault();
+		if (string.IsNullOrEmpty(modelFilePath)) {
+			MessageBox.Show(_userFriendlyErrorOccurredDuringInitialization);
+			System.Windows.Application.Current.Shutdown();
+		}
+		#endregion
+		try {
+			Model = new(config);
+		}
+		catch (Exception ex) {
+			MessageBox.Show(ex.Message);
+
+		}
 		Tokenizer = new(Model);
 		GeneratorParams = new(Model);
 	}
+	
 	/// <summary>
 	/// Re-initialize the generator after each response as opposed to before your next input is tokenized.
 	/// (i.e.: user reads initial output of the model and then by the time they comprehend, the generator is re-initialized)

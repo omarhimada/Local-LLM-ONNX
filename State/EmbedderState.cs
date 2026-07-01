@@ -2,8 +2,6 @@ using Microsoft.ML.OnnxRuntime;
 using System.IO;
 using System.Windows;
 using static OLLM.Constants;
-using Application = System.Windows.Application;
-using MessageBox = System.Windows.MessageBox;
 namespace OLLM.State;
 
 internal class EmbedderState {
@@ -27,8 +25,8 @@ internal class EmbedderState {
 		#region Point to the direct ONNX model itself to instantiate the inference session
 		string? embedModelFilePath = Directory.GetFiles(embedModelDirectory ?? _ws, _onnxSearch).FirstOrDefault();
 		if (string.IsNullOrEmpty(embedModelFilePath)) {
-			MessageBox.Show(_userFriendlyErrorOccurredDuringInitialization);
-			Application.Current.Shutdown();
+			System.Windows.MessageBox.Show(_userFriendlyErrorOccurredDuringInitialization);
+			System.Windows.Application.Current.Shutdown();
 		}
 		#endregion
 		Session = new InferenceSession(embedModelFilePath, options);
@@ -36,7 +34,7 @@ internal class EmbedderState {
 		VocabularyPath = Initialization.Vocabulary.GetRequiredTextDocument(_preBuildEmbedModelVocabTextPath) ?? string.Empty;
 		if (string.IsNullOrEmpty(VocabularyPath)) {
 			// User was already shown a friendly error message, shut down the app.
-			Application.Current.Shutdown();
+			System.Windows.Application.Current.Shutdown();
 		}
 		Vocabulary = new(StringComparer.Ordinal);
 		int i = 0;

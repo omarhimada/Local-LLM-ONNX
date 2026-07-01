@@ -12,7 +12,6 @@ namespace OLLM.State.Thinking;
 using static Constants;
 using static MdFd;
 using Application = System.Windows.Application;
-using Orientation = System.Windows.Controls.Orientation;
 using Point = System.Windows.Point;
 using Size = System.Windows.Size;
 
@@ -46,7 +45,7 @@ public sealed class FloatingAdorner : Adorner {
 
 		_veilBlur = new Border {
 			HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch,
-			VerticalAlignment = System.Windows.VerticalAlignment.Stretch,
+			VerticalAlignment = VerticalAlignment.Stretch,
 			Opacity = 0.82,
 			Background = new VisualBrush(adornedElement) {
 				Stretch = Stretch.None,
@@ -61,14 +60,14 @@ public sealed class FloatingAdorner : Adorner {
 
 		_veilTint = new Border {
 			HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch,
-			VerticalAlignment = System.Windows.VerticalAlignment.Stretch,
+			VerticalAlignment = VerticalAlignment.Stretch,
 			Background = new SolidColorBrush(System.Windows.Media.Color.FromArgb(140, 0, 0, 0)),
 			Opacity = 0
 		};
 
 		_veilRoot = new Grid {
 			HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch,
-			VerticalAlignment = System.Windows.VerticalAlignment.Stretch,
+			VerticalAlignment = VerticalAlignment.Stretch,
 			Opacity = 0,
 			IsHitTestVisible = false
 		};
@@ -96,8 +95,8 @@ public sealed class FloatingAdorner : Adorner {
 			VerticalScrollBarVisibility = ScrollBarVisibility.Hidden,
 			HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled,
 			CanContentScroll = false,
-			MaxWidth = 680,
-			MaxHeight = 227
+			MaxWidth = 800,
+			MaxHeight = 252
 		};
 
 		_bubble = new Border {
@@ -111,7 +110,7 @@ public sealed class FloatingAdorner : Adorner {
 
 			BorderThickness = new Thickness(1),
 			Child = new StackPanel {
-				Orientation = Orientation.Vertical,
+				Orientation = System.Windows.Controls.Orientation.Vertical,
 				Children =
 				{
 					_title,
@@ -136,7 +135,7 @@ public sealed class FloatingAdorner : Adorner {
 		};
 
 		_writeBufferTimer = new DispatcherTimer(DispatcherPriority.Normal) {
-			Interval = TimeSpan.FromMilliseconds(80)
+			Interval = TimeSpan.FromMilliseconds(34)
 		};
 		_writeBufferTimer.Tick += (_, _) => {
 			if (!_canAppend)
@@ -203,17 +202,17 @@ public sealed class FloatingAdorner : Adorner {
 		await Application.Current.Dispatcher.InvokeAsync(() => {
 			Storyboard sb = new();
 
-			DoubleAnimation veilFade = new(0, 1, TimeSpan.FromMilliseconds(333)) { EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseOut } };
+			DoubleAnimation veilFade = new(0, 1, TimeSpan.FromMilliseconds(144)) { EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseOut } };
 			Storyboard.SetTarget(veilFade, _veilRoot);
 			Storyboard.SetTargetProperty(veilFade, new PropertyPath(OpacityProperty));
 			sb.Children.Add(veilFade);
 
-			DoubleAnimation tintFade = new(0, 1, TimeSpan.FromMilliseconds(333)) { EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseOut } };
+			DoubleAnimation tintFade = new(0, 1, TimeSpan.FromMilliseconds(144)) { EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseOut } };
 			Storyboard.SetTarget(tintFade, _veilTint);
 			Storyboard.SetTargetProperty(tintFade, new PropertyPath(OpacityProperty));
 			sb.Children.Add(tintFade);
 
-			DoubleAnimation fade = new(0d, 1d, TimeSpan.FromMilliseconds(252)) { EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseOut } };
+			DoubleAnimation fade = new(0d, 1d, TimeSpan.FromMilliseconds(144)) { EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseOut } };
 			Storyboard.SetTarget(fade, _bubble);
 			Storyboard.SetTargetProperty(fade, new PropertyPath(OpacityProperty));
 			sb.Children.Add(fade);
@@ -221,7 +220,7 @@ public sealed class FloatingAdorner : Adorner {
 			TransformGroup tg = (TransformGroup)_bubble.RenderTransform;
 			ScaleTransform scale = (ScaleTransform)tg.Children[0];
 
-			DoubleAnimation sx = new(0.68, 1, TimeSpan.FromMilliseconds(333)) { EasingFunction = new BackEase { Amplitude = 0.25, EasingMode = EasingMode.EaseOut } };
+			DoubleAnimation sx = new(0.68, 1, TimeSpan.FromMilliseconds(144)) { EasingFunction = new BackEase { Amplitude = 0.25, EasingMode = EasingMode.EaseOut } };
 			Storyboard.SetTarget(sx, scale);
 			Storyboard.SetTargetProperty(sx, new PropertyPath(ScaleTransform.ScaleXProperty));
 			sb.Children.Add(sx);
@@ -254,10 +253,10 @@ public sealed class FloatingAdorner : Adorner {
 
 	protected override Size ArrangeOverride(Size finalSize) {
 		_veilRoot.Measure(finalSize);
-		_veilRoot.Arrange(new Rect(new System.Windows.Point(0, 0), finalSize));
+		_veilRoot.Arrange(new Rect(new Point(0, 0), finalSize));
 
 		_bubble.Measure(finalSize);
-		_bubble.Arrange(new Rect(new System.Windows.Point(0, 0), _bubble.DesiredSize));
+		_bubble.Arrange(new Rect(new Point(0, 0), _bubble.DesiredSize));
 		return finalSize;
 	}
 
