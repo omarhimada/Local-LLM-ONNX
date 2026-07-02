@@ -26,8 +26,13 @@ internal partial class MainWindow : Window {
 		Memories = null;
 		try {
 			Memories = new Remember(MiniEmbedder!);
-		} catch (Exception exception) { 
-			MessageBox.Show(exception.Message);
+		} catch (Exception exception) {
+			// TODO retrieval augmented generation
+			// Skip this exception
+			const string ragInitializeException = "Definition is required for dynamic collections";
+			if (exception.Message != ragInitializeException) {
+				MessageBox.Show(exception.Message);
+			}
 		}
 		LinearCommunication = new(ModelState, Memories);
 	}

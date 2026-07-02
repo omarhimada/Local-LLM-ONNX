@@ -1,7 +1,8 @@
+/* Visual Studio Settings File */
 {
   "environment.terminal.profiles+defaultItemIndex": 0,
-  "debugging.symbols.location.searchMicrosoftSymbolServer": true,
-  "debugging.symbols.location.searchNuGetOrgSymbolServer": true,
+  "debugging.symbols.location.searchMicrosoftSymbolServer": false,
+  "debugging.symbols.location.searchNuGetOrgSymbolServer": false,
   "debugging.general.justMyCode": true,
   "debugging.symbols.load.moduleFilterMode": "loadAllButExcluded"
 }

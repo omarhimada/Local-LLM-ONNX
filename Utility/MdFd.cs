@@ -31,7 +31,7 @@ internal static class MdFd {
 
 	// ReadyDOS logo colors
 	//FCA469 (orange) 252, 164, 105
-	//3C2491 (purple) 60, 36, 145
+	//582119 (reddish) 60, 36, 145
 	//ECB3CD (pink) 236, 179, 205
 
 	internal static int CountHeadingLevel(string line) {

@@ -13,21 +13,20 @@
         MaxWidth="521" MaxHeight="292" 
 		HorizontalAlignment="Center"
 		VerticalAlignment="Center"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+		Cursor=".Images\loading.ani">
 	<Window.Resources>
-		<SolidColorBrush x:Key="LightSCB" Color="#DADADA" options:Freeze="True"/>
-		<SolidColorBrush x:Key="DarkerSCB" Color="#050505" options:Freeze="True" />
-		<SolidColorBrush x:Key="ReadyDOSOrange" Color="#FCA469" options:Freeze="True" />
-		<SolidColorBrush x:Key="ReadyDOSPurple" Color="#3C2491" options:Freeze="True" />
+		<SolidColorBrush x:Key="Light1" Color="#DDDDCF" options:Freeze="True"/>
+		<SolidColorBrush x:Key="Dark2" Color="#000000" options:Freeze="True" />
 
 		<FontFamily x:Key="0xProtoFont">pack://application:,,,/Fonts/#0xProto</FontFamily>
 
 		<Style x:Key="LabelStyle" TargetType="{x:Type Label}">
 			<Setter Property="Width" Value="Auto"/>
 			<Setter Property="Height" Value="25"/>
-			<Setter Property="Background" Value="{StaticResource DarkerSCB}"/>
-			<Setter Property="BorderBrush" Value="{StaticResource ReadyDOSPurple}"/>
-			<Setter Property="Foreground" Value="{StaticResource ReadyDOSOrange}"/>
+			<Setter Property="Background" Value="{StaticResource Dark2}"/>
+			<Setter Property="BorderBrush" Value="{StaticResource Light1}"/>
+			<Setter Property="Foreground" Value="{StaticResource Light1}"/>
 			<Setter Property="FontFamily" Value="{StaticResource 0xProtoFont}" />
 			<Setter Property="FontSize" Value="14" />
 			<Setter Property="HorizontalAlignment" Value="Stretch" />
@@ -39,7 +38,7 @@
 		              CornerRadius="0"
 		              GlassFrameThickness="0"/>
 	</WindowChrome.WindowChrome>
-	<Border BorderThickness="1" Background="{StaticResource DarkerSCB}" BorderBrush="{StaticResource ReadyDOSPurple}" Padding="35">
+	<Border BorderThickness="1" Background="{StaticResource Dark2}" BorderBrush="{StaticResource Light1}" Padding="35">
 		<StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
 			<Label x:Name="CheckingForCUDALabel" Content="Checking for CUDA" Style="{StaticResource LabelStyle}" Opacity="0" />
 			<Label x:Name="LoadingLabel" Content="Loading..." Style="{StaticResource LabelStyle}" Opacity="0" />

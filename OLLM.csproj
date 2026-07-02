@@ -115,6 +115,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Resource Include=".Images\loading.ani">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Resource>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Resource Include=".Images\aero_arrow.cur">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Resource>
+	</ItemGroup>
+
+	<ItemGroup>
 		<Resource Include="Fonts\0xProto-Regular.ttf">
 			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
 		</Resource>
