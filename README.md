@@ -1,4 +1,4 @@
-# OLLM
+# ollm
 - **Completely local** LLM chat desktop application that uses the *ONNX Generative AI Runtime* and CUDA. 
 - **Does not make any networking requests outside of the local machine.**
 - **Zero HTTP** *(e.g.: API calls to OpenAI, Gemini)*, 
