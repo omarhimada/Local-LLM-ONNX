@@ -1,5 +1,6 @@
-# OLLM
-- **Completely local** LLM chat desktop application that uses the *ONNX Generative AI Runtime*. 
+# Local-LLM-ONNX 
+## (OLLM)
+- **Completely local** LLM chat desktop application that uses the *ONNX Generative AI Runtime* and CUDA. 
 - **Does not make any networking requests outside of the local machine.**
 - **Zero HTTP** *(e.g.: API calls to OpenAI, Gemini)*, 
 - **Zero REST API middle-layer** *(e.g.: GPT4All)* 
@@ -7,7 +8,7 @@
 - Loads a local LLM model. 
 - The latest release utilizes **gpt-oss-20b**.
 
-![Reasoning example GIF](.Images/ReasoningExample.gif)
+<img width="820" height="1386" alt="newlook" src="https://github.com/user-attachments/assets/34930588-d787-44d5-af8a-a21fda063034" />
 
 ## Roadmap 
 - **High Priority**
